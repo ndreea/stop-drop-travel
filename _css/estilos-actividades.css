@@ -1,0 +1,941 @@
+
+/*
+
+DESCRIPCIÓN GENERAL PÁGINA ACTIVIDADES DE CADA DESTINO
+Esta sección ofrece al usuario cada una de las diferentes actividades que tiene cada destino seleccionado.
+
+Contiene:
+1.Modales
+    1.1 Login
+    1.2 Registro
+2.Navegador principal general
+3.Botón back: Vuelve a la página de Home
+4.Encabezado general
+5.Contenido general de actividades
+    5.1 Imagen
+    5.2 Título de la actividad
+    5.3 Lugar y precio
+    5.4 Breve descripción introductoria
+6.Footer general
+7.Responsive
+
+*/
+
+
+/* ----------------------------- */
+
+
+/* ESTILO UNIVERSAL */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+}
+
+
+/* ----------------------------- */
+
+
+/* MODAL LOGIN */
+.login {
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	display: none;
+}
+
+.login .form { /* Damos los estilos al modal login */
+	background-color: #fff;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px 30px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	border-radius: 10px;
+}
+
+/* Mostramos la modal */
+.login.show {
+	display: block;
+}
+
+.login .form i { /* Botón de cerrar */
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	color: #1d1d1b;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+}
+
+.login .form h2 { /* Título */
+	text-align: center;
+	color: #1d1d1b;
+	margin: 10px 0 20px;
+	font-size: 25px;
+}
+
+/* Todos los inputs, botones y demás */
+.login .form .caja {
+	margin: 20px 0;
+}
+
+.login .form .caja label {
+	font-size: 14px;
+	color: #1d1d1b;
+}
+
+/* Damos estilo a los inputs de email y contraseña */
+.login .form .caja input[type="email"], 
+.login .form .caja input[type="password"] {
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 0.5px solid #1d1d1b;
+	border-radius: 5px;
+}
+
+.login .form .caja input[type="checkbox"] { /* Damos estilo a la caja del checkbox */
+	margin-right: 5px;
+}
+
+.login .form .caja button { /* Damos estilo al botón */
+	width: 100%;
+	height: 50px;
+	background-color: #E33323;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-radius: 30px;
+	cursor: pointer;
+	box-shadow: 0 2px 8px 0 rgba(16, 16, 16, 0.16);
+}
+
+.login .form .caja a { /* Damos estilo al enlace */
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	color: #1d1d1b;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.login .form .caja a:hover {
+	text-decoration: underline;
+}
+
+
+/* ----------------------------- */
+
+
+/* MODAL REGISTRO */
+.registro { 
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	display: none;
+}
+
+.registro .formulario { /* Damos los estilos al modal registro */
+	background-color: #fff;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px 30px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	border-radius: 10px;
+}
+
+/* Mostramos la modal */
+.registro.show {
+	display: block;
+}
+
+.registro .formulario i { /* Botón de cerrar */
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	color: #1d1d1b;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+}
+
+.registro .formulario h2 { /* Título */
+	text-align: center;
+	color: #1d1d1b;
+	margin: 10px 0 20px;
+	font-size: 25px;
+}
+
+/* Todos los inputs, botones y demás */
+.registro .formulario .datos {
+	margin: 20px 0;
+}
+
+.registro .formulario .datos label {
+	font-size: 14px;
+	color: #1d1d1b;
+}
+
+/* Damos estilo a los inputs de datos, email, contraseña y texto */
+.registro .formulario .datos input[type="datos"],
+.registro .formulario .datos input[type="email"],
+.registro .formulario .datos input[type="password"],
+.registro .formulario .datos input[type="text"] {
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 0.5px solid #1d1d1b;
+	border-radius: 5px;
+}
+
+.registro .formulario .datos input[type="checkbox"] { /* Damos estilo a la datos del checkbox */
+	margin-right: 5px;
+}
+
+.registro .formulario .datos button { /* Damos estilo al botón */
+	width: 100%;
+	height: 50px;
+	background-color: #E33323;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-radius: 30px;
+	cursor: pointer;
+	box-shadow: 0 2px 8px 0 rgba(16, 16, 16, 0.16);
+}
+
+.registro .formulario .datos a {
+	font-weight: 600;
+	color: #1d1d1b;
+}
+
+
+/* ----------------------------- */
+
+
+/* ESTILO GENERAL MENÚ DE NAVEGACIÓN PRINCIPAL */
+.nav {
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	top: 0;
+	background-color: #ffffff;
+	box-shadow: 0 1px 5px 0 rgba(25, 25, 25, 0.1);
+}
+
+.nav .titulo {
+	font-size: 30px;
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+/* Dropdowns (Usuario y Search) */
+.nav .btns-dropdown {
+	display: flex;
+	flex-direction: row;
+}
+
+.nav .btns-dropdown .fa-magnifying-glass,
+.nav .btns-dropdown .fa-user {
+	font-size: 30px;
+	color: #1d1d1b;
+}
+
+.nav .btns-dropdown .fa-magnifying-glass {
+	margin-right: 80px;
+}
+
+/* Dropdown Search */
+.nav .btns-dropdown .dropdown-search {
+	overflow: hidden;
+	display: none;
+}
+
+.nav .btns-dropdown .dropdown-search.abrir-search {
+	display: block;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search {
+	display: flex;
+	justify-content: space-between;
+	width: 30rem;
+	background-color: #ffffff;
+	padding: 1.5rem;
+	position: absolute;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	right: 10rem;
+	top: 5rem;
+	border-radius: 2rem;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search input {
+	font-size: 16px;
+	width: 20rem;
+	border: none;
+	outline: none;
+	color: #1d1d1b;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search .btn-search {
+	position: absolute;
+	right: 0.8rem;
+	top: 0.7rem;
+	z-index: 1;
+	background-color: #E33323;
+	padding: 0.8rem 1.8rem;
+	border-radius: 1.5rem;
+	cursor: pointer;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search .btn-search a {
+	color: #fafafa;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/* Dropdown Usuario (Iniciar sesión y crear cuenta) */
+.nav .btns-dropdown .dropdown-user {
+	overflow: hidden;
+	display: none;
+}
+
+.nav .btns-dropdown .dropdown-user.abrir-user {
+	display: block;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user {
+	width: 12rem;
+	background-color: #ffffff;
+	padding: 1rem;
+	position: absolute;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	right: 3rem;
+	top: 5rem;
+	border-radius: 1rem;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li {
+	list-style: none;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li:last-child {
+	margin-top: 25px;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li a {
+	display: block;
+	font-size: 16px;
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li a:hover {
+	color: #E33323;
+}
+
+
+/* -------------------------------------- */
+
+
+/* BOTÓN ATRÁS */
+.btn-back {
+	position: absolute;
+	margin-top: 35px;
+	margin-left: 30px;
+	width: 35px;
+	height: 35px;
+	padding: 8px;
+	border-radius: 50%;
+	background-color: #E33323;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	text-align: center;
+}
+
+.btn-back i {
+	color: #fafafa;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO ENCABEZADO */
+.encabezado {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 350px;
+	background-color: #ffffff;
+}
+
+.encabezado h1 {
+	font-size: 45px;
+	color: #1d1d1b;
+	text-align: center;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO ACTIVIDADES */
+.actividades {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding: 100px 0;
+	background-color: #fafafa;
+}
+
+.actividades .contenedor {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.actividades .contenedor .actividad {
+	display: flex;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	padding: 40px;
+	margin-bottom: 30px;
+}
+
+.actividades .contenedor .actividad img { /* Imagen */
+	width: 320px;
+	height: 200px;
+	z-index: 0;
+	border-radius: 5px;
+	object-fit: cover;
+}
+
+/* Descripción de la actividad */
+.actividades .contenedor .actividad .descripcion {
+	margin-left: 40px;
+}
+
+.actividades .contenedor .actividad .descripcion h5 {
+	align-self: center;
+	color: #1d1d1b;
+	font-size: 24px;
+}
+
+.actividades .contenedor .actividad .descripcion .datos {
+	display: flex;
+	align-items: flex-start;
+}
+
+.actividades .contenedor .actividad .descripcion .datos p {
+	align-self: center;
+	color: #1d1d1b;
+	font-weight: 600;
+	padding: 10px 20px 12px 0;
+}
+
+.actividades .contenedor .actividad .descripcion p {
+	color: #1d1d1b;
+	font-size: 16px;
+	line-height: 1.5;
+	padding-bottom: 20px;
+}
+
+.actividades .contenedor .actividad .descripcion a {
+	position: absolute;
+	background-color: #E33323;
+	border-radius: 30px;
+	padding: 15px 30px;
+	box-shadow: 0 1px 3px 0 rgba(25, 25, 25, 0.1);
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fafafa;
+}
+
+.actividades .contenedor .actividad .descripcion a:hover {
+	transform: scale(1.1);
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO FOOTER */
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 30px;
+	bottom: 0;
+	background-color: #ffffff;
+}
+
+.footer ul {
+	display: flex;
+	flex-direction: row;
+}
+
+.footer ul li {
+	list-style: none;
+}
+
+.footer ul li:not(:last-child) {
+	padding-right: 20px;
+}
+
+.footer ul li a {
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.footer a:hover {
+	color: #E33323;
+}
+
+.footer i:hover {
+	transform: scale(1.3);
+}
+
+
+
+/* ------------------------------ */
+
+
+/*
+
+FORMATO RESPONSIVE
+Se adecuarán los tamaños para todo tipo de pantallas.
+Ordenadores, tablet y móviles.
+
+*/
+
+
+/* RESPONSIVE ORDENADOR */
+
+@media (max-width: 1250px) {
+    
+    /* Reducimos un poco el tamaño del contenedor y añadimos
+	un padding a los laterales, arriba y abajo para ampliar
+	la caja del contenido */
+
+    .actividades .contenedor{
+        width: 90%;
+    }
+
+	.actividades .contenedor .actividad .descripcion{
+        margin: 0;
+        padding: 0px 0px 35px 25px;       
+    }
+}
+
+
+
+/* ------------------------------ */
+
+
+
+/* RESPONSIVE ORDENADOR - TABLET */
+@media (max-width: 975px) {
+
+    /* Ponemos el contenido en modo vertical, la imagen
+    hacemos que ocupe el 100% del contenedor y añadimos
+    padding nuevo al contenido de la descripción */
+
+    .actividades .contenedor .actividad{
+        display: block;
+        padding: 0;
+    }
+
+    .actividades .contenedor .actividad img{ /* Imagen */
+        width: 100%;
+        height: 180px;
+    }
+
+    .actividades .contenedor .actividad .descripcion{
+        margin: 0;
+        padding: 40px 30px 80px 30px;       
+    }
+}
+
+
+
+/* ------------------------------ */
+
+
+
+/* RESPONSIVE TABLET */
+@media (max-width: 601px) {
+
+    /* Reducimos el tamaño del logo junto
+    con los iconos de lupa y usuario */
+
+    .nav .titulo{
+        font-size: 24px;
+    }
+    
+    .nav .btns-dropdown .fa-magnifying-glass,
+    .nav .btns-dropdown .fa-user{
+        font-size: 24px;
+    }
+    
+    .nav .btns-dropdown .fa-magnifying-glass{
+        margin-right: 50px;
+    }
+
+    /* ------------------------------ */
+
+    /* También reducimos el tamaño del contenido
+    de search junto con su tipografía y adecuamos
+    el botón */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        width: 24rem;
+        padding: 1.3rem;
+        right: 7rem;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search input{
+        font-size: 14px;
+        width: 18rem;
+        border: none;
+        outline: none;
+        color: #1d1d1b;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search .btn-search{
+        right: 0.8rem;
+        top: 0.6rem;
+        padding: 0.6rem 1.5rem;
+
+    }
+
+    /* ------------------------------ */
+
+    /* La cajita del menú de usuario la
+    reducimos un poco de tamaño */
+
+    .nav .btns-dropdown .dropdown-user .menu-user{
+        width: 11rem;
+        right: 2rem;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos el alto del encabezado */
+
+    .encabezado{
+        height: 300px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos la distancia entre el contenido
+    y el encabezado */
+
+    .actividades{
+        padding: 80px 0;
+    }
+
+    /* ------------------------------ */
+
+     /* El footer lo ponemos en modo columna invertida
+     para que los enlaces queden arriba y las redes abajo.
+     También ampliamos la distancia entre ellos */
+
+    .footer{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .footer ul li a{
+        line-height: 3;
+    }
+}
+
+
+
+/* ------------------------------ */
+
+
+
+/* RESPONSIVE TABLET-MÓVIL */
+@media (max-width: 521px) {
+
+    /* Reducimos el tamaño del contenedor de 
+    la modal del login junto con su título y
+    el botón */
+
+    .login .form{ 
+        width: 330px;
+    }
+
+    .login .formulario h2{
+        font-size: 20px;
+    }
+
+    .login .form .caja button{
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* ------------------------------ */
+
+     /* Reducimos el tamaño del contenedor de 
+    la modal de registro junto con su título y
+    el botón */
+
+    .registro .formulario{
+        width: 330px;
+    }
+
+    .registro .formulario h2{
+        font-size: 20px;
+    }
+
+    .registro .formulario .datos button{
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* ------------------------------ */
+
+    /* Quitamos el sombreado del navegador para fusionarlo
+    con el encabezado y reducimos un poco el logo y los
+    iconos del header */
+
+    .nav{
+        background-color: none;
+        box-shadow: none;
+    }
+
+    .nav .titulo{
+        font-size: 22px;
+    }
+    
+    .nav .btns-dropdown .fa-magnifying-glass,
+    .nav .btns-dropdown .fa-user{
+        font-size: 22px;
+    }
+    
+    .nav .btns-dropdown .fa-magnifying-glass{
+        margin-right: 40px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos un poco el tamaño del dropdown
+    de search*/
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        width: 23rem;
+        padding: 1.3rem;
+        right: 5rem;
+        z-index: 1;
+    }
+
+    /* ------------------------------ */
+
+     /* Reducimos un poco el tamaño del dropdown
+    de usuario junto con la tipografía */
+
+    .nav .btns-dropdown .dropdown-user .menu-user{
+        width: 10rem;
+        right: 2rem;
+    }
+
+    .nav .btns-dropdown .dropdown-user .menu-user ul li a{
+        font-size: 14px;
+    }
+
+    /* ------------------------------ */
+
+    /* Subimos un poco el botón */
+
+    .btn-back{
+        margin-top: 15px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos el alto del encabezado y  el texto
+    lo alinamos todo a la izquierda */
+
+    .encabezado{
+        display: flex;
+        justify-content: left; 
+        height: 250px;
+    }
+    
+    .encabezado h1{
+        text-align: left;
+        margin-left: 30px;
+        margin-top: 35px;
+        font-size: 38px;
+    }
+
+    /* ------------------------------ */
+
+    /* La localización y el precio, lo ponemos uno debajo del 
+    otro y reducimos su distancia entre ellos y el texto */
+
+    .actividades .contenedor .actividad .descripcion .datos{ /* Lugar y precio */
+        display: block;
+    }
+    
+    .actividades .contenedor .actividad .descripcion .datos p{
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .actividades .contenedor .actividad .descripcion .datos p:last-child{
+        margin-top: 10px;
+    }
+
+    .actividades .contenedor .actividad .descripcion p{
+        margin-top: 20px;     
+    }
+}
+
+
+
+/* ------------------------------ */
+
+
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 461px) {
+
+     /* Reducimos el tamaño del logo junto
+     con los iconos del header principal */
+
+    .nav .titulo{
+        font-size: 20px;
+    }
+    
+    .nav .btns-dropdown .fa-magnifying-glass,
+    .nav .btns-dropdown .fa-user{
+        font-size: 20px;
+    }
+    
+    .nav .btns-dropdown .fa-magnifying-glass{
+        margin-right: 30px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos el tamaño del input del menu
+    search */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        right: 5rem;
+        width: 21rem;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search input{
+        font-size: 12px;
+        width: 16rem;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos la distancia entre el contenido y el encabezado
+     y el tamalo del título */
+
+    .actividades{
+        padding: 60px 0;
+    }
+
+    .actividades .contenedor .actividad .descripcion h5{
+        font-size: 22px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos la tipografía del footer */
+
+    .footer ul li a{
+        font-size: 16px;
+    }
+}
+
+
+
+/* ------------------------------ */
+
+
+/* RESPONSIVE MÓVIL CHIQUITO */
+@media (max-width: 425px) {
+
+    /* Reducimos la tipografía del título, los datos de 
+    localización y precio, la descripción y el botón */
+
+    .actividades .contenedor .actividad .descripcion h5{
+        font-size: 20px;
+    }
+
+    .actividades .contenedor .actividad .descripcion .datos p{
+        font-size: 14px;
+    }
+    
+    .actividades .contenedor .actividad .descripcion p{
+        font-size: 14px;
+    }
+
+    .actividades .contenedor .actividad .descripcion a{
+        font-size: 10px;
+    }
+}

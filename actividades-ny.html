@@ -1,0 +1,212 @@
+<!--
+
+DESCRIPCIÓN DE LA PÁGINA DE ACTIVIDADES MILÁN
+Esta sección se concentran todas las actividades correspondientes del destino.
+Al obtener más información sobre cada uno de ellos, te ofrece una descripción más detallada.
+
+Contiene:
+1.Modales:
+    1.1 Login
+    1.2 Registro
+2.Navegador general
+    2.1 Dropdown buscar
+    2.2 Dropdown usuario
+3.Encabezado con título
+4.Contenido con las las actividades
+    4.1 Empire State
+    4.2 Visita por Brooklyn
+    4.3 Broadway
+5.Footer general
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva York, Nueva York - Actividades</title>
+    <link rel="icon" href="_img/favicon.png">
+    <link rel="stylesheet" href="_css/estilos-actividades.css">
+    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <script defer src="_js/app-actividades.js"></script>
+</head>
+<body>
+
+    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
+
+    <!--MODAL LOGIN-->
+    <div class="login">
+        <div class="form">
+            <i class="fa-solid fa-xmark" id="close-login"></i>
+            <h2>Inicia sesión</h2>
+            <div class="caja">
+                <label for="email-login">Email</label> <!--Input email-->
+                <input type="email" id="email-login" placeholder="correo electrónico">
+            </div>
+            <div class="caja">
+                <label for="password-login">Contraseña</label> <!--Input contraseña-->
+                <input type="password" id="password-login" placeholder="contraseña">
+            </div>
+            <div class="caja">
+                <input type="checkbox" id="recordar"> <!--Checkbox para recordar los datos-->
+                <label for="recordar">Recuérdame</label>
+            </div>
+            <div class="caja">
+                <button>Entrar</button> <!--Botón para entrar-->
+            </div>
+            <div class="caja"> <!--Pregunta de olvidar contraseña-->
+                <a href="#">¿Olvidaste la contraseña?</a>
+            </div>
+        </div>   
+    </div>
+
+
+    <!--MODAL CREAR CUENTA-->
+    <div class="registro">
+        <div class="formulario">
+            <i class="fa-solid fa-xmark" id="close-registro"></i>
+            <h2>Crea tu cuenta</h2>
+            <div class="datos">
+                <label for="datos">Nombre y Apellidos</label> <!--Input datos del usuario-->
+                <input type="text" id="datos" placeholder="Nombre y Apellidos">
+            </div>
+            <div class="datos">
+                <label for="email-registro">Email</label> <!--Input email-->
+                <input type="email" id="email-registro" placeholder="correo electrónico">
+            </div>
+            <div class="datos">
+                <label for="password-registro">Contraseña</label> <!--Input contraseña-->
+                <input type="password" id="password-registro" placeholder="contraseña">
+            </div>
+            <div class="datos">
+                <input type="checkbox" id="edad"> <!--Input Mayor de edad-->
+                <label for="recordar">Soy mayor de 18 años</label>
+            </div>
+            <div class="datos">
+                <input type="checkbox" id="terminos"> <!--Checkbox términos y condiciones-->
+                <label for="recordar">Acepto los <a href="#">términos y condiciones</a></label>
+            </div>
+            <div class="datos"> <!--Botón-->
+                <button>Crear cuenta</button>
+            </div>
+        </div>   
+    </div>
+
+    <!---->
+
+
+    <!--MENÚ DE NAVEGACIÓN GENERAL-->
+    <header class="nav">
+        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+        <!--Botones dropdown--> 
+        <div class="btns-dropdown">
+            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Search-->
+            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Search (buscar)-->
+                <div class="menu-search abrir-search">
+                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                    <div class="btn-search">
+                        <a href="#">Buscar</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
+            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario (inicar sesión y crear cuenta)-->
+                <div class="menu-user abrir-user" >
+                    <ul>
+                        <!--Ponemos un id a los enlaces para llamar a las modales-->
+                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
+                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!---->
+    
+
+    <!--BOTÓN BACK HOME: Este botón esta fuera del encabezado de la página-->
+    <a class="btn-back" href="destinos.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+    
+    <!--ENCABEZADO NUEVA YORK-->
+    <section class="encabezado">
+        <h1>Actividades en<br>Nueva York, Nueva York</h1>
+    </section>
+
+
+    <!---->
+
+
+    <!--ACTIVIDADES NUEVA YORK-->
+    <section class="actividades">
+        <div class="contenedor">
+
+            <!--Actividad Empire State-->
+            <div class="actividad">
+                <img src="_img/empire-state.jpg" alt="">
+                <div class="descripcion"> <!--Descripción de la actividad-->
+                    <h5>Vistas desde el Empire State</h5>
+                    <div class="datos"> <!--Ubicación y precio por persona-->
+                        <p><i class="fa-solid fa-location-dot"></i> Empire State Building</p>
+                        <p><i class="fa-solid fa-money-bill"></i> 45€ / persona</p>
+                    </div>
+                    <p>Con esta entrada podrás ascender hasta el mirador del Empire State, uno de los edificios más famosos del mundo, para disfrutar de unas vistas únicas de la Gran Manzana.</p>
+                    <a href="reserva-ny-empire.html">más información</a>
+                </div>
+            </div>
+
+             <!--Actividad Visita a Brooklyn-->
+             <div class="actividad">
+                <img src="_img/brooklyn.jpg" alt="">
+                <div class="descripcion"> <!--Descripción de la actividad-->
+                    <h5>Visita a pie por Brooklyn</h5>
+                    <div class="datos"> <!--Ubicación y precio por persona-->
+                        <p><i class="fa-solid fa-location-dot"></i> DUMBO</p>
+                        <p><i class="fa-solid fa-money-bill"></i> 20€ / persona</p>
+                    </div>
+                    <p>Disfruta de esta visita guiada por DUMBO, uno de los espacios mas trendy de Nueva York. Admirarás su arquitectura antigua junto con los espacios de diseño y lujo más modernos del barrio.</p>
+                    <a href="reserva-ny-brooklyn.html">más información</a>
+                </div>
+            </div>
+
+             <!--Actividad Historia de Broadway-->
+             <div class="actividad">
+                <img src="_img/broadway.jpg" alt="">
+                <div class="descripcion"> <!--Descripción de la actividad-->
+                    <h5>La historia de Broadway</h5>
+                    <div class="datos"> <!--Ubicación y precio por persona-->
+                        <p><i class="fa-solid fa-location-dot"></i> Times Square</p>
+                        <p><i class="fa-solid fa-money-bill"></i> 34€ / persona</p>
+                    </div>
+                    <p>En esta visita guiada por la historia de Broadway, pasearás por sus atrevidas calles llenas de musicales y espectáculos como un artista más.</p>
+                    <a href="reserva-ny-broadway.html">más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!---->
+
+
+     <!--FOOTER GENERAL-->
+     <footer class="footer">
+        <ul class="redes"> <!--Iconos-->
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+        </ul>
+
+        <ul class="enlaces"> <!--Enlaces-->
+            <li><a href="actividades-general.html">Actividades</a></li>
+            <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer">Vuelos</a></li>
+            <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer">Hoteles</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

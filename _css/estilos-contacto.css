@@ -1,0 +1,919 @@
+
+/*
+
+DESCRIPCIÓN GENERAL PÁGINA CONTACTO
+Esta sección ofrece al usuario información de contacto
+e información de su reserva.
+
+Carece de botón de vuelta atrás ya que se considera irrelevante.
+
+Contiene:
+0.Modales: Iniciar sesión y crear cuenta
+1.Navegador principal general
+2.Encabezado general
+3.Contenido general de contacto
+    3.1 información de la sede: Dirección y nº de teléfono
+    3.2 Apartado de más ayuda
+5. Footer general
+
+*/
+
+
+/* -------------------------------------- */
+
+
+/* ESTILOS GENERALES */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+}
+
+
+/* -------------------------------------- */
+
+
+/* MODAL LOGIN */
+.login {
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	display: none;
+}
+
+.login .form { /* Damos los estilos al modal login */
+	background-color: #fff;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px 30px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	border-radius: 10px;
+}
+
+/* Mostramos el modal */
+.login.show {
+	display: block;
+}
+
+.login .form i { /* Botón de cerrar */
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	color: #1d1d1b;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+}
+
+.login .form h2 { /* Título */
+	text-align: center;
+	color: #1d1d1b;
+	margin: 10px 0 20px;
+	font-size: 25px;
+}
+
+/* Todos los inputs, botones y demás */
+.login .form .caja { 
+	margin: 20px 0;
+}
+
+.login .form .caja label {
+	font-size: 14px;
+	color: #1d1d1b;
+}
+
+/* Damos estilo a los inputs de email y contraseña */
+.login .form .caja input[type="email"],
+.login .form .caja input[type="password"] {
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 0.5px solid #1d1d1b;
+	border-radius: 5px;
+}
+
+.login .form .caja input[type="checkbox"] { /* Damos estilo a la caja del checkbox */
+	margin-right: 5px;
+}
+
+.login .form .caja button { /* Damos estilo al botón */
+	width: 100%;
+	height: 50px;
+	background-color: #E33323;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-radius: 30px;
+	cursor: pointer;
+	box-shadow: 0 2px 8px 0 rgba(16, 16, 16, 0.16);
+}
+
+.login .form .caja a {/* Damos estilo a enlace */
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	color: #1d1d1b;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.login .form .caja a:hover {
+	text-decoration: underline;
+}
+
+/* -------------------------------------- */
+
+/* MODAL REGISTRO */
+.registro {
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	display: none;
+}
+
+.registro .formulario { /* Damos los estilos al modal registro */
+	background-color: #fff;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px 30px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	border-radius: 10px;
+}
+
+/* Mostramos la modal */
+.registro.show {
+	display: block;
+}
+
+.registro .formulario i { /* Botón de cerrar */
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	color: #1d1d1b;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+}
+
+.registro .formulario h2 { /* Título */
+	text-align: center;
+	color: #1d1d1b;
+	margin: 10px 0 20px;
+	font-size: 25px;
+}
+
+/* Todos los inputs, botones y demás */
+.registro .formulario .datos {
+	margin: 20px 0;
+}
+
+.registro .formulario .datos label {
+	font-size: 14px;
+	color: #1d1d1b;
+}
+
+/* Damos estilo a los inputs de datos, email, contraseña y texto */
+.registro .formulario .datos input[type="datos"],
+.registro .formulario .datos input[type="email"],
+.registro .formulario .datos input[type="password"],
+.registro .formulario .datos input[type="text"] {
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 0.5px solid #1d1d1b;
+	border-radius: 5px;
+}
+
+.registro .formulario .datos input[type="checkbox"] { /* Damos estilo a la datos del checkbox */
+	margin-right: 5px;
+}
+
+.registro .formulario .datos button { /* Damos estilo al botón */
+	width: 100%;
+	height: 50px;
+	background-color: #E33323;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-radius: 30px;
+	cursor: pointer;
+	box-shadow: 0 2px 8px 0 rgba(16, 16, 16, 0.16);
+}
+
+.registro .formulario .datos a {
+	font-weight: 600;
+	color: #1d1d1b;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO GENERAL MENÚ DE NAVEGACIÓN PRINCIPAL */
+.nav {
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	top: 0;
+	background-color: #ffffff;
+	box-shadow: 0 1px 5px 0 rgba(25, 25, 25, 0.1);
+}
+
+.nav .titulo {
+	font-size: 30px;
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+/* Dropdowns (Usuario y Search) */
+.nav .btns-dropdown {
+	display: flex;
+	flex-direction: row;
+}
+
+.nav .btns-dropdown .fa-magnifying-glass,
+.nav .btns-dropdown .fa-user {
+	font-size: 30px;
+	color: #1d1d1b;
+}
+
+.nav .btns-dropdown .fa-magnifying-glass {
+	margin-right: 80px;
+}
+
+/* Dropdown Search */
+.nav .btns-dropdown .dropdown-search {
+	overflow: hidden;
+	display: none;
+}
+
+.nav .btns-dropdown .dropdown-search.abrir-search {
+	display: block;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search {
+	display: flex;
+	justify-content: space-between;
+	width: 30rem;
+	background-color: #ffffff;
+	padding: 1.5rem;
+	position: absolute;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	right: 10rem;
+	top: 5rem;
+	border-radius: 2rem;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search input {
+	font-size: 16px;
+	width: 20rem;
+	border: none;
+	outline: none;
+	color: #1d1d1b;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search .btn-search {
+	position: absolute;
+	right: 0.8rem;
+	top: 0.7rem;
+	z-index: 1;
+	background-color: #E33323;
+	padding: 0.8rem 1.8rem;
+	border-radius: 1.5rem;
+	cursor: pointer;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search .btn-search a {
+	color: #fafafa;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/* Dropdown Usuario (Iniciar sesión y crear cuenta) */
+.nav .btns-dropdown .dropdown-user {
+	overflow: hidden;
+	display: none;
+}
+
+.nav .btns-dropdown .dropdown-user.abrir-user {
+	display: block;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user {
+	width: 12rem;
+	background-color: #ffffff;
+	padding: 1rem;
+	position: absolute;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	right: 3rem;
+	top: 5rem;
+	border-radius: 1rem;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li {
+	list-style: none;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li:last-child {
+	margin-top: 25px;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li a {
+	display: block;
+	font-size: 16px;
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li a:hover {
+	color: #E33323;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO ENCABEZADO */
+.encabezado {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 250px;
+	background-color: #ffffff;
+}
+
+.encabezado h1 {
+	font-size: 34px;
+	color: #1d1d1b;
+	text-align: center;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO CONTENEDOR */
+.contenedor {
+	width: 100%;
+	padding: 100px 0;
+	background-color: #fafafa;
+	display: flex;
+	justify-content: center;
+}
+
+.contenedor .contenido {
+	background-color: #fff;
+	max-width: 1200px;
+	padding: 60px 40px;
+	border-radius: 15px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+}
+
+/* Sede principal (Dirección, teléfono e imagen decorativa) */
+.contenedor .contenido .sede {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 80px;
+}
+
+.contenedor .contenido .sede .texto {
+	color: #1d1d1b;
+}
+
+.contenedor .contenido .sede .texto h3 {
+	font-size: 24px;
+	margin-bottom: 25px;
+}
+
+/* Dirección y teléfono */
+.contenedor .contenido .sede .texto .direccion,
+.contenedor .contenido .sede .texto .tlf {
+	margin-bottom: 20px;
+	line-height: 1.5;
+}
+
+.contenedor .contenido .sede .texto .direccion span,
+.contenedor .contenido .sede .texto .tlf span {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.contenedor .contenido .sede .texto .direccion p,
+.contenedor .contenido .sede .texto .tlf p {
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.contenedor .contenido .sede img {
+	width: 300px;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px 0 rgba(25, 25, 25, 0.1);
+	object-fit: cover;
+}
+
+/* Sección ayuda (Cuadro informativo e input de contacto) */
+.contenedor .contenido .ayuda {
+	border-top: 0.5px solid #9e9e9e;
+}
+
+.contenedor .contenido .ayuda .titulo {
+	margin-top: 50px;
+	font-size: 16px;
+	color: #1d1d1b;
+	font-weight: 600;
+}
+
+/* Contenido */
+.contenedor .contenido .ayuda .caja {
+	background-color: #fcf7f6;
+	padding: 25px 20px;
+	margin-top: 20px;
+	border-top: 3px solid #E33323;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	box-shadow: 0 2px 5px 0 rgba(25, 25, 25, 0.1);
+}
+
+.contenedor .contenido .ayuda .caja p {
+	line-height: 1.5;
+	color: #1d1d1b;
+	font-size: 16px;
+}
+
+.contenedor .contenido .ayuda .caja a {
+	font-weight: 600;
+	color: #1d1d1b;
+}
+
+.contenedor .contenido .ayuda .caja a:hover {
+	text-decoration: none;
+}
+
+/* Input de contacto */
+.contenedor .contenido .ayuda input {
+	display: inline-block;
+	padding: 15px;
+	width: 300px;
+	outline: none;
+	border: 1px solid #1d1d1b;
+	border-radius: 5px;
+}
+
+.contenedor .contenido .ayuda button {
+	margin-left: 20px;
+	background-color: #E33323;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 30px;
+	padding: 15px 30px;
+	cursor: pointer;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO FOOTER */
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 30px;
+	bottom: 0;
+	background-color: #ffffff;
+}
+
+.footer ul {
+	display: flex;
+	flex-direction: row;
+}
+
+.footer ul li {
+	list-style: none;
+}
+
+.footer ul li:not(:last-child) {
+	padding-right: 20px;
+}
+
+.footer ul li a {
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.footer a:hover {
+	color: #E33323;
+}
+
+.footer i:hover {
+	transform: scale(1.3);
+}
+
+
+/* ------------------------------ */
+
+
+/*
+
+FORMATO RESPONSIVE
+Se adecuarán los tamaños para todo tipo de pantallas.
+Ordenadores, tablet y móviles.
+
+*/
+
+/* RESPONSIVE ORDENADOR */
+@media (max-width: 1116px) {
+
+    /* Reducimos el ancho del contenido */
+    .contenedor .contenido{
+        max-width: 85%; 
+    }
+}
+
+
+/* ------------------------------ */
+
+
+/* RESPONSIVE ORDENADOR-TABLET */
+@media (max-width: 851px) {
+
+    /* Hacemos que todo el contenido de la caja esté
+    al 100% y le quitamos el padding */
+    .contenedor .contenido{
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Todo el conteido que hay dentro de la caja, lo
+    ponemos en modo vertical */
+    .contenedor .contenido .sede{ 
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 60px;
+         
+    }
+
+    /* Hacemos que la imagen ocupe todo su ancho y
+    reducimos un poco su altura. */
+    .contenedor .contenido .sede img{
+        width: 100%;
+        height: 180px;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    /* Ponemos padding nuevo al texto para que a la
+    hora de hacer el responsive, sigan en su sitio */
+    .contenedor .contenido .sede .texto{ 
+        padding: 50px 40px 0 40px;
+    }
+
+    /* Ponemos padding nuevo al texto de abajo para que a la
+    hora de hacer el responsive, sigan en su sitio */
+    .contenedor .contenido .ayuda{
+        padding: 0px 40px 50px 40px;
+    }  
+}
+
+
+/* ------------------------------ */
+
+
+/* RESPONSIVE TABLET */
+@media (max-width: 680px) {
+
+    /* Reducimos el tamaño del logo junto con
+    el de los iconos del header principal */
+
+    .nav .titulo{
+        font-size: 25px;
+    }
+    
+    .nav .btns-dropdown .fa-magnifying-glass,
+    .nav .btns-dropdown .fa-user{
+        font-size: 25px;
+        color: #1d1d1b;
+    }
+
+    .nav .btns-dropdown .fa-magnifying-glass{
+        margin-right: 60px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos el tamaño del input del search (lupa)
+    y adecuamos la tipografía y el tamaño del botón */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        width: 25rem;
+        padding: 1.3rem;
+        right: 9rem;
+        top: 5rem;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search input{
+        font-size: 14px;
+        width: 18rem;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search .btn-search{
+        right: 0.7rem;
+        top: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    /* ------------------------------ */
+
+     /* Reducimos el tamaño del contenedor del 
+     dropdown del menú user */
+
+    .nav .btns-dropdown .dropdown-user .menu-user{
+        width: 11rem;
+        padding: 1rem;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos alto del encabezado */
+
+    .encabezado{
+        height: 220px;
+    }
+
+    /* ------------------------------ */
+
+     /* Reducimos padding de arriba y abajo
+     del contenedor principal */
+
+    .contenedor{
+        padding: 80px 0;
+    }
+
+    /* ------------------------------ */
+
+     /* Ponemos el footer en colum-reverse para
+     que los enlaces estén arriba y las redes abajo.
+     También le añadimos margen para separarlos */
+
+    .footer{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .footer ul li a{
+        line-height: 3;
+    }
+}
+
+
+
+/* ------------------------------ */
+
+
+
+/* RESPONSIVE TABLET */
+@media (max-width: 621px) {
+
+     /* Llevamos el input de Search (lupa), un
+     poco más hacia la derecha */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        right: 8rem;
+    }
+
+    /* ------------------------------ */
+
+    /* El pequeño formulario que hay al final, lo
+    ponemos en modo vertical y hacemos que ocupen
+    todo el ancho excepto el botón */
+
+    .contenedor .contenido .ayuda .form{ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor .contenido .ayuda input{ 
+        width: 100%;
+    }
+
+    .contenedor .contenido .ayuda button{
+        margin-top: 20px;
+        display: block;
+    }
+}
+
+
+
+/* ------------------------------ */
+
+
+
+/* RESPONSIVE TABLET - MÓVIL */
+@media (max-width: 521px) {
+
+    /* Reducimos el ancho de la modal del Login
+    junto con su texto y el tamaño del botón */
+
+    .login .form{ 
+        width: 350px;
+    }
+
+    .login .form h2{
+        font-size: 20px;
+    }
+
+    .login .form .caja button{
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos el ancho de la modal de Registro
+    junto con su texto y el tamaño del botón */
+
+    .registro .formulario{ 
+        width: 350px;
+    }
+
+    .registro .formulario h2{
+        font-size: 20px;
+    }
+
+    .registro .formulario .datos button{
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* ------------------------------ */
+
+    /* Quitamos la sombra al navegador princpial y
+    reducimos el tamaño del logo y de los iconos */
+
+    .nav{
+        background-color: none;
+        box-shadow: none;
+    }
+
+    .nav .titulo{
+        font-size: 20px;
+    }
+    
+    .nav .btns-dropdown .fa-magnifying-glass,
+    .nav .btns-dropdown .fa-user{
+        font-size: 20px;
+        color: #1d1d1b;
+    }
+
+    .nav .btns-dropdown .fa-magnifying-glass{
+        margin-right: 40px;
+    }
+
+    /* ------------------------------ */
+
+    /* Seguimos reduciendo el tamaño del input del
+    dropdown Search (lupa), junto con su tipografía
+    y adecuamos el botón */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        width: 22rem;
+        right: 6rem;
+        z-index: 1;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search input{
+        font-size: 13px;
+        width: 20rem;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search .btn-search{
+        right: 0.7rem;
+        top: 0.4rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos también el tamaño del contenedor del dropdown
+    del menú de usuario y reducimos el tamaño de la tipografía */
+
+    .nav .btns-dropdown .dropdown-user .menu-user{
+        width: 10em;
+        right: 2rem;
+    }
+
+    .nav .btns-dropdown .dropdown-user .menu-user ul li a{
+        font-size: 14px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos el alto del encabezado */
+
+    .encabezado{
+        height: 180px;
+    }
+}
+
+
+
+/* ------------------------------ */
+
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 450px) {
+
+    /* Ponemos el input del dropdown Search (lupa)
+    más a la derecha */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        right: 5rem;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos el tamaño del título
+    del encabezado */
+
+    .encabezado h1{
+        font-size: 32px;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos padding de arriba y abajo
+    del contenedor principal */
+
+    .contenedor{
+        padding: 60px 0;
+    }
+
+    /* ------------------------------ */
+
+    /* Reducimos el tamaño de la tipografía
+    del footer */
+    
+    .footer ul li a{
+        font-size: 16px;
+    }
+}
+
+
+
+
+

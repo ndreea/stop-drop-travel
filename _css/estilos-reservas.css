@@ -1,0 +1,2044 @@
+
+/*
+DESCRIPCIÓN GENERAL PÁGINA DE RESERVA
+Esta sección es donde se describe la actividad que quiere hacer el usuario. Consta de diferentes apartados como:
+0. Modales Inicio sesión y crear cuenta
+1.Menu de navegación general de la página
+    1.1 Dropdown Search
+    1.2 Dropdown Usuario
+2.Botón de atrás
+3.Encabezado
+4.Descipción de la actividad y cuadro de reserva informativo
+5.Información general de la actividad
+6.Cuadro de reserva de la actividad:
+    6.1 Nº de participantes
+    6.2 Fecha (calendario)
+    6.3 Idioma
+    6.4 Horario
+7.Punto de encuentro de la actividad
+8.Opiniones de clientes que han realizado la actividad
+    8.1 Valoraciones
+    8.2 Reseñas
+9.Footer general
+
+*/
+
+
+/* -------------------------------------- */
+
+
+/* ESTILOS GENERALES */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	background-color: #fafafa;
+}
+
+
+/* -------------------------------------- */
+
+
+/* MODAL LOGIN */
+.login {
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	display: none;
+}
+
+.login .form { /* Damos los estilos al modal login */
+	background-color: #fff;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px 30px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	border-radius: 10px;
+}
+
+/* Mostramos el modal */
+.login.show {
+	display: block;
+}
+
+.login .form i { /* Botón de cerrar */
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	color: #1d1d1b;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+}
+
+.login .form h2 { /* Título */
+	text-align: center;
+	color: #1d1d1b;
+	margin: 10px 0 20px;
+	font-size: 25px;
+}
+
+/* Todos los inputs, botones y demás */
+.login .form .caja {
+	margin: 20px 0;
+}
+
+.login .form .caja label {
+	font-size: 14px;
+	color: #1d1d1b;
+}
+
+/* Damos estilo a los inputs de email y contraseña */
+.login .form .caja input[type="email"],
+.login .form .caja input[type="password"] {
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 0.5px solid #1d1d1b;
+	border-radius: 5px;
+}
+
+.login .form .caja input[type="checkbox"] { /* Damos estilo a la caja del checkbox */
+	margin-right: 5px;
+}
+
+.login .form .caja button { /* Damos estilo al botón */
+	width: 100%;
+	height: 50px;
+	background-color: #E33323;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-radius: 30px;
+	cursor: pointer;
+	box-shadow: 0 2px 8px 0 rgba(16, 16, 16, 0.16);
+}
+
+.login .form .caja a { /* Damos estilo a enlace */
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	color: #1d1d1b;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.login .form .caja a:hover {
+	text-decoration: underline;
+}
+
+
+/* -------------------------------------- */
+
+
+/* MODAL REGISTRO */
+.registro {
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	display: none;
+}
+
+.registro .formulario { /* Damos los estilos al modal registro */
+	background-color: #fff;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px 30px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	border-radius: 10px;
+}
+
+/* Mostramos la modal */
+.registro.show {
+	display: block;
+}
+
+.registro .formulario i { /* Botón de cerrar */
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	color: #1d1d1b;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+}
+
+.registro .formulario h2 { /* Título */
+	text-align: center;
+	color: #1d1d1b;
+	margin: 10px 0 20px;
+	font-size: 25px;
+}
+
+/* Todos los inputs, botones y demás */
+.registro .formulario .datos {
+	margin: 20px 0;
+}
+
+.registro .formulario .datos label {
+	font-size: 14px;
+	color: #1d1d1b;
+}
+
+/* Damos estilo a los inputs de datos, email, contraseña y texto */
+.registro .formulario .datos input[type="datos"],
+.registro .formulario .datos input[type="email"],
+.registro .formulario .datos input[type="password"],
+.registro .formulario .datos input[type="text"] {
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 0.5px solid #1d1d1b;
+	border-radius: 5px;
+}
+
+.registro .formulario .datos input[type="checkbox"] { /* Damos estilo a la datos del checkbox */
+	margin-right: 5px;
+}
+
+.registro .formulario .datos button { /* Damos estilo al botón */
+	width: 100%;
+	height: 50px;
+	background-color: #E33323;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-radius: 30px;
+	cursor: pointer;
+	box-shadow: 0 2px 8px 0 rgba(16, 16, 16, 0.16);
+}
+
+.registro .formulario .datos a {
+	font-weight: 600;
+	color: #1d1d1b;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO GENERAL MENÚ DE NAVEGACIÓN PRINCIPAL */
+.nav {
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	top: 0;
+	background-color: #fafafa;
+}
+
+.nav .titulo {
+	font-size: 30px;
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+/* Dropdowns (Usuario y Search) */
+.nav .btns-dropdown {
+	display: flex;
+	flex-direction: row;
+}
+
+.nav .btns-dropdown .fa-magnifying-glass,
+.nav .btns-dropdown .fa-user {
+	font-size: 30px;
+	color: #1d1d1b;
+}
+
+.nav .btns-dropdown .fa-magnifying-glass {
+	margin-right: 80px;
+}
+
+/* Dropdown Search */
+.nav .btns-dropdown .dropdown-search {
+	overflow: hidden;
+	display: none;
+}
+
+.nav .btns-dropdown .dropdown-search.abrir-search {
+	display: block;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search {
+	display: flex;
+	justify-content: space-between;
+	width: 30rem;
+	background-color: #ffffff;
+	padding: 1.5rem;
+	position: absolute;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	right: 10rem;
+	top: 5rem;
+	border-radius: 2rem;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search input {
+	font-size: 16px;
+	width: 20rem;
+	border: none;
+	outline: none;
+	color: #1d1d1b;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search .btn-search {
+	position: absolute;
+	right: 0.8rem;
+	top: 0.7rem;
+	z-index: 1;
+	background-color: #E33323;
+	padding: 0.8rem 1.8rem;
+	border-radius: 1.5rem;
+	cursor: pointer;
+}
+
+.nav .btns-dropdown .dropdown-search .menu-search .btn-search a {
+	color: #fafafa;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/* Dropdown Usuario (Iniciar sesión y crear cuenta) */
+.nav .btns-dropdown .dropdown-user {
+	overflow: hidden;
+	display: none;
+}
+
+.nav .btns-dropdown .dropdown-user.abrir-user {
+	display: block;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user {
+	width: 12rem;
+	background-color: #ffffff;
+	padding: 1rem;
+	position: absolute;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	right: 3rem;
+	top: 5rem;
+	border-radius: 1rem;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li {
+	list-style: none;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li:last-child {
+	margin-top: 25px;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li a {
+	display: block;
+	font-size: 16px;
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.nav .btns-dropdown .dropdown-user .menu-user ul li a:hover {
+	color: #E33323;
+}
+
+
+/* -------------------------------------- */
+
+
+/* BOTÓN ATRÁS */
+.btn-back {
+	position: absolute;
+	margin-top: 35px;
+	margin-left: 30px;
+	width: 35px;
+	height: 35px;
+	padding: 8px;
+	border-radius: 50%;
+	background-color: #E33323;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	text-align: center;
+}
+
+.btn-back i {
+	color: #fafafa;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ESTILO ENCABEZADO */
+.encabezado {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 400px;
+}
+
+.encabezado h1 {
+	font-size: 54px;
+	color: #fff;
+	text-align: center;
+}
+
+.encabezado a { /* Botón reserva (escondido hasta que se llegue a tablet) */
+	visibility: hidden;
+}
+
+.encabezado button { /* Botón favoritos (escondido hasta que se llegue a tablet) */
+	visibility: hidden;
+}
+
+
+/* -------------------------------------- */
+
+
+/* MENÚ DE NAVEGACIÓN INTERNO DE LA PÁGINA */
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	z-index: 1;
+}
+
+.sticky { /* A medida que se hace scroll, el menú se queda anclado arriba */
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #fafafa;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+}
+
+nav .navegador {
+	display: flex;
+	padding: 25px 30px;
+}
+
+nav .navegador li {
+	list-style: none;
+	display: inline-block;
+	padding: 0 10px;
+}
+
+nav .navegador li:first-child {
+	padding: 0;
+}
+
+nav .navegador li a {
+	font-size: 18px;
+	text-decoration: none;
+	color: #1d1d1b;
+	font-weight: 600;
+}
+
+nav .navegador li a:hover {
+	color: #E33323;
+}
+
+nav .navegador li span {
+	font-size: 18px;
+	color: #757573;
+	line-height: 1.2;
+}
+
+nav .btn-favorito {
+	color: #1d1d1b;
+	font-size: 16px;
+	text-decoration: none;
+	padding-right: 50px;
+}
+
+nav .btn-favorito .fa-heart {
+	margin-right: 5px;
+}
+
+nav .btn-favorito:hover {
+	color: #E33323;
+}
+
+
+/* -------------------------------------- */
+
+
+/* CONTENEDOR GENERAL DE LA ACTIVIDAD */
+.actividad {
+	padding: 30px 0;
+}
+
+.actividad .contenedor {
+	padding: 0 30px;
+}
+
+.actividad .contenedor .contenido {
+	display: flex;
+	flex-direction: column;
+	width: 1100px;
+}
+
+
+/* -------------------------------------- */
+
+
+/* CONTENEDOR DE LA DESCRIPCIÓN DE LA ACTIVIDAD */
+.descripcion { 
+	padding-bottom: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.descripcion .texto {
+	width: 1100px;
+}
+
+.descripcion .titulo {
+	font-size: 24px;
+	font-weight: 600;
+	display: none;
+}
+
+.descripcion p {
+	font-size: 18px;
+	color: #1d1d1b;
+	font-weight: 300;
+	text-align: justify;
+	line-height: 1.4;
+}
+
+.descripcion span {
+	font-weight: 400;
+}
+
+/* -------------------------------------- */
+
+/* Cuadro de reserva informativo de la actividad (está dentro del contenedor descripción) */
+.descripcion .cuadro-reserva {
+	width: 400px;
+	height: 200px;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 30px;
+	border-top: 3px solid #E33323;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+}
+
+/* Precio y botón de reserva */
+.descripcion .cuadro-reserva .datos {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.descripcion .cuadro-reserva .datos p {
+	font-size: 14px;
+	font-weight: 600;
+	color: #1d1d1b;
+	line-height: 1.2;
+}
+
+.descripcion .cuadro-reserva .datos span {
+	color: #E33323;
+	font-size: 40px;
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+.descripcion .cuadro-reserva .datos a { /* Al hacer click en el botón, este te manda al contenedor de reserva interactivo que hay abajo) */
+	background-color: #E33323;
+	padding: 15px 35px;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 30px;
+	font-weight: 600;
+	font-size: 16px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	transition-property: transform;
+}
+
+.descripcion .cuadro-reserva .datos a:hover {
+	transform: scale(1.1);
+}
+
+/* Icono de calendario y nota informativa de la reserva  */
+.descripcion .cuadro-reserva .nota {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+
+.descripcion .cuadro-reserva .nota i {
+	font-size: 22px;
+	color: #1d1d1b;
+	margin-right: 15px;
+	margin-top: 3px;
+}
+
+.descripcion .cuadro-reserva .nota p {
+	font-size: 16px;
+	color: #1d1d1b;
+	font-weight: 300;
+}
+
+.descripcion .cuadro-reserva .nota span {
+	font-weight: 400;
+}
+
+
+/* -------------------------------------- */
+
+
+/* CONTENEDOR DE LA INFORMACIÓN GENERAL DE LA ACTIVIDAD */
+.info-general {
+	padding: 30px 0;
+}
+
+.info-general .info-btn { /* Título */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+	padding: 30px 0;
+	border-bottom: 0.5px solid #E33323;
+}
+
+.info-general .info-btn p {
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.info-general .info-btn i { /* Icono dropdown */
+	font-size: 18px;
+	margin-right: 20px;
+	display: none; /* A partir de tablet, este aparecerá */
+}
+
+/* Dropdown Texto informativo */
+.info-general .informaciones {
+	padding: 10px 0 80px 0;
+	display: block;
+}
+
+.info-general .informaciones.abrir-info { /* A partir de tablet, el contenido querará oculto y solo se activará cuando se haga click en el drowpdown */
+	display: none;
+}
+
+.info-general .informaciones .informacion {
+	display: flex;
+	height: 60px;
+	margin-top: 15px;
+}
+
+.info-general .informaciones .informacion i { /* Iconos */
+	font-size: 20px;
+	color: #1d1d1b;
+	margin-top: 3px;
+}
+
+.info-general .informaciones .informacion .fa-user-group { /* Al icono de grupo, se le reduce un poco el tamaño para que tenga el mismo ancho y alto que los demás */
+	font-size: 18px;
+}
+
+.info-general .informaciones .informacion .texto {
+	padding-left: 10px;
+	font-size: 16px;
+	color: #1d1d1b;
+	line-height: 1.6;
+	text-align: left;
+}
+
+.info-general .informaciones .informacion .texto span {
+	font-weight: 600;
+}
+
+.contenido .info-general .informaciones .informacion .texto ul {
+	margin-left: 15px;
+}
+
+.contenido .info-general .informaciones .informacion .texto p {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+
+/* -------------------------------------- */
+
+
+/* CONTENEDOR RESERVA DE LA ACTIVIDAD (CUADRO INTERACTIVO) */
+.reserva .reserva-contenido {
+	width: 1100px;
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	border-top: 3px solid #E33323;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+}
+
+.reserva .reserva-contenido h2 { /* Título */
+	font-size: 22px;
+	color: #1d1d1b;
+	padding-bottom: 20px;
+}
+
+/* Botones dropdowns de participantes, fecha, horario e idioma */
+.reserva .reserva-contenido .selecciones {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu {
+	width: 200px;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn {
+	display: flex;
+	height: 35px;
+	background-color: #fff;
+	padding: 20px;
+	font-size: 16px;
+	color: #1d1d1b;
+	border-radius: 30px;
+	border: 1px solid #1d1d1b;
+	box-shadow: 0 2px 5px 0 rgba(10, 10, 10, 0.1);
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+
+/* Dropdowns de participantes, fecha, horario e idioma */
+.reserva .reserva-contenido .selecciones .seleccion-menu .options {
+	width: 200px;
+	position: absolute;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 10px;
+	margin-top: 10px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+    visibility: hidden; /* Escondemos el dropdown a simple vista */
+}
+
+/* Hacemos visible el dropdown cuando se haga click en él */
+.reserva .reserva-contenido .selecciones .seleccion-menu.abrir .options  {
+	visibility: visible;
+}
+
+/* Contenido de los dropdowns (Participantes, idioma y horario) */
+.reserva .reserva-contenido .selecciones .seleccion-menu .options .option {
+	display: flex;
+	height: 55px;
+	cursor: pointer;
+	padding: 0 15px;
+	border-radius: 5px;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	list-style: none;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .options .option .option-text {
+	font-size: 16px;
+	color: #1d1d1b;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .options .option:hover {
+	background-color: #e3332322;
+	color: #E33323;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn .fa-calendar-days,
+.reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn .fa-globe,
+.reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn .fa-clock {
+	font-size: 18px;
+}
+
+/* Dropdown Calendario (Fecha) */
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario {
+	width: 400px;
+	position: absolute;
+	background-color: #fff;
+	border-radius: 10px;
+	margin-top: 10px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	display: none;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu.abrir .calendario {
+	display: block;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .cabecera { /* Título del calendario */
+	display: flex;
+	justify-content: center;
+	padding: 30px 25px 10px;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .cabecera .mes-actual {
+	font-size: 20px;
+	font-weight: 600;
+	color: #1d1d1b;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido { /* Contenido del calendario */
+	width: 400px;
+	padding: 10px;
+}
+
+/* Días de la semana */
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido ul { 
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido ul li { 
+	position: relative;
+	width: calc(100% / 7);
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido ul li {
+	font-size: 14px;
+	color: #757573;
+	font-weight: 300;
+}
+
+/* Días del mes */
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias { 
+	margin-bottom: 20px;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li {
+	z-index: 1;
+	margin-top: 30px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #1d1d1b;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li::before {
+	position: absolute;
+	content: "";
+	height: 40px;
+	width: 40px;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li:hover::before {
+	background-color: #e3332322;
+}
+
+.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li.inactivo {
+	color: #b2b2b2;
+}
+
+/* Botón de reserva ahora */
+.reserva .reserva-contenido .selecciones button { 
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+	border: none;
+	outline: none;
+	padding: 15px 35px;
+	border-radius: 30px;
+	background-color: #E33323;
+	color: #fff;
+	box-shadow: 0 2px 5px 0 rgba(10, 10, 10, 0.1);
+	cursor: pointer;
+}
+
+
+/* -------------------------------------- */
+
+
+/* CONTENEDOR PUNTO DE ENCUENTRO DE LA ACTIVIDAD */
+.ubicacion {
+	padding-top: 40px;
+}
+
+.ubicacion .ubicacion-btn { /* Título */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+	padding: 30px 0;
+	border-bottom: 0.5px solid #E33323;
+}
+
+.ubicacion .ubicacion-btn p {
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.ubicacion .ubicacion-btn i { /* Icono dropdown */
+	font-size: 18px;
+	margin-right: 20px;
+	display: none; /* A partir de tablet, este aparecerá */
+}
+
+/* Dropdown Información del punto de encuentro */
+.ubicacion .encuentro {
+	padding-top: 30px;
+	display: block;
+}
+
+.ubicacion .encuentro.abrir-ubicacion { /* A partir de tablet, el contenido querará oculto y solo se activará cuando se haga click en el drowpdown */
+	display: none;
+}
+
+/* Icono de localización y lugar */
+.ubicacion .encuentro .fa-location-dot {
+	font-size: 24px;
+	color: #E33323;
+	margin-right: 5px;
+}
+
+.ubicacion .encuentro p {
+	font-size: 16px;
+	color: #1d1d1b;
+	font-weight: 400;
+}
+/* Mapa decorativo y enlace al lugar */
+.ubicacion .encuentro .mapa {
+	width: 250px;
+	height: 120px;
+	border-radius: 5px;
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ubicacion .encuentro .mapa a {
+	background-color: #fff;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-size: 16px;
+	color: #E33323;
+	border-radius: 30px;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+}
+
+.actividad .contenedor .contenido .ubicacion .encuentro .mapa a:hover {
+	background-color: #E33323;
+	color: #fff;
+}
+
+
+/* -------------------------------------- */
+
+
+/* CONTENEDOR OPINIONES DE CLIENTES */
+.opiniones {
+	padding: 0 30px;
+	padding-bottom: 50px;
+}
+
+.opiniones .opinion-btn {  /* Título */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+	padding: 30px 0;
+	font-size: 22px;
+	font-weight: 600;
+	border-bottom: 0.5px solid #E33323;
+}
+
+.opiniones .opinion-btn i { /* Icono dropdown */
+	font-size: 18px;
+	margin-right: 20px;
+	display: none; /* A partir de tablet, este aparecerá */
+}
+
+/* Dropdown Información del punto de encuentro */
+.opiniones .comentarios {
+	padding-top: 40px;
+	display: block;
+}
+
+.opiniones .comentarios.abrir-opinion { /* A partir de tablet, el contenido querará oculto y solo se activará cuando se haga click en el drowpdown */
+	display: none;
+}
+
+/* Valoracion general de la actividad en base a las opiniones de los clientes */
+.opiniones .comentarios .valoracion {
+	line-height: 1.5;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	border-left: 2px solid #E33323;
+	border-bottom: 2px solid #E33323;
+	width: 20rem;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+	margin-bottom: 40px;
+}
+
+.opiniones .comentarios .valoracion p {
+	font-size: 16px;
+	color: #1d1d1b;
+	font-weight: 600;
+}
+
+.opiniones .comentarios .valoracion p span {
+	font-size: 26px;
+	font-weight: 600;
+}
+
+.opiniones .comentarios .valoracion .fa-star { /* Iconos de estrella */
+	font-size: 20px;
+	color: #E33323;
+}
+
+.opiniones .comentarios .valoracion .cita {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+/* Comentarios de clientes anteriores */
+.opiniones .comentarios .reseña {
+	padding: 30px 0;
+	border-bottom: 0.5px solid #b2b2b2;
+}
+
+/* Valoración de los clientes a base de estrellas */
+.opiniones .comentarios .reseña .estrellas {
+	font-size: 10px;
+}
+
+.opiniones .comentarios .reseña .estrellas .rojo {
+	color: #E33323;
+}
+
+.opiniones .comentarios .reseña .estrellas .gris {
+	color: #757573;
+}
+
+/* Foto, nombre, ubicación, fecha de la publicación y opinión del cliente */
+.opiniones .comentarios .reseña .usuario {
+	display: flex;
+	align-items: center;
+	padding: 20px 0;
+}
+
+.opiniones .comentarios .reseña .usuario img { /* Foto del cliente */
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.opiniones .comentarios .reseña .usuario .nombre { /* Nombre y ubicación del cliente */
+	margin-left: 10px;
+	line-height: 1.5;
+	color: #1d1d1b;
+}
+
+.opiniones .comentarios .reseña .usuario .nombre p { 
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.opiniones .comentarios .reseña .usuario .nombre .fecha { /* Fecha de la publicación */
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.opiniones .comentarios .reseña p { /* Comentario del cliente */
+	font-size: 16px;
+	color: #1d1d1b;
+	line-height: 1.3;
+}
+
+.opiniones .comentarios .reseña:last-child { /* Quitamos el borde inferior al último comentario */
+	border: none;
+}
+
+
+/* -------------------------------------- */
+
+
+/* FOOTER */
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 30px;
+	bottom: 0;
+	background-color: #ffffff;
+}
+
+.footer ul {
+	display: flex;
+	flex-direction: row;
+}
+
+.footer ul li {
+	list-style: none;
+}
+
+.footer ul li:not(:last-child) {
+	padding-right: 20px;
+}
+
+.footer ul li a {
+	color: #1d1d1b;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.footer a:hover {
+	color: #E33323;
+}
+
+.footer i:hover {
+	transform: scale(1.3);
+}
+
+
+
+/* ----------------------------- */
+
+
+
+/*
+
+FORMATO RESPONSIVE
+Se adecuarán los tamaños para todo tipo de pantallas.
+Ordenadores, tablet y móviles.
+
+*/
+
+
+/* RESPONSIVE ORDENADOR */
+@media (max-width: 1661px) {
+
+    /* Adecuamos los tamaños al % en todos los
+    contenedores para facilitar el responsive */
+
+    .actividad{
+        width: 100%;  
+    }
+    
+    .actividad .contenedor{
+        width: 100%;   
+    }
+
+    .actividad .contenedor .descripcion .texto{
+        width: 70%;
+    }
+
+    .actividad .contenedor .descripcion .cuadro-reserva{
+        width: 25%;
+    }
+
+    .opiniones{
+        width: 100%;
+    }
+}
+
+
+
+/* ----------------------------- */
+
+
+
+/* RESPONSIVE ORDENADOR */
+@media (max-width: 1560px) {
+
+     /* Hacemos que el contenido del cuadro de reserva informativo que
+     hay al lado del texto de la descripción, sea más pequeño */
+
+    .descripcion .cuadro-reserva .datos a{
+        background-color: #E33323;
+        padding: 20px 35px;
+        font-size: 16px;
+    }
+}
+
+
+
+/* ----------------------------- */
+
+
+
+/* RESPONSIVE ORDENADOR */
+@media (max-width: 1471px) {
+
+    /* Añadimos padding nuevo al cuadro de reserva
+    informativo y ponemos su contenido de manera
+    vertical. También agrandamos el botón para que
+    ocupe el ancho del contenido */
+
+    .descripcion .cuadro-reserva{
+        padding: 25px 30px 25px 30px;
+        height: 100%;
+        border-top: 4px solid #E33323;
+    }
+    
+    .descripcion .cuadro-reserva .datos{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .descripcion .cuadro-reserva .datos a{
+        background-color: #E33323;
+       text-align: center;
+        font-size: 16px;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+
+
+/* ----------------------------- */
+
+
+
+/* RESPONSIVE ORDENADOR */
+@media (max-width: 1170px) {
+
+    /* Adecuamos el ancho del contenido, excepto
+    el de la descripción y hacemos que no ocupe
+    el 100% */
+
+    .actividad .contenedor .contenido{
+        width: 90%;
+    }
+
+    /* ----------------------------- */
+
+    /* Aumentamos el tamaño del título, el icono y el
+    texto del contenido de la Información General */
+
+    .info-general .info-btn{
+        border-bottom: 1px solid #E33323;
+    }
+    
+    .info-general .info-btn i{
+        font-size: 18px;
+        display: none; 
+    }
+
+    .info-general .informaciones .informacion .texto{
+        font-size: 16px;
+    }
+
+    /* ----------------------------- */
+
+     /* En el cuadro de reserva informativo, que hay al lado de la
+     descripción, ponemos el texto del calendario alineado a la
+     derecha y le quitamos el justify */
+
+    .descripcion .cuadro-reserva .nota p{
+        text-align: left;
+    }
+
+    /* ----------------------------- */
+
+    /* El cuadro de reserva interactivo, que hay debajo de la
+    Información General, adecuamos el contenido, aunmentamos el
+    borde decorativo, aumentamos el tamaño del título y hacemos
+    que los botones ocupen la mitad, es decir, dos a cada lado.
+    El botón rojo de reserva, hacemos que ocupe el 100% de todo
+    el contenido */
+
+    .reserva .reserva-contenido{
+        width: 90%;
+        border-top: 4px solid #E33323;
+    }
+
+    .reserva .reserva-contenido .selecciones{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu{
+        width: 49%;
+        margin-bottom: 20px;
+    }
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn{
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .reserva .reserva-contenido .selecciones button{ 
+        width: 100%;
+        height: 55px;
+        font-size: 16px;
+    }
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu .options{ 
+        width: 22rem;
+    }
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu .options .option{
+        height: 55px;
+    }
+    
+    .reserva .reserva-contenido .selecciones .seleccion-menu .options .option .option-text{
+        font-size: 16px;
+    }
+
+    /* ----------------------------- */
+
+    /* Aumentamos el tamaño del título, el icono y el
+    texto del contenido del Punto de Encuentro y el
+    mapa lo aumentamos de tamaño */
+
+    .ubicacion .ubicacion-btn{
+        border-bottom: 1px solid #E33323;
+    }
+
+    .ubicacion .ubicacion-btn i{
+        font-size: 18px;
+    }
+
+    .ubicacion .encuentro .fa-location-dot{
+        font-size: 24px;
+    }
+    
+    .ubicacion .encuentro p{
+        font-size: 16px;
+    }
+
+    .ubicacion .encuentro .mapa{
+        width: 25%;
+    }
+    
+    .ubicacion .encuentro .mapa a{
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+
+     /* ----------------------------- */
+
+     /* Aumentamos el tamaño del título, el icono y el
+    texto del contenido de las Opiniones de los Clientes.
+    Aumentamos también los nombres y las fotografías de
+    tamaño junto con la caja de valoraciones */
+
+    .opiniones{
+        padding: 0 30px;
+    }
+
+     .opiniones .opinion-btn{
+        border-bottom: 1px solid #E33323;
+    }
+
+    .opiniones .opinion-btn i{
+        font-size: 18px;
+    }
+
+    .opiniones .comentarios .valoracion{
+        width: 22rem;
+        line-height: 1.6;
+        padding: 25px;
+        border-left: 3px solid #E33323;
+        border-bottom: 3px solid #E33323;
+    }
+
+    .opiniones .comentarios .valoracion p{
+        font-size: 16px;
+    }
+    
+    .opiniones .comentarios .valoracion p span{
+        font-size: 26px;
+    }
+    
+    .opiniones .comentarios .valoracion .fa-star{
+        font-size: 20px;
+    }
+    
+    .opiniones .comentarios .valoracion .cita{
+        font-size: 12px;
+    }
+
+    .opiniones .comentarios .reseña{
+        padding: 40px 0;
+        border-bottom: 1px solid #b2b2b2;
+    }
+    
+    .opiniones .comentarios .reseña .estrellas{
+        font-size: 12px;
+    }
+
+    .opiniones .comentarios .reseña .usuario{
+        padding: 30px 0;
+    }
+
+    .opiniones .comentarios .reseña .usuario img{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .opiniones .comentarios .reseña .usuario .nombre{
+        margin-left: 12px;
+    }
+    
+    .opiniones .comentarios .reseña .usuario .nombre p{
+        font-size: 16px;
+    }
+    
+    .opiniones .comentarios .reseña .usuario .nombre .fecha{
+        font-size: 14px;
+    }
+    
+    .opiniones .comentarios .reseña p{
+        font-size: 16px;
+    }
+}
+
+
+
+/* ----------------------------- */
+ 
+
+
+/* RESPONSIVE ORDENADOR */
+@media (max-width: 1131px) {
+
+    /* Nos desacemos del menú interno
+    del contenido (stiky) */
+
+    nav{
+        display: none;
+    }
+
+    /* ----------------------------- */
+
+     /* Ponemos el ancho al 100% y del contenido del texto también */
+    
+    .actividad .contenedor .contenido{
+        width: 100%;
+    }
+
+    .actividad .contenedor .descripcion .texto{
+        width: 100%;
+    }
+
+    /* ----------------------------- */
+
+    /* Aumentamos el alto del encabezado y nos llevamos
+    el título hacia la izquierda. También hacemos que aparezca
+    el botón de reserva y el de favoritos y los situamos debajo
+    del título del encabezado */
+
+    .encabezado{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 420px;
+    }
+    
+    .encabezado h1{
+        font-size: 55px;
+        text-align: left;
+        margin-left: 30px;
+        margin-top: 50px;
+    }
+
+    .encabezado .btn-encabezado{ /* Botones de reserva y favoritos */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 30px;
+        margin-top: 50px;
+    }
+
+    .encabezado a{ /* Botón de reserva */
+        visibility: visible;
+        background-color: #E33323;
+        border-radius: 30px;
+        padding: 15px 30px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+    }
+
+    .encabezado button{ /* Botón de favoritos */
+        visibility: visible;
+        height: 45px;
+        width: 45px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        margin-left: 20px;
+        box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+    }
+
+    .encabezado button i{ /* Icono de corazón */
+        font-size: 18px;
+        color: #1d1d1b;
+        cursor: pointer;
+    }
+
+    .encabezado button i:hover{ /* Icono de corazón */
+        color: #E33323;
+    }
+
+    /* ----------------------------- */
+
+    /* Añadimos separación abajo de la caja de la descripción
+    de la actividad, hacemos que aparezca el título del
+    contenido y quitamos el cuadro de la reserva informativo
+    ya que el botón de reserva lo hemos puesto en el encabezado */
+
+    .descripcion{
+        padding-bottom: 30px;
+        display: block;
+    }
+
+    .descripcion .titulo{
+        font-size: 24px;
+        display: block;
+    }
+    
+    .descripcion .texto{
+        width: 100%;
+    }
+
+    .descripcion .cuadro-reserva{
+        display: none;
+    }
+
+     /* ----------------------------- */
+
+      /* Ampliamos el ancho de los dropdown de participantes,
+      horario e idioma cuando se hacen click en ellos */
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu .options{ 
+        width: 18rem;
+    }
+
+    /* ----------------------------- */
+
+    /* El mapa que hay en el apartado de Punto de Encuentro,
+    se hace más ancho */
+
+    .ubicacion .encuentro .mapa{
+        width: 30%;
+    }
+}
+
+
+
+ /* ----------------------------- */
+
+
+
+/* RESPONSIVE TABLET */
+@media (max-width: 781px) {
+
+    /* El dropdown Search (lupa), reducimos su contenido
+    y lo alineamos más hacia la derecha */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        width: 26rem;
+        right: 9rem;
+    }
+
+    /* ----------------------------- */
+
+    /* Volvemos a poner todo el contenido, sin la descripción
+    al 100% */
+
+    .actividad .contenedor .contenido{
+        width: 100%;
+    }
+
+     /* ----------------------------- */
+
+     /* Desplegamos el botón del apartado de la Información General
+     y ocultamos su contenido */
+
+    .info-general .info-btn i{
+        display: block;
+        cursor: pointer;
+    }
+    
+    .info-general .informaciones{
+        display: none;
+    }
+
+    .info-general .informaciones.abrir-info{
+        display: block;
+    }
+
+    /* ----------------------------- */
+
+    /* Todo el contenido hacemos que ocupe el 100% y el 
+    borde decorativo, lo resaltamos más. También aumentamos los
+    márgenes y el tamaño de los dropdowns una vez despleagados */
+
+    .reserva .reserva-contenido{
+        width: 100%;
+        border-top: 4px solid #E33323;
+    }
+
+    .reserva .reserva-contenido{
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+   .reserva .reserva-contenido .selecciones .seleccion-menu{
+        width: 100%;
+    }
+
+   .reserva .reserva-contenido .selecciones .seleccion-menu .options{ 
+        width: 30rem;
+    }
+
+    /* ----------------------------- */
+
+    /* Desplegamos el botón del apartado del Punto de Encuentro
+     y ocultamos su contenido */
+
+   .ubicacion .ubicacion-btn i{
+        display: block;
+        cursor: pointer;
+    }
+    
+   .ubicacion .encuentro{
+        display: none;
+    }
+    
+   .ubicacion .encuentro.abrir-ubicacion{
+        display: block;
+    }
+
+    .opiniones .opinion-btn i{
+        display: none;
+        cursor: pointer;
+    }
+
+    .ubicacion .encuentro .mapa{
+        width: 50%;
+    }
+
+    /* ----------------------------- */
+    
+    /* Desplegamos el botón del apartado de las Opiniones
+    de los Clientes y ocultamos su contenido */
+
+    .opiniones .comentarios{
+        display: none;
+    }
+
+    .opiniones .opinion-btn i{
+        display: block;
+    }
+    
+    .opiniones .comentarios.abrir-opinion{
+        display: block;
+    }
+}
+
+
+
+/* ----------------------------- */
+
+
+
+/* RESPONSIVE TABLET */
+@media (max-width: 645px) {
+    
+    /* Reducimos el tamaño del logo y de los
+    iconos del navegador princpial así como
+    la separación que hay entre ellos */
+
+    .nav .titulo{
+        font-size: 28px;
+    }
+
+    .nav .btns-dropdown .fa-magnifying-glass,
+    .nav .btns-dropdown .fa-user{
+        font-size: 28px;
+    }
+
+    .nav .btns-dropdown .fa-magnifying-glass{
+        margin-right: 60px;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        width: 26rem;
+        right: 7rem;
+    }
+
+    /* ----------------------------- */
+
+    /* Volvemos a modificar el ancho del dropdown una vez desplegado
+    de participantes, idioma y horario */
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu .options{ 
+        width: 26rem;
+    }
+
+    /* ----------------------------- */
+
+    /* Ponemos el footer en modo columna invertida
+    para que primero queden los enlaces y después las
+    redes. También les añadimos márgen para separarlos
+    unos de otros */
+
+    .footer{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    .footer ul li a{
+        line-height: 3;
+    }
+}
+
+
+
+/* ----------------------------- */
+
+
+
+/* RESPONSIVE TABLET */
+@media (max-width: 610px) {
+
+    /* Ocultamos el fondo del navegador principal (header)
+     y reducimos también el tamaño del logo y de los iconos
+     junto con la separación entre ellos.
+     Hacemos el que navegador se funda con el encabezado
+     y le ponemos color blanco para destacarlo */
+
+     .nav{
+        box-shadow: none;
+        background-color: transparent;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .nav .titulo{
+        font-size: 22px;
+        color: #fff;
+    }
+
+    .nav .btns-dropdown .fa-magnifying-glass,
+    .nav .btns-dropdown .fa-user{
+        font-size: 22px;
+        color: #fff
+    }
+
+    .nav .btns-dropdown .fa-magnifying-glass{
+        margin-right: 40px;
+    }
+
+    /* ----------------------------- */
+
+    /* Llebamos el dropdown search (lupa) hacia el frente
+    y lo llevamos más hacia la derecha */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        z-index: 1;
+        right: 5rem;
+    }
+
+    /* ----------------------------- */
+
+     /* El botón back, lo traemos hacia el frente */
+
+    .btn-back{
+        position: absolute;
+        margin-top: 100px;
+    }  
+    
+    /* ----------------------------- */
+
+    /* Aumentamos el alto del encabezado, reducimos el
+    título pero le añadimos más márgenes inferiores */
+
+    .encabezado{
+        height: 500px;
+    }
+
+    .encabezado h1{
+       font-size: 48px;
+       margin-top: 120px;
+    }
+
+    .encabezado .btn-encabezado{
+        margin-top: 80px;
+    }
+
+    /* ----------------------------- */
+
+    /* Reducimos el ancho del dropdown search (lupa)
+    junto con su input */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        width: 24rem;
+        right: 6rem;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search input{
+        font-size: 14px;
+        width: 18rem;
+    }
+
+    /* ----------------------------- */
+
+    /* Reducimos el ancho del dropdown usuario y
+    lo llevamos más hacia la derecha */
+
+    .nav .btns-dropdown .dropdown-user .menu-user{
+        width: 11rem;
+        right: 2rem;
+    }
+}
+
+
+
+/* ----------------------------- */
+
+
+
+/* RESPONSIVE TABLET - MÓVIL */
+@media (max-width: 551px) {
+
+    /* El primer apartado del contenido de la Inforamción General,
+    le aumentamos el tamaño para que esté igualado con el resto */
+
+    .info-general .informaciones .informacion:first-child{
+        height: 80px;
+    }
+
+    /* ----------------------------- */
+
+    /* Volvemos a modificar el ancho del contenido del dropdown */
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu .options{ 
+        width: 23rem;
+    }
+   
+}
+
+
+
+/* ----------------------------- */
+
+
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 485px) {
+
+    /* Reducimos el tamaño del ancho de la modal del Login
+    junto con el título y el botón */
+
+    .login .form{
+        width: 350px;
+    }
+
+    .login .form h2{
+        font-size: 20px;
+    }
+
+    .login .form .caja button{ /* Damos estilo al botón */
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* ----------------------------- */
+
+     /* Reducimos el tamaño del ancho de la modal de Registro
+    junto con el título y el botón */
+
+    .registro .formulario{
+        width: 350px;
+    }
+    
+
+    .registro .formulario h2{
+        font-size: 20px;
+    }
+
+    .registro .formulario .datos button{ 
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* ----------------------------- */
+
+     /* Volvemos a traer al frente el dropdown del
+     menú Search (lupa) */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        z-index: 1;
+    }
+
+    /* ----------------------------- */
+
+    /* Reducimos el contenido del encabezado
+    junto con sus separaciones */
+
+    .encabezado h1{
+        font-size: 42px;
+    }
+
+    .encabezado .btn-encabezado{
+        margin-top: 70px;
+    }
+
+    .encabezado a{
+        font-size: 12px;
+    }
+
+    .encabezado button{
+        height: 40px;
+        width: 40px;
+    }
+
+    .encabezado button i{
+        font-size: 16px;
+    }
+
+     /* ----------------------------- */
+
+     /* Reducimos el ancho del dropdown search (lupa)
+    junto con su input */
+
+    .nav .btns-dropdown .dropdown-search .menu-search{
+        width: 21rem;
+        right: 5rem;
+        padding: 1.2rem;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search input{
+        font-size: 12px;
+        width: 16rem;
+    }
+
+    .nav .btns-dropdown .dropdown-search .menu-search .btn-search {
+        right: 0.7rem;
+        top: 0.5rem;
+        padding: 0.6rem 1.3rem;
+    }
+
+     /* ----------------------------- */
+
+     /* Reducimos el ancho de los dropdowns una vez abiertos de participantes, horario e idioma */
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu .options{ 
+        width: 21rem;
+    }
+
+     /* ----------------------------- */
+
+     /* Reducimos el ancho de contenido del calendario junto con
+     su contenido */
+
+     .reserva .reserva-contenido .selecciones .seleccion-menu .calendario {
+        width: 21rem;
+    }
+
+    .reserva .reserva-contenido .selecciones .seleccion-menu .calendario .cabecera { /* Título del calendario */
+        padding: 25px 20px 8px;
+    }
+    
+    .reserva .reserva-contenido .selecciones .seleccion-menu .calendario .cabecera .mes-actual {
+        font-size: 16px;
+    }
+    
+    .reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido { /* Contenido del calendario */
+        width: 335px;
+        padding: 10px;
+    }
+    
+    /* Días de la semana */
+    .reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido ul li {
+        font-size: 14px;
+    }
+    
+    /* Días del mes */
+    .reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias { 
+        margin-bottom: 15px;
+    }
+    
+    .reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li {
+        margin-top: 25px;
+        font-size: 14px;
+    }
+    
+    .reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li::before {
+        height: 30px;
+        width: 30px;
+    }
+    
+    /* ----------------------------- */
+
+    /* Aumentamos el ancho del link del mapa del apartado de Punto de Encuentro */
+
+    .ubicacion .encuentro .mapa{ 
+        width: 80%;
+    }
+
+    /* ----------------------------- */
+
+    /* Reducimos el tamaño de la tipografía del footer */
+
+    .footer ul li a{
+        font-size: 16px;
+    }
+}

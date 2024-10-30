@@ -1,0 +1,474 @@
+
+<!--
+
+DESCRIPCIÓN GENERAL PÁGINA DE ACTIVIDAD
+Esta sección es donde se describe la actividad que quiere hacer el usuario.
+
+Consta de diferentes apartados como:
+0. Modales inicio sesión y crear cuenta
+1.Contenido general de las páginas - (navegador general, botón back y encabezado)
+2.Contenido de la actividad:
+    2.1.Descipción de la actividad
+    2.2.Información general de la actividad
+    2.3.Punto de encuentro de la actividad
+    2.4.Opiniones de clientes que han realizado la actividad
+3.Footer general
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El mejor café de Seattle - Reserva</title>
+    <link rel="icon" href="_img/favicon.png">
+    <link rel="stylesheet" href="_css/estilos-reservas.css">
+    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <script defer src="_js/app-reservas.js"></script>
+</head>
+<body>
+
+    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
+
+    <!--MODAL LOGIN-->
+    <div class="login">
+        <div class="form">
+            <i class="fa-solid fa-xmark" id="close-login"></i>
+            <h2>Inicia sesión</h2>
+            <div class="caja">
+                <label for="email-login">Email</label> <!--Input email-->
+                <input type="email" id="email-login" placeholder="correo electrónico">
+            </div>
+            <div class="caja">
+                <label for="password-login">Contraseña</label> <!--Input contraseña-->
+                <input type="password" id="password-login" placeholder="contraseña">
+            </div>
+            <div class="caja">
+                <input type="checkbox" id="recordar"> <!--Checkbox para recordar los datos-->
+                <label for="recordar">Recuérdame</label>
+            </div>
+            <div class="caja">
+                <button>Entrar</button> <!--Botón para entrar-->
+            </div>
+            <div class="caja"> <!--Pregunta de olvidar contraseña-->
+                <a href="#">¿Olvidaste la contraseña?</a>
+            </div>
+        </div>   
+    </div>
+
+    <!--MODAL CREAR CUENTA-->
+    <div class="registro">
+        <div class="formulario">
+            <i class="fa-solid fa-xmark" id="close-registro"></i>
+            <h2>Crea tu cuenta</h2>
+            <div class="datos">
+                <label for="datos">Nombre y Apellidos</label> <!--Input datos del usuario-->
+                <input type="text" id="datos" placeholder="Nombre y Apellidos">
+            </div>
+            <div class="datos">
+                <label for="email-registro">Email</label> <!--Input email-->
+                <input type="email" id="email-registro" placeholder="correo electrónico">
+            </div>
+            <div class="datos">
+                <label for="password-registro">Contraseña</label> <!--Input contraseña-->
+                <input type="password" id="password-registro" placeholder="contraseña">
+            </div>
+            <div class="datos">
+                <input type="checkbox" id="edad"> <!--Input Mayor de edad-->
+                <label for="recordar">Soy mayor de 18 años</label>
+            </div>
+            <div class="datos">
+                <input type="checkbox" id="terminos"> <!--Checkbox términos y condiciones-->
+                <label for="recordar">Acepto los <a href="#">términos y condiciones</a></label>
+            </div>
+            <div class="datos"> <!--Botón-->
+                <button>Crear cuenta</button>
+            </div>
+        </div>   
+    </div>
+
+    <!--
+    CONTENIDO GENERAL DE LAS PÁGINAS
+    En esta sección tenemos el menú de navegación general con tu título y sus botones dropdown, el botón de volver
+    y el encabezado con el título y foto de la actividad
+    -->
+
+    <!--NAVEGADOR GENERAL DE LA PÁGINA-->
+    <header class="nav">
+        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+        <!--Botones dropdown--> 
+        <div class="btns-dropdown">
+            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Buscar-->
+            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Buscar-->
+                <div class="menu-search abrir-search">
+                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                    <div class="btn-search">
+                        <a href="#">Buscar</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
+            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario-->
+                <div class="menu-user abrir-user" >
+                    <ul>
+                        <!--Ponemos un id a los enlaces para llamar a las modales-->
+                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
+                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header> 
+
+    <!---->
+
+    <!--BOTÓN BACK (Este botón te lleva a la página anterior)-->
+    <a class="btn-back" href="actividades-seattle.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <!---->
+
+   <!--ENCABEZADO ACTIVIDAD--> 
+   <section class="encabezado" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(_img/cafe.jpg) no-repeat center center/cover;">
+        <h1>Saborea el mejor<br>café de Seattle</h1>
+        <div class="btn-encabezado">
+            <a href="#reserva">reserva ahora</a>
+            <button><i class="fa-regular fa-heart"></i></button>
+        </div>
+    </section>
+
+    <!--
+    CONTENIDO DE LA ACTIVIDAD
+    El contenido se divide en diferentes secciones:
+    1.Menú de navegación interno de la página
+    2.Descripción y cuadro de reserva informativo de la pagina
+    3.Información general de la página
+    4.Cuadro de reserva de la actividad
+    5.Punto de encuentro
+    6.Opiniones de clientes
+    -->
+
+    <!--NAVEGADOR INTERNO DE LA ACTIVIDAD-->
+    <nav id="navbar">
+        <ul class="navegador">
+            <li><a href="#descripcion">Descripción</a></li>
+            <li><span>|</span></li>
+            <li><a href="#info-general">Información general</a></li>
+            <li><span>|</span></li>
+            <li><a href="#ubicacion">Punto de encuentro</a></li>
+            <li><span>|</span></li>
+            <li><a href="#opiniones">Opiniones de clientes</a></li>
+        </ul>
+        <a class="btn-favorito" href="#"><i class="fa-regular fa-heart"></i> Añadir a favoritos</a>  <!--Botón de "Añadir a favoritos"-->
+    </nav>
+
+    <!---->
+
+    <!--Contenido de la actividad-->
+    <div class="actividad">
+
+        <!--DESCRIPCIÓN, INFORMACIÓN GENERAL, CUADRO DE RESERVA DE LA ACTIVIDAD Y PUNTO DE ENCUENTRO--> 
+        <div class="contenedor">
+            <div class="descripcion" id="descripcion"> <!--Descripción de la actividad-->
+                <div class="texto">
+                    <p class="titulo">Descripción</p> <br>
+                    <p><span>Disfruta del mejor café de todo Seattle en Starbucks Reserve Rosery, conocido por sus exquisitos cafés especiales y sus deliciosos aperitivos.</span></p> <br>
+                    <p>Con esta entrada, le damos la bienvenida para que experimente el arte, la ciencia y el teatro de la artesanía del café.</p> <br>
+                    <p>Abrieron el <span>primer Starbucks Reserve® Roastery</span> en el vibrante barrio de Capitol Hill de Seattle en diciembre de 2014. Es una expresión envolvente y espectacular de nuestra pasión por el café, situada a solo nueve manzanas de la tienda <span>Starbucks Pike Place original</span>.</p> <br>
+                    <p>Más información en su <span><a href="https://www.starbucksreserve.com/locations/seattle-roastery" style="color: #E33323;" target="_blank">página web</a></span>.</p>
+                </div>
+ 
+                <div class="cuadro-reserva"> <!--Cuadro informativo lateral de la reserva-->
+                    <div class="datos"> <!--Precio por persona y botón de reserva-->
+                        <p><span>25€</span> <br> por persona</p>
+                        <a href="#reserva">reserva ahora</a>
+                    </div>
+                <div class="nota"> <!--Información de la misma-->
+                    <i class="fa-regular fa-calendar"></i>
+                    <p>Al <span>hacer la reserva ahora</span>, estarías asegurando tu plaza.</p>
+                </div>
+            </div>
+
+            <!--INFORMACIÓN GENERAL, CUADRO DE RESERVA DE LA ACTIVIDAD Y PUNTO DE ENCUENTRO--> 
+            <div class="contenido">
+                <div class="info-general" id="info-general">
+                    <div class="info-btn" onclick="toggleInformacion()"> <!--Botón Dropdown Información general-->
+                        <p>Información general</p>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <!--Contenido de la información general de la actividad-->
+                    <div class="informaciones" id="informaciones">
+                        <div class="informacion"> <!--Cancelación de la actividad-->
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <div class="texto">
+                                <span>Cancelación gratuita</span>
+                                <p>Cancela con hasta 24 horas de antelación y recibe un reembolso completo</p>
+                            </div>
+                        </div>
+                        <div class="informacion"> <!--Duración de la actividad-->
+                            <i class="fa-regular fa-clock"></i>
+                            <div class="texto">
+                                <span>Duración 1 hora</span>
+                                <p>Comprueba tu disponibilidad para ver los horarios de inicio</p>
+                            </div>
+                        </div>
+                        <div class="informacion"> <!--Nº de personas de la actividad-->
+                            <i class="fa-solid fa-user-group"></i>
+                            <div class="texto">
+                                <span>Sin grupo</span>
+                                <p>Por libre</p>
+                            </div>
+                        </div>
+                        <div class="informacion"> <!--Cosas incluidas dentro de la actividad-->
+                            <i class="fa-solid fa-check"></i>
+                            <div class="texto">
+                                <span>Incluido</span>
+                                <ul>
+                                    <li><p>Entrada sin colas</p></li>
+                                    <li><p>Degustación de su variedad de café</p></li>
+                                    <li><p>Degustación de sus brunchs</p></li>
+                                    <li><p>Un recuerdo de regalo</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--CUADRO DE RESERVA DE LA ACTIVIDAD: Nº DE PARTICIPANTES, FECHA (con su calendario), IDIOMA Y HORARIO-->
+                <div class="reserva" id="reserva">
+                    <div class="reserva-contenido">
+                        <h2>Seleccione los participantes, la fecha, el idioma y el horario</h2>
+                        <!--Selección de opciones de la actividad-->
+                        <div class="selecciones">
+                            <div class="seleccion-menu"> <!--Selección nº de participantes de la actividad-->
+                                <div class="seleccion-btn"> 
+                                    <i class="fa-solid fa-user-group"></i>
+                                    <span class="btnSelect texto-btn">Participantes</span> <!--Añadimos la clase texto-btn para el JS-->
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                    <ul class="options"> <!--Participantes Dropdown-->
+                                        <li class="option"><span class="option-text">Adulto x1</span></li>
+                                        <li class="option"><span class="option-text">Adultos x2</span></li>
+                                        <li class="option"><span class="option-text">Adultos x3</span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="seleccion-menu"> <!--Selección de la fecha de la actividad-->
+                                    <div class="seleccion-btn"> 
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <span class="btnSelect texto-btn">Fecha</span> <!--Añadimos la clase texto-btn para el JS-->
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                    <div class="calendario"> <!--Calendario dropdown de la actividad-->
+                                        <div class="cabecera">
+                                            <p class="mes-actual">Noviembre 2024</p>
+                                        </div>
+                                        <div class="contenido">
+                                            <ul class="semana"> <!--Días de la semana-->
+                                                <li>lun</li>
+                                                <li>mar</li>
+                                                <li>mié</li>
+                                                <li>jue</li>
+                                                <li>vie</li>
+                                                <li>sab</li>
+                                                <li>dom</li>
+                                            </ul>
+                                            <ul class="dias"> <!--Dias del mes-->
+                                                <!--Dias restantes de Octubre-->
+                                                <li class="inactivo"><span>28</span></li>
+                                                <li class="inactivo"><span>29</span></li>
+                                                <li class="inactivo"><span>30</span></li>
+                                                <li class="inactivo"><span>31</span></li>
+                                                <!--Días activos del mes-->
+                                                <li class="dia"><span class="option-day">1</span></li>
+                                                <li class="dia"><span class="option-day">2</span></li>
+                                                <li class="dia"><span class="option-day">3</span></li>
+                                                <li class="dia"><span class="option-day">4</span></li>
+                                                <li class="dia"><span class="option-day">5</span></li>
+                                                <li class="dia"><span class="option-day">6</span></li>
+                                                <li class="dia"><span class="option-day">7</span></li>
+                                                <li class="dia"><span class="option-day">8</span></li>
+                                                <li class="dia"><span class="option-day">9</span></li>
+                                                <li class="dia"><span class="option-day">10</span></li>
+                                                <li class="dia"><span class="option-day">11</span></li>
+                                                <li class="dia"><span class="option-day">12</span></li>
+                                                <li class="dia"><span class="option-day">13</span></li>
+                                                <li class="dia"><span class="option-day">14</span></li>
+                                                <li class="dia"><span class="option-day">15</span></li>
+                                                <li class="dia"><span class="option-day">16</span></li>
+                                                <li class="dia"><span class="option-day">17</span></li>
+                                                <li class="dia"><span class="option-day">18</span></li>
+                                                <li class="dia"><span class="option-day">19</span></li>
+                                                <li class="dia"><span class="option-day">20</span></li>
+                                                <li class="dia"><span class="option-day">21</span></li>
+                                                <li class="dia"><span class="option-day">22</span></li>
+                                                <li class="dia"><span class="option-day">23</span></li>
+                                                <li class="dia"><span class="option-day">24</span></li>
+                                                <li class="dia"><span class="option-day">25</span></li>
+                                                <li class="dia"><span class="option-day">26</span></li>
+                                                <li class="dia"><span class="option-day">27</span></li>
+                                                <li class="dia"><span class="option-day">28</span></li>
+                                                <li class="dia"><span class="option-day">29</span></li>
+                                                <li class="dia"><span class="option-day">30</span></li>
+                                                <!--Primer día de diciemmbre-->
+                                                <li class="inactivo"><span>1</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="seleccion-menu"> <!--Selección del idioma de la actividad-->
+                                    <div class="seleccion-btn"> 
+                                        <i class="fa-solid fa-globe"></i>
+                                        <span class="btnSelect texto-btn">Idioma</span> <!--Añadimos la clase texto-btn para el JS-->
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                    <ul class="options"> <!--Idioma Dropdown-->
+                                        <li class="option"><span class="option-text">Español</span></li>
+                                        <li class="option"><span class="option-text">Inglés</span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="seleccion-menu"> <!--Selección del horario de la actividad-->
+                                    <div class="seleccion-btn"> 
+                                        <i class="fa-solid fa-clock"></i>
+                                        <span class="btnSelect texto-btn">Horario</span> <!--Añadimos la clase texto-btn para el JS-->
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                    <ul class="options"> <!--Horario Dropdown-->
+                                        <li class="option activo"><span class="option-text">7:00h</span></li>
+                                        <li class="option activo"><span class="option-text">8:00h</span></li>
+                                        <li class="option activo"><span class="option-text">9:00h</span></li>
+                                        <li class="option activo"><span class="option-text">10:00h</span></li>
+                                        <li class="option activo"><span class="option-text">11:00h</span></li>
+                                        <li class="option activo"><span class="option-text">12:00h</span></li>
+                                    </ul>
+                                </div>
+                                <button>reserva ahora</button><!--Botón de reserva-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--PUNTO DE ENCUENTRO DE LA ACTIIVIDAD-->
+                    <div class="ubicacion" id="ubicacion">
+                        <div class="ubicacion-btn" onclick="toggleUbicacion()"> <!--Botón Dropdown Ubicación-->
+                            <p>Punto de encuentro</p>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <!--Dropdown y contenido de la ubicación de la actividad-->
+                        <div class="encuentro" id="encuentro"> 
+                            <p><i class="fa-solid fa-location-dot"></i> Starbucks Reserve Roastery</p>
+                            <div class="mapa" style="background: url(_img/mapa.jpg) no-repeat center center/cover;">
+                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x54906acdccf44db1:0x6da0c1f2d7a6736e?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---->
+
+    <!--
+    Las opiniones de los clientes se pusieron a parte ya que ocupan todo el ancho de la página
+    -->
+
+    <!--OPINIONES DE CLIENTES SOBRE LA ACTIVIDAD--> 
+    <div class="opiniones" id="opiniones">
+        <div class="opinion-btn" onclick="toggleOpinion()"> <!--Botón Dropdown Opiniones de clientes-->
+            <span>Opiniones de clientes</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <!--Dropdown y opiniones de los clientes sobre la actividad-->
+        <div class="comentarios" id="comentarios">
+            <div class="valoracion"> <!--Valoración general de la actividad-->
+                <p>Valoración general: <span>4.1 / 5</span> <i class="fa-solid fa-star"></i></p>
+                <span class="cita">Basada en 3 comentarios</span>
+            </div>
+
+            <!--RESEÑA 1-->
+            <div class="reseña">
+                <div class="estrellas"> <!--Valoración-->
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star gris"></i>
+                </div>
+                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
+                    <img src="_img/persona1-seattle-cafe.jpg" alt="">
+                    <div class="nombre">
+                        <p>Robert - Singapur</p>
+                        <span class="fecha"> 7 de octubre del 2024</span>
+                    </div>
+                </div>
+                <!--Comentario de la opinión-->
+                <p>No soy un gran fan de Starbucks, pero aún así encontré este lugar bastante interesante. También hay lindo merch para la venta.</p>
+            </div>
+
+            <!--RESEÑA 2-->
+            <div class="reseña"> 
+                <div class="estrellas"> <!--Valoración-->
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star gris"></i>
+                </div>
+                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
+                    <img src="_img/persona2-seattle-cafe.jpg" alt="">
+                    <div class="nombre">
+                        <p>Ariel - Nueva Zelanda</p>
+                        <span class="fecha"> 20 de octubre del 2024</span>
+                    </div>
+                </div>
+                <!--Comentario de la opinión-->
+                <p>Panadería, tostadores de café, bar con licencia y cafetería. Mucho a la venta. Gran selección de café y otras bebidas. Buen ambiente y buenas vibraciones. Una visita obligada en Seattle.</p>
+            </div>
+
+            <!--RESEÑA 3-->
+            <div class="reseña">
+                <div class="estrellas"> <!--Valoración-->
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star rojo"></i>
+                    <i class="fa-solid fa-star gris"></i>
+                </div>
+                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
+                    <img src="_img/persona3-seattle-cafe.jpg" alt="">
+                    <div class="nombre">
+                        <p>George - Irlanda</p>
+                        <span class="fecha"> 2 de noviembre del 2024</span>
+                    </div>
+                </div>
+                <!--Comentario de la opinión-->
+                <p>Es un poco novedoso y está un poco alejado de la ciudad, pero se puede ir andando. Interesante ver todo el funcionamiento de la torrefacción de café con las enormes cubas y tuberías.</p>
+            </div>
+        </div>
+    </div>
+
+    <!---->
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <ul class="redes"> <!--Iconos-->
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+        </ul>
+
+        <ul class="enlaces"> <!--Enlaces-->
+            <li><a href="actividades-general.html">Actividades</a></li>
+            <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer">Vuelos</a></li>
+            <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer">Hoteles</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+
