@@ -5,9 +5,7 @@ Este repositorio contiene una página web responsive completa, desarrollado como
 Esta página permite a los usuarios buscar actividades en los destinos que ofrece la agencia. La interfaz se ha diseñado de manera sencilla y profesional cuidando el detalle y la experiencia de usuario.
 
 ## Tecnologías utilizadas
-HTML: para la estructura de la página.
-CSS: para el estilo y diseño visual de la página.
-JS: para darle dinamismo a la página.
+HTML: para la estructura de la página. | CSS: para el estilo y diseño visual de la página. | JS: para darle dinamismo a la página.
 
 ## Propósito
 Este proyecto tiene como objetivo practicar y demostrar habilidades en HTML, CSS y JS adquiridas durante todo curso.
