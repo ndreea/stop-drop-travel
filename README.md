@@ -20,4 +20,4 @@ Algunas mejoras que se podrían implementar en el futuro incluyen:
 Integración con backend: conectar los formularios y los dropdown de reservas a un servidor para manejar el envío de datos y responder a los usuarios.
 
 ## Licencia
-Este proyecto es de uso libre y abierto. Puedes utilizarlo y modificarlo de acuerdo con tus necesidades.
+Este proyecto está inspirado en otros sitios webs de reservas realistas y el diseño de las páginas de principales de los destinos son del diseñador UX/UI Ethan Parry.
