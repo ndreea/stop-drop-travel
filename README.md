@@ -14,8 +14,7 @@ Este proyecto tiene como objetivo practicar y demostrar habilidades en HTML, CSS
 Para ver la página, simplemente abre el archivo index.html en cualquier navegador.
 
 ## Mejoras Futuras
-Algunas mejoras que se podrían implementar en el futuro incluyen:
-Integración con backend: conectar los formularios y los dropdown de reservas a un servidor para manejar el envío de datos y responder a los usuarios.
+Integración con backend: conectar los formularios y los dropdown de reservas a un servidor para manejar el envío de datos, responder a los usuarios y que éstos puedan ver la reserva.
 
 ## Licencia
 Este proyecto está inspirado en otros sitios webs de reservas realistas y el diseño de las páginas de principales de los destinos son del diseñador UX/UI Ethan Parry.
