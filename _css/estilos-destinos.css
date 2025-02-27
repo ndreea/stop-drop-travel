@@ -1,45 +1,25 @@
 
-/*
+/* Variables Globales para colores y fuentes*/
 
-DESCRIPCIÓN GENERAL PÁGINA HOME (destinos)
-Esta sección ofrece al usuario los diferentes destinos junto con una breve descripción de cada uno de ellos.
-
-Contiene:
-1.Modales
-    1.1 Modal login
-    1.2 Modal login
-2.Navegador principal general
-3.Estilo de los destinos:
-    3.1 Título
-    3.2 Descripción
-    3.3 Botón de actividades
-4.Menú de navegación manual por puntos animado con JS
-5.Footer General
-6.Responsive
-
-*/
-
-
-/* ----------------------------- */
-
-
-/* ESTILOS GENERALES */
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
 }
 
 body {
-	font-family: Helvetica, sans-serif;
-	height: 100vh;
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
 }
 
 
 /* ----------------------------- */
 
 
-/* MODAL LOGIN */
+/* Modal Login*/
+
 .login {
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 1;
@@ -49,7 +29,7 @@ body {
 	display: none;
 }
 
-.login .form { /* Damos los estilos al modal login */
+.login .form {
 	background-color: #fff;
 	width: 400px;
 	position: absolute;
@@ -66,7 +46,8 @@ body {
 	display: block;
 }
 
-.login .form i { /* Botón de cerrar */
+/* Botón de cerrar */
+.login .form i { 
 	position: absolute;
 	top: 15px;
 	right: 15px;
@@ -78,7 +59,8 @@ body {
 	cursor: pointer;
 }
 
-.login .form h2 { /* Título */
+/* Título */
+.login .form h2 { 
 	text-align: center;
 	color: #1d1d1b;
 	margin: 10px 0 20px;
@@ -107,11 +89,13 @@ body {
 	border-radius: 5px;
 }
 
-.login .form .caja input[type="checkbox"] { /* Damos estilo a la caja del checkbox */
+/* Damos estilo a la caja del checkbox */
+.login .form .caja input[type="checkbox"] { 
 	margin-right: 5px;
 }
 
-.login .form .caja button { /* Damos estilo al botón */
+/* Damos estilo al botón */
+.login .form .caja button { 
 	width: 100%;
 	height: 50px;
 	background-color: #E33323;
@@ -126,7 +110,8 @@ body {
 	box-shadow: 0 2px 8px 0 rgba(16, 16, 16, 0.16);
 }
 
-.login .form .caja a { /* Damos estilo a enlace */
+/* Damos estilo a enlace */
+.login .form .caja a { 
 	display: block;
 	text-align: right;
 	font-size: 14px;
@@ -143,7 +128,7 @@ body {
 /* ----------------------------- */
 
 
-/* MODAL REGISTRO */
+/* Modal Registro */
 .registro {
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 1;
@@ -153,7 +138,7 @@ body {
 	display: none;
 }
 
-.registro .formulario { /* Damos los estilos al modal registro */
+.registro .formulario {
 	background-color: #fff;
 	width: 400px;
 	position: absolute;
@@ -170,7 +155,8 @@ body {
 	display: block;
 }
 
-.registro .formulario i { /* Botón de cerrar */
+/* Botón de cerrar */
+.registro .formulario i {
 	position: absolute;
 	top: 15px;
 	right: 15px;
@@ -182,7 +168,8 @@ body {
 	cursor: pointer;
 }
 
-.registro .formulario h2 { /* Título */
+/* Título */
+.registro .formulario h2 {
 	text-align: center;
 	color: #1d1d1b;
 	margin: 10px 0 20px;
@@ -213,11 +200,13 @@ body {
 	border-radius: 5px;
 }
 
-.registro .formulario .datos input[type="checkbox"] { /* Damos estilo a la datos del checkbox */
+/* Checkbox */
+.registro .formulario .datos input[type="checkbox"] {
 	margin-right: 5px;
 }
 
-.registro .formulario .datos button { /* Damos estilo al botón */
+/* Botón */
+.registro .formulario .datos button { 
 	width: 100%;
 	height: 50px;
 	background-color: #E33323;
@@ -243,141 +232,158 @@ body {
 
 /* ESTILO GENERAL MENÚ DE NAVEGACIÓN PRINCIPAL */
 .nav {
-	padding: 30px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	top: 0;
-	position: fixed;
-	z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    z-index: 100;
 }
 
+/* Título */
 .nav .titulo {
-	font-size: 30px;
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 600;
+    font-size: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
-/* Dropdowns (Usuario y Search) */
+/* Contenedor de botones de dropdown */
 .nav .btns-dropdown {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    gap: 50px; /* Espaciado entre iconos */
+    align-items: center;
 }
 
-.nav .btns-dropdown .fa-magnifying-glass,
-.nav .btns-dropdown .fa-user {
-	font-size: 30px;
-	color: #ffffff;
+/* Botones de dropdown */
+.nav .btns-dropdown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ffffff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
 }
 
-.nav .btns-dropdown .fa-magnifying-glass {
-	margin-right: 80px;
+.nav .btns-dropdown button:focus {
+    outline: none;
 }
 
-/* Dropdown Search */
-.nav .btns-dropdown .dropdown-search {
-	overflow: hidden;
-	display: none;
+/* Dropdowns generales */
+.dropdown-container {
+    position: relative;
 }
 
-.nav .btns-dropdown .dropdown-search.abrir-search {
-	display: block;
+/* Dropdowns */
+.dropdown-search,
+.dropdown-user {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    top: 3rem;
+    right: 0;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search {
-	display: flex;
-	justify-content: space-between;
-	width: 28rem;
-	background-color: #ffffff;
-	padding: 1.3rem;
-	position: absolute;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
-	right: 10rem;
-	top: 5rem;
-	border-radius: 2rem;
+.dropdown-search {
+    border-radius: 5rem;
+    padding: 0.3rem;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search input {
-	font-size: 16px;
-	width: 20rem;
-	border: none;
-	outline: none;
-	color: #1d1d1b;
+.dropdown-user {
+    border-radius: 1rem;
+    padding: 1.5rem 0.3rem;
+    text-align: center;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search .btn-search {
-	position: absolute;
-	right: 0.8rem;
-	top: 0.5rem;
-	z-index: 1;
-	background-color: #E33323;
-	padding: 0.8rem 1.6rem;
-	border-radius: 1.5rem;
-	cursor: pointer;
+/* Mostrar los dropdown activos */
+.dropdown-search.abrir-search,
+.dropdown-user.abrir-user {
+    display: block;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search .btn-search a {
-	color: #fff;
-	text-decoration: none;
-	font-size: 12px;
-	font-weight: 600;
-	text-transform: uppercase;
+/* Contenido del dropdown de búsqueda */
+.dropdown-search .menu-search {
+    display: flex;
+    align-items: center;
+    width: 28rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
 }
 
-/* Dropdown Usuario (Iniciar sesión y crear cuenta) */
-.nav .btns-dropdown .dropdown-user {
-	overflow: hidden;
-	display: none;
+.dropdown-search input {
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #1d1d1b;
+    padding: 0.5rem;
 }
 
-.nav .btns-dropdown .dropdown-user.abrir-user {
-	display: block;
+.dropdown-search .btn-search {
+    background-color: #E33323;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user {
-	width: 12rem;
-	background-color: #ffffff;
-	padding: 1rem;
-	position: absolute;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
-	right: 3rem;
-	top: 5rem;
-	border-radius: 1rem;
+.dropdown-search .btn-search a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul {
-	padding: 15px;
-	display: flex;
-	flex-direction: column;
+/* Contenido del dropdown de usuario */
+.dropdown-user .menu-user {
+    width: 12rem;
+    border-radius: 1rem;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li {
-	list-style: none;
+.dropdown-user ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li:last-child {
-	margin-top: 25px;
+.dropdown-user li a {
+    font-size: 16px;
+    color: #1d1d1b;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 5px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li a {
-	display: block;
-	font-size: 16px;
-	color: #1d1d1b;
-	text-decoration: none;
-	font-weight: 600;
-}
-
-.nav .btns-dropdown .dropdown-user .menu-user ul li a:hover {
-	color: #E33323;
+.dropdown-user li a:hover {
+    color: #E33323;
 }
 
 
 /* ----------------------------- */
 
 
-/* ESTILO CONTENEDOR */
+/*Imágenes */
+#medellin { background-image: url('../_img/medellin.jpg'); }
+#porto { background-image: url('../_img/porto.jpg'); }
+#milan { background-image: url('../_img/milan.jpg'); }
+#lima { background-image: url('../_img/lima.jpg'); }
+#new-york { background-image: url('../_img/new-york.jpg'); }
+#seattle { background-image: url('../_img/seattle.jpg'); }
+
+
+/* Estilo Contenedor */
 .home {
 	overflow: hidden;
 	width: 100%;
@@ -391,6 +397,19 @@ body {
 	margin: 0 auto;
 	height: 100vh;
 	clip-path: circle(0% at 0 50%);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.home .contenedor::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Activamos el primer botón del menú de navegación manual */
@@ -402,50 +421,59 @@ body {
 
 .home .contenedor .contenido {
 	width: 1200px;
-}
-
-.home .contenedor .contenido .parrafos {
-	display: flex;
+    color: #fff;
+    display: flex;
 	justify-content: space-between;
-	align-items: center;
+    z-index: 1;
+    padding: 0 30px;
 }
 
-.home .contenedor .contenido .parrafos h2 { /* Título */
+.home .contenedor .contenido .texto {
+    max-width: 580px;
+    padding-top: 30px;
+}
+
+/* Título */
+.home .contenedor .contenido h2 { 
 	font-size: 85px;
 	color: #fff;
 	line-height: 1;
 	animation: mov-izq-dcha 2s;
-	padding-bottom: 80px;
+	padding-bottom: 70px;
 	display: flex;
 	flex-direction: column;
 }
 
- /* Contenido del texto */
-.home .contenedor .contenido .parrafos .texto {
-	width: 580px;
-	margin-right: 40px;
-	margin-top: 20px;
+/* Botón debajo del título */
+.home .contenedor .contenido .titulo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre el título y el botón */
 }
 
-.home .contenedor .contenido .parrafos .texto p {
-	color: #fafafa;
-	font-size: 22px;
+ /* Contenido del texto */
+.home .contenedor .contenido p {
+    width: 580px;
+    font-size: 22px;
+	margin-right: 40px;
 	font-weight: 600;
-	line-height: 1.3;
+	line-height: 1.5;
 	text-align: justify;
 	animation: mov-dcha-izq 2s;
 }
 
-.home .contenedor .contenido a {  /* Botón */
+/* Botón */
+.home .contenedor .contenido a {
+    width: fit-content;
 	background-color: #E33323;
 	color: #fafafa;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 600;
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 15px 30px;
 	border-radius: 30px;
-	display: inline-block;
+    display: inline-block;
 	animation: mov-izq-dcha 2s;
 	transition-property: transform;
 }
@@ -458,32 +486,34 @@ body {
 /* ----------------------------- */
 
 
-/* MENÚ DE NAVEGACIÓN LATERAL MANUAL (BOTONES) */
+/* Menú de Navegación Manual (Botones) */
 .home .botones-laterales {
-	z-index: 1;
-	position: absolute;
+	position: fixed;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+    align-items: center;
 	top: 50px;
 	left: 30px;
-	transform: translatey(60%);
+    gap: 30px;
+	transform: translateY(50%);
 }
 
 .home .botones-laterales .btn {
 	background: rgba(255, 255, 255, 0.3);
-	width: 22px;
-	height: 22px;
-	margin: 20px;
+	width: 24px;
+	height: 24px;
+    margin: 10px;
 	border-radius: 50%;
 	cursor: pointer;
 	transition: all 0.15s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.home .botones-laterales .btn:hover {
-	background-color: #fff;
-}
-
+.home .botones-laterales .btn:hover,
 .home .botones-laterales .btn.active {
 	background-color: #fff;
 }
@@ -492,11 +522,13 @@ body {
 /* ----------------------------- */
 
 
-/* FOOTER */
+/* Footer */
+
 .footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+    text-align: center;
 	width: 100%;
 	padding: 30px;
 	position: fixed;
@@ -535,8 +567,11 @@ body {
 /* ------------------------------ */
 
 
-/* ANIMACIÓN PÁGINA MEDELLÍN - Cada vez que el usuario entra a la página, se activa la animación en el texto, botón y descripción */
-@keyframes mov-izq-dcha { /* Título y botón de enlace */
+/* ANIMACIÓN PÁGINA MEDELLÍN:
+Cada vez que el usuario entra a la página, se activa la animación en el texto, botón y descripción */
+
+/* Título y botón de enlace */
+@keyframes mov-izq-dcha { 
     from{
         transform: translateX(-50px);
     }
@@ -545,7 +580,8 @@ body {
     }
 }
 
-@keyframes mov-dcha-izq { /* Texto */
+/* Texto */
+@keyframes mov-dcha-izq { 
     from{
         transform: translateX(50px);
     }
@@ -558,437 +594,4 @@ body {
 /* ------------------------------ */
 
 
-/*
-
-FORMATO RESPONSIVE
-Se adecuarán los tamaños para todo tipo de pantallas.
-Ordenadores, tablet y móviles.
-
-*/
-
-
-/* RESPONSIVE ORDENADOR */
-
-/* Ponemos el menú de navegación lateral en la
-parte superior para que al usuario le sea más fácil
-navegar por el contenido */
-
-@media (max-width: 1461px) {
-
-    .home .botones-laterales{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        top: 130px;
-        transform: translateX(130%);
-    }
-}
-
-
-/* ------------------------------ */
-
-
-/* RESPONSIVE ORDENADOR */
-
-/* Adecuamos los botones laterales al
-ancho de la pantalla */
-
-@media (max-width: 1251px) {
-
-    .home .botones-laterales{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        top: 130px;
-        transform: translateX(100%);
-    }
-
-    /* ------------------------------ */
-
-    /* Reducimos el ancho del contenido y adecuamos el
-    título junto con el texto descriptivo de cada
-    destino correspondiente */
-
-    .home .contenedor .contenido{
-        width: 1000px;
-    }
-
-    .home .contenedor .contenido .parrafos h2{
-        font-size: 70px;
-        padding-bottom: 60px;
-    }
-
-    .home .contenedor .contenido .parrafos .texto{
-        width: 520px;
-        margin-left: 30px;
-    }
-
-    .home .contenedor .contenido .parrafos .texto p{
-        font-size: 20px;
-    }  
-}
-
-
-/* ------------------------------ */
-
-
-
-/* RESPONSIVE ORDENADOR */
-@media (max-width: 1031px) {
-
-    /* Reducimos el ancho del contenido y adecuamos el
-    título junto con el texto descriptivo de cada
-    destino correspondiente */
-
-    .home .contenedor .contenido{
-        width: 100%;
-        padding-left: 30px;
-    }
-
-    .home .contenedor .contenido .parrafos{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-top: 100px;
-    }
-
-    .home .contenedor .contenido .parrafos h2{
-        font-size: 60px;
-        animation: none;
-        padding-bottom: 0;
-        margin-bottom: 20px;
-        animation: none;
-    }
-
-    .home .contenedor .contenido .parrafos .texto{
-        width: 620px;
-        margin-left: 0;
-        margin-bottom: 60px;
-    }
-
-    .home .contenedor .contenido .parrafos .texto p{
-        animation: none;
-        line-height: 1.4;
-        animation: none;
-    }
-
-    .home .contenedor .contenido a{ /* Botón */
-        font-size: 12px;
-        padding: 15px 30px;
-        animation: none;
-    }
-
-    /* ------------------------------ */
-
-    /* Adecuamos los botones laterales al
-    ancho de la pantalla */
-
-    .home .botones-laterales{
-        display: flex;
-        flex-direction: row;
-        top: 130px;
-        transform: translateX(80%);
-    }
-}
-
-
-/* ------------------------------ */
-
-
-/* RESPONSIVE TABLET */
-@media (max-width: 751px) {
-
-    /* Reducimos el tamaño del logo y de los
-    iconos del header principal */
-
-    .nav .titulo{
-        font-size: 25px;
-    }
-    
-    .nav .btns-dropdown .fa-magnifying-glass,
-    .nav .btns-dropdown .fa-user{
-        font-size: 25px;
-    }
-    
-    .nav .btns-dropdown .fa-magnifying-glass{
-        margin-right: 60px;
-    }
-
-    /* ------------------------------ */
-
-    /* Reducimos el tamaño del de los dropdowns de Search
-    y los adecuamos al tamaño */
-
-    .nav .btns-dropdown .dropdown-search .menu-search{
-        width: 25rem;
-        padding: 1.2rem;
-        right: 8rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search input{
-        font-size: 14px;
-        width: 18rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search .btn-search{
-        top: 0.4rem;
-        padding: 0.7rem 1.5rem;
-    }
-
-    /* ------------------------------ */
-
-    /* Reducimos el tamaño del de los dropdowns del Usuario
-    y los adecuamos al tamaño */
-
-    .nav .btns-dropdown .dropdown-user .menu-user{
-        width: 10rem;
-        right: 2rem;
-    }
-
-    .nav .btns-dropdown .dropdown-user .menu-user ul li a{
-        font-size: 14px;
-    }
-
-    /* ------------------------------ */
-
-    /* Ponemos el contenido en modo vertical para aprovechar
-    al máximo el espacio y adecuamos la tipografía y el
-    tamaño de los elementos que hay en su interior, título,
-    parráfos y botón inluido */
-
-    .home .contenedor .contenido .parrafos{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-top: 120px;
-    }
-
-    .home .contenedor .contenido .parrafos h2{
-        font-size: 50px;
-        animation: none;
-        margin-bottom: 10px;
-    }
-
-    .home .contenedor .contenido .parrafos .texto{
-        width: 520px;
-        margin-left: 0;
-        margin-bottom: 60px;
-    }
-
-    .home .contenedor .contenido .parrafos .texto p{
-        animation: none;
-        font-size: 18px;
-    }
-
-    .home .contenedor .contenido a{ /* Botón */
-        font-size: 11px;
-        padding: 15px 25px;
-        animation: none;
-    }
-
-    .home .botones-laterales{
-        display: flex;
-        flex-direction: row;
-        top: 150px;
-        transform: translateX(40%);
-        z-index: 0;
-    }
-
-    /* ------------------------------ */
-
-    /* Reducimos el tamaño de la tipografía
-    del footer */
-
-    .footer ul li a{
-        font-size: 16px;
-    }
-
-}
-
-
-/* ------------------------------ */
-
-/* RESPONSIVE TABLET */
-@media (max-width: 631px) {
-
-     /* El ancho del contenido de la modal de Login
-     junto con su título y el botón */
-
-    .login .form{
-        width: 350px;
-    }
-
-    .login .form h2{
-        font-size: 20px;
-    }
-
-    .login .form .caja button{
-        width: 100%;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    /* ------------------------------ */
-
-    /* El ancho del contenido de la modal de Registro
-    junto con su título y el botón */
-
-    .registro .formulario{
-        width: 350px;
-    }
-
-    .registro .formulario h2{
-        font-size: 20px;
-    }
-
-    .registro .formulario .datos button{
-        width: 100%;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    /* ------------------------------ */
-
-    /* Reducimos la distancia del dropdown search
-    para acercarlo más al icono */
-
-    .nav .btns-dropdown .dropdown-search .menu-search{
-        right: 5rem;
-        top: 5rem;
-    }
-
-    /* ------------------------------ */
-
-    /* Reducimos la distancia del dropdown menú usuario
-    para acercarlo más al icono */
-
-    .nav .btns-dropdown .dropdown-user .menu-user{
-        top: 5rem;
-    }
-
-    /* ------------------------------ */
-
-    .home .contenedor .contenido .parrafos{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-top: 220px;
-    }
-    
-
-    .home .contenedor .contenido .parrafos h2{
-        display: flex;
-        flex-direction: column;
-        font-size: 55px;
-    }
-
-    .home .contenedor .contenido .parrafos .texto{
-        width: 80%;
-        margin-left: 0;
-        margin-bottom: 60px;
-    }
-
-    .home .contenedor .contenido .parrafos .texto p{
-        animation: none;
-        font-size: 18px;
-    }
-
-    .home .contenedor .contenido a{ /* Botón */
-        font-size: 12px;
-        padding: 15px 25px;
-        animation: none;
-    }
-
-    /* ------------------------------ */
-
-    .home .botones-laterales{
-        display: flex;
-        flex-direction: row;
-        top: 150px;
-        transform: translateX(15%);
-        z-index: 0;
-    }
-
-    /* ------------------------------ */
-
-    .footer{
-        display: none;
-    }
-}
-
-
-
- /* ------------------------------ */
-
-
-
-/* RESPONSIVE TABLET-MÓVIL */
-@media (max-width: 561px) {
-
-    /* Reducimos el tamaño del logo y de los
-    iconos del header principal */
-
-    .nav .titulo{
-        font-size: 20px;
-    }
-    
-    .nav .btns-dropdown .fa-magnifying-glass,
-    .nav .btns-dropdown .fa-user{
-        font-size: 20px;
-    }
-    
-    .nav .btns-dropdown .fa-magnifying-glass{
-        margin-right: 40px;
-    }
-
-     /* ------------------------------ */
-
-     /* Adecuamos los botones del menú
-     de navegación manual */
-
-    .home .botones-laterales{
-        transform: translateX(10%);
-    }
-}
-
-
-
-/* ------------------------------ */
-
-
-
-/* RESPONSIVE MÓVIL */
-@media (max-width: 445px) {
-
-    /* Centramos el menú de navegación por botones
-    y reducimos un poco su tamaño */
-
-    .home .botones-laterales{
-        transform: translateX(3%);
-    }
-
-    .home .botones-laterales .btn{
-        width: 20px;
-        height: 20px;
-        margin: 18px;
-    }
-
-    /* ------------------------------ */
-
-     /* Reducimos el tamaño del input del menu
-    search */
-
-    .nav .btns-dropdown .dropdown-search .menu-search{
-        right: 5rem;
-        width: 20rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search input{
-        font-size: 12px;
-        width: 18rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search .btn-search{
-        right: 0.5rem;
-    }
-}
+/* Responsive */

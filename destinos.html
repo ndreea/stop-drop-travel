@@ -1,23 +1,3 @@
-<!--
-
-DESCRIPCIÓN DE LA PÁGINA HOME
-Esta sección se concentran todos los destinos. Cada uno de ellos viene con una descripción de
-la ciudad y una imagen de fondo.
-
-Contiene:
-1.Navegador general
-2.Contenido de los destinos
-    2.1 Medellín, Colombia: Título, descripción y botón de información
-    2.2 Oporto, Portugal: Título, descripción y botón de información
-    2.3 Milán, Italia: Título, descripción y botón de información
-    2.4 Lima, Perú: Título, descripción y botón de información
-    2.5 Nueva York, Nueva York: Título, descripción y botón de información
-    2.6 Seattle, Whashington: Título, descripción y botón de información
-3. Botones laterales de navegación manual
-4.Footer general
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,39 +5,46 @@ Contiene:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página principal - Destinos</title>
     <link rel="icon" href="_img/favicon.png">
-    <link rel="stylesheet" href="_css/estilos-destinos.css">
-    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="_css/estilos-destinos.css" media="all">
+    <script src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
     <script defer src="_js/app-destinos.js"></script>
 </head>
 <body>
     <!--MENÚ DE NAVEGACIÓN GENERAL-->
     <header class="nav">
         <a class="titulo" href="index.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
-        <!--Dropdown botones-->
+    
+        <!-- Contenedor de botones dropdown -->
         <div class="btns-dropdown">
-            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Search (buscar)-->
-            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Search (buscar)-->
-                <div class="menu-search abrir-search">
-                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
-                    <div class="btn-search">
-                        <a href="#">Buscar</a>
+    
+            <!-- Botón de búsqueda -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuSearch()" aria-controls="MenuSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="dropdown-search" id="MenuSearch">
+                    <div class="menu-search abrir-search">
+                        <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                        <div class="btn-search">
+                            <a href="#">Buscar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--Dropdown botón Usuario-->
-            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
-            <div class="dropdown-user" id="MenuUser"> <!--Botón Usuario (iniciar sesión y crear cuenta)-->
-                <div class="menu-user abrir-user" >
-                    <ul>
-                        <!--Ponemos un id a los enlaces para llamar a las modales-->
-                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
-                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
-                    </ul>
+    
+            <!-- Botón de usuario -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuUser()" aria-controls="MenuUser"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-user" id="MenuUser">
+                    <div class="menu-user abrir-user">
+                        <ul>
+                            <li><a id="open-registro" href="#">Crear cuenta</a></li>
+                            <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
-
+    
 
     <!---->
 
@@ -130,86 +117,80 @@ Contiene:
     <!--SECCIONES DESTINOS-->
     <div class="home">
         <!--Medellín, Colombia-->
-        <section class="contenedor active" id="medellin" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(_img/medellin.jpg) no-repeat center center/cover;">
-            <div class="contenido"> <!--Contenido general de la página-->       
-                <div class="parrafos">
+        <section class="contenedor active" id="medellin">
+            <div class="contenido"> 
+                <div class="titulo">
                     <h2>Medellín, <span>Colombia</span></h2>
-                    <div class="texto">
-                        <p>Medellín es la capital de la provincia montañosa colombiana de Antioquia.</p> <br>
-                        <p>Apodada la «Ciudad de la Eterna Primavera» por su clima templado, acoge cada año el famoso Festival de las Flores. Los modernos metrocables unen la ciudad con los barrios circundantes y ofrecen vistas del Valle de Aburrá.</p>
-                    </div>
-                </div>
-                <a href="actividades-medellin.html">ver todas las actividades</a>     
+                    <a href="actividades-medellin.html">ver todas las actividades</a>  
+                </div>  
+                <div class="texto">
+                    <p>Medellín es la capital de la provincia montañosa colombiana de Antioquia. Apodada la «Ciudad de la Eterna Primavera» por su clima templado, acoge cada año el famoso Festival de las Flores. <br>Los modernos metrocables unen la ciudad con los barrios circundantes y ofrecen vistas del Valle de Aburrá.</p>  
+                </div>    
             </div>
         </section>
 
         <!--Oporto, Portugal-->
-        <section class="contenedor" id="porto" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(_img/porto.jpg) no-repeat center center/cover;">
-            <div class="contenido"> <!--Contenido general de la página-->
-                <div class="parrafos">
+        <section class="contenedor" id="porto">
+            <div class="contenido">
+                <div class="titulo">
                     <h2>Oporto, <span>Portugal</span></h2>
-                    <div class="texto">
-                        <p>Oporto es una ciudad costera del noroeste de Portugal conocida por sus puentes señoriales y la producción de vino de Oporto.</p> <br>
-                        <p>En el barrio de Ribeira, las estrechas calles adoquinadas serpentean entre casas de comerciantes y cafés. La iglesia de São Francisco es conocida por su suntuoso interior barroco con ornamentadas tallas doradas.</p>
-                    </div>
+                    <a href="actividades-oporto.html">ver todas las actividades</a>
                 </div>
-                <a href="actividades-oporto.html">ver todas las actividades</a>
+                <div class="texto">
+                    <p>Oporto es una ciudad costera del noroeste de Portugal conocida por sus puentes señoriales y la producción de vino de Oporto. En el barrio de Ribeira, las estrechas calles adoquinadas serpentean entre casas de comerciantes y cafés. <br>La iglesia de São Francisco es conocida por su suntuoso interior barroco con ornamentadas tallas doradas.</p> 
+                </div>
             </div>
         </section>
 
         <!--Milán, Italia-->
-        <section class="contenedor" id="milan" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(_img/milan.jpg) no-repeat center center/cover;">
-            <div class="contenido"> <!--Contenido general de la página-->
-                <div class="parrafos">
+        <section class="contenedor" id="milan">
+            <div class="contenido">
+                <div class="titulo">
                     <h2>Milán, <span>Italia</span></h2>
-                    <div class="texto">
-                        <p>Milán, metrópoli del norte de Lombardía, es la capital mundial de la moda y el diseño.</p> <br> 
-                        <p>Sede de la bolsa nacional, es un centro financiero también conocido por sus restaurantes y tiendas de alta gama.</p>
-                    </div>
+                    <a href="actividades-milan.html">ver todas las actividades</a>
                 </div>
-                <a href="actividades-milan.html">ver todas las actividades</a>
+                <div class="texto">
+                    <p>Milán, metrópoli del norte de Lombardía, es la capital mundial de la moda y el diseño. <br>Sede de la bolsa nacional, es un centro financiero también conocido por sus restaurantes y tiendas de alta gama.</p>
+                </div>
             </div>
         </section>
 
         <!--Lima, Perú-->
-        <section class="contenedor" id="lima" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(_img/lima.jpg) no-repeat center center/cover;">
-            <div class="contenido"> <!--Contenido general de la página-->
-                <div class="parrafos">
+        <section class="contenedor" id="lima">
+            <div class="contenido">
+                <div class="titulo">
                     <h2>Lima, <span>Perú</span></h2>
-                    <div class="texto">
-                        <p>Lima, la capital de Perú, se encuentra en la árida costa del Pacífico del país.</p> <br>
-                        <p>Aunque conserva su centro colonial, es una metrópolis bulliciosa y una de las ciudades más grandes de Sudamérica. Alberga la colección de arte precolombino del Museo Larco y el Museo de la Nación, que recorre la historia de la antigua civilización peruana.</p>
-                    </div>
+                    <a href="actividades-lima.html">ver todas las actividades</a>
                 </div>
-                <a href="actividades-lima.html">ver todas las actividades</a>
+                <div class="texto">
+                    <p>Lima, la capital de Perú, se encuentra en la árida costa del Pacífico del país. <br>Aunque conserva su centro colonial, es una metrópolis bulliciosa y una de las ciudades más grandes de Sudamérica. Alberga la colección de arte precolombino del Museo Larco y el Museo de la Nación, que recorre la historia de la antigua civilización peruana.</p>
+                </div>     
             </div>
         </section>
 
         <!--Nueva York, Nueva York-->
-        <section  class="contenedor" id="new-york" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(_img/new-york.jpg) no-repeat center center/cover;">
-            <div class="contenido"> <!--Contenido general de la página-->
-                <div class="parrafos">
+        <section  class="contenedor" id="new-york">
+            <div class="contenido">
+                <div class="titulo">
                     <h2>Nueva York, <span>Nueva York</span></h2>
-                    <div class="texto">
-                        <p>Nueva York está formada por cinco distritos situados en la confluencia del río Hudson y el océano Atlántico.</p> <br>
-                        <p>En su centro se encuentra Manhattan, un barrio densamente poblado que es uno de los principales centros comerciales, financieros y culturales del mundo.</p>
-                    </div>
+                    <a href="actividades-ny.html">ver todas las actividades</a>
                 </div>
-                <a href="actividades-ny.html">ver todas las actividades</a>
+                <div class="texto">
+                    <p>Nueva York está formada por cinco distritos situados en la confluencia del río Hudson y el océano Atlántico. <br>En su centro se encuentra Manhattan, un barrio densamente poblado que es uno de los principales centros comerciales, financieros y culturales del mundo.</p>
+                </div>
             </div>
         </section>
 
         <!--Seattle, Whashington-->
-        <section class="contenedor" id="seattle" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(_img/seattle.jpg) no-repeat center center/cover;">
-            <div class="contenido"> <!--Contenido general de la página-->
-                <div class="parrafos">
-                    <h2>Seattle, <span>Whashington</span></h2>
-                    <div class="texto">
-                        <p>Seattle, ciudad situada en Puget Sound, en el noroeste del Pacífico, está rodeada de agua, montañas y bosques de hoja perenne, y cuenta con miles de hectáreas de parques.</p> <br> 
-                        <p>Es la ciudad más grande del Estado de Washington y alberga una gran industria tecnológica, con sedes de Microsoft y Amazon en su en su área metropolitana.</p>
-                    </div>
+        <section class="contenedor" id="seattle">
+            <div class="contenido">
+                <div class="titulo">
+                    <h2>Seattle, <span>Washington</span></h2>
+                    <a href="actividades-seattle.html">ver todas las actividades</a>
                 </div>
-                <a href="actividades-seattle.html">ver todas las actividades</a>
+                <div class="texto">
+                    <p>Seattle, ciudad situada en Puget Sound, en el noroeste del Pacífico, está rodeada de agua, montañas y bosques de hoja perenne, y cuenta con miles de hectáreas de parques. <br>Es la ciudad más grande del Estado de Washington y alberga una gran industria tecnológica, con sedes de Microsoft y Amazon en su en su área metropolitana.</p>
+                </div>
             </div>
         </section>
 
