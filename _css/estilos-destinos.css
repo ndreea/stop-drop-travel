@@ -407,7 +407,7 @@ body::before {
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-	height: 100vh;
+	height: 100dvh;
 	clip-path: circle(0% at 0 50%);
     background-size: cover;
     background-position: center;
@@ -757,6 +757,7 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	}
 }
 
+/* Móviles (Pantallas pequeñas) */
 @media (max-width: 530px) {
 
 	.nav .titulo,
@@ -779,4 +780,26 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	.footer ul li a {
 		font-size: 16px;
 	}
+}
+
+/* Móviles (Pantallas pequeñas) */
+@media (max-width: 450px) {
+
+	.home .botones-laterales {
+		gap: 20px;
+	}
+
+	.home .contenedor .contenido {
+		padding: 0px;
+	}
+
+	.home .contenedor .contenido h1 { 
+		font-size: 55px;
+	}
+
+	.home .contenedor .contenido p {
+		max-width: 390px;
+		font-size: 16px;
+	}
+
 }
