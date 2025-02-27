@@ -101,7 +101,7 @@ body::before {
 /* Dispositivos pequeños (móviles) */
 @media (max-width: 600px) {
     .contenedor {
-        max-width: 86%;
+        max-width: 90%;
     }
 
     .contenedor .btn {
