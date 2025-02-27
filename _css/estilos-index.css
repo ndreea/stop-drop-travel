@@ -1,5 +1,5 @@
 
-/* Estilos Globales */
+/* ESTILOS GLOBALES */
 
 * {
 	margin: 0;
@@ -32,6 +32,8 @@ body::before {
 
 /* ----------------------------- */
 
+
+/* ESTILOS CUERPO */
 
 /* Contenedor */
 .contenedor {
@@ -106,5 +108,15 @@ body::before {
 
     .contenedor .btn {
         padding: 12px 30px;
+    }
+}
+
+@media (max-width: 410px) {
+    .contenedor h1 { 
+        font-size: clamp(3rem, 5vw, 4.5rem);
+    }
+
+    .contenedor i {
+        font-size: clamp(2.5rem, 4vw, 3.75rem);
     }
 }
