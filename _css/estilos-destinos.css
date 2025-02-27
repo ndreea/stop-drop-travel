@@ -810,4 +810,8 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	.home .contenedor .contenido h1 { 
 		font-size: 50px;
 	}
+
+	.footer ul li a {
+		font-size: 14px;
+	}
 }
