@@ -805,13 +805,17 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	.home .contenedor .contenido {
 		gap: 10px; /* Ajustar el espacio entre los elementos */
 	}
-	
 
 	.home .contenedor .contenido h1 { 
 		font-size: 50px;
 	}
 
-	.footer ul li a {
+	.home .contenedor .contenido p {
+		max-width: 100%;
 		font-size: 14px;
+	}
+
+	.footer ul li a {
+		font-size: 16px;
 	}
 }
