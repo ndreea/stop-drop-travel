@@ -789,12 +789,17 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 /* Móviles (Pantallas pequeñas) */
 @media (max-width: 450px) {
 
+	.login .form,
+	.registro .formulario {
+		width: 320px;
+	}
+
 	.nav {
 		padding: 20px;
 	}
 
 	.home .botones-laterales {
-		top: 90px;
+		top: 80px;
 		transform: translateX(0%);
 	}
 
