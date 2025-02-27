@@ -780,10 +780,6 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	.home .contenedor .contenido p {
 		font-size: 16px;
 	}
-
-	.footer ul li a {
-		font-size: 16px;
-	}
 }
 
 /* Móviles (Pantallas pequeñas) */
