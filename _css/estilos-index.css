@@ -1,27 +1,9 @@
 
-/*
+/* Estilos Globales */
 
-DESCRIPCIÓN GENERAL PÁGINA DE ATERRIZAJE
-Esta sección es introductoria y muestra al usuario lo que Stop, Drop & Travel ofrece.
-
-Contiene:
-1.Título
-2.Subtítulo
-3.Texto descriptivo
-4.Botón
-5.Responsive
-
-*/
-
-
-/* ----------------------------- */
-
-
-/* ESTILOS GENERALES */
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 	font-family: Helvetica, sans-serif;
 }
 
@@ -29,237 +11,100 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../_img/inicio.jpg") no-repeat center center / cover;
+	height: 100dvh;
 	color: #fff;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../_img/inicio.jpg") no-repeat center center / cover;
+    z-index: -1;
 }
 
 
 /* ----------------------------- */
 
 
-/* ESTILOS CONTENEDOR */
+/* Contenedor */
 .contenedor {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 1200px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
 }
 
-.contenedor h1 { /* Título principal */
-	font-size: 70px;
-	margin-bottom: 70px;
+/* Títulos */
+.contenedor h1 { 
+	font-size: clamp(2.5rem, 5vw, 4.5rem);
 }
 
-.contenedor i { /* Reducimos un poco el icono del avión para que sea igual de ancho que el texto */
-	font-size: 60px;
+.contenedor h2 { 
+	font-size: clamp(2rem, 4vw, 3rem);
 }
 
-.contenedor h2 { /* Título secundario */
-	font-size: 50px;
-	margin-bottom: 70px;
+.contenedor h1,
+.contenedor h2 {
+    margin-bottom: 50px;
 }
 
-.contenedor p { /* Texto */
-	font-size: 20px;
-	text-align: center;
+/* Icono */
+.contenedor i {
+	font-size: clamp(2rem, 4vw, 3.75rem);
+}
+
+
+/* Texto */
+.contenedor p { 
+	font-size: clamp(1rem, 3vw, 1.5rem);
 	line-height: 1.5;
-	font-weight: 600;
-	max-width: 600px;
+	font-weight: bold;
 }
 
-.contenedor a { /* Enlace */
-	font-size: 16px;
+ /* Botón */
+.contenedor .btn {
+    display: inline-block;
+	font-size: clamp(0.9rem, 2vw, 1rem);
 	background-color: #E33323;
 	padding: 15px 50px;
 	text-decoration: none;
     text-transform: uppercase;
-	color: #fafafa;
-	font-weight: 600;
+	color: #fff;
+	font-weight: bold;
 	border-radius: 50px;
-	margin-top: 70px;
+	margin-top: 50px;
 	transition: transform;
 }
 
-.contenedor a:hover {
+.contenedor .btn:hover {
 	transform: scale(1.1);
 }
 
-
-
 /* ----------------------------- */
 
+/* FORMATOS RESPONSIVE */
 
-
-/*
-
-FORMATO RESPONSIVE
-Se adecuarán los tamaños para todo tipo de pantallas.
-Ordenadores, tablet y móviles.
-
-*/
-
-
-/* RESPONSIVE ORDENADOR */
-@media (max-width: 1025px){
-
-    /* Reducimos el tamaño de todas las tipografías
-    y el botón que hay en el contenedor */
-
-    .contenedor h1{
-        font-size: 65px;
-    }
-
-    .contenedor i{
-        font-size: 55px;
-    }
-
-    .contenedor h2{
-        font-size: 45px;
-    }
-
-    .contenedor p{
-        font-size: 18px;
-        max-width: 550px;
-    }
-
-    .contenedor a{
-        font-size: 14px;
-    }
-}
-
-
-
-/* ----------------------------- */
-
-
-
-/* RESPONSIVE TABLET */
-@media (max-width: 801px){
-
-    /* Reducimos el tamaño de todas las tipografías
-    y el botón que hay en el contenedor junto con el
-    espaciado que hay entre ellos */
-
-    .contenedor h1{
-        font-size: 55px;
-    }
-
-    .contenedor i{
-        font-size: 45px;
-    }
-
-    .contenedor h2{
-        font-size: 35px;
-    }
-
-    .contenedor p{
-        font-size: 16px;
-        max-width: 500px;
-    }
-
-    .contenedor a{
-        font-size: 12px;
-        padding: 15px 35px;
-    }
-}
-
-
-/* ----------------------------- */
-
-
-/* RESPONSIVE TABLET-MÓVIL */
-@media (max-width: 601px){
-
-    /* Reducimos el tamaño de todas las tipografías
-    y el botón que hay en el contenedor junto con el
-    espaciado que hay entre ellos.
-    También alineamos el contenido a la izquierda */
-
-    .contenedor{
-        padding: 0 30px;
-        align-items: flex-start;
-    }
-
-    .contenedor h1{
-        font-size: 70px;
-        margin-bottom: 80px;
-    }
-
-    .contenedor i{
-        font-size: 55px;
-    }
-
-    .contenedor h2{
-        font-size: 45px;
-        margin-bottom: 80px;
-    }
-
-    .contenedor p{
-        font-size: 18px;
-        max-width: 400px;
+/* Dispositivos medianos (tablets y pantallas pequeñas) */
+@media ( max-width: 860px) {
+    .contenedor {
+        max-width: 650px;
         text-align: left;
     }
-
-    .contenedor a{
-        font-size: 14px;
-        padding: 15px 35px;
-        margin-top: 80px;
-    }
 }
 
-
-
-/* ----------------------------- */
-
-
-
-/* RESPONSIVE MÓVIL */
-@media (max-width: 475px) {
-
-    /* Reducimos el tamaño de todas las tipografías
-    y el botón que hay en el contenedor junto con el
-    espaciado que hay entre ellos. */
-
-    .contenedor h1{
-        font-size: 65px;
-        margin-bottom: 70px;
+/* Dispositivos pequeños (móviles) */
+@media (max-width: 600px) {
+    .contenedor {
+        max-width: 86%;
     }
 
-    .contenedor h2{
-        font-size: 40px;
-        margin-bottom: 70px;
+    .contenedor .btn {
+        padding: 12px 30px;
     }
-
-    .contenedor a{
-        margin-top: 70px;
-    }
-}
-
-
-
-/* ----------------------------- */
-
-
-
-/* RESPONSIVE MÓVIL CHIQUITO */
-@media (max-width: 415px) {
-
-    /* Reducimos el tamaño de todas las tipografías
-    y el icono que hay en el contenedor junto con el
-    espaciado que hay entre ellos. */
-
-    .contenedor h1{
-        font-size: 60px;
-    }
-
-    .contenedor h2{
-        font-size: 35px;
-    }
-
-    .contenedor i{
-        font-size: 50px;
-    }
-
 }
