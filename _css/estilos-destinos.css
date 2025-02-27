@@ -790,6 +790,7 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	}
 
 	.home .botones-laterales {
+		top: 80px;
 		transform: translateX(0%);
 	}
 
