@@ -785,12 +785,17 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 /* Móviles (Pantallas pequeñas) */
 @media (max-width: 450px) {
 
-	.home .botones-laterales {
-		gap: 20px;
+	.nav {
+		padding: 20px;
 	}
 
-	.home .contenedor .contenido {
-		padding: 0px;
+	.home .botones-laterales {
+		top: 80px;
+		transform: translateX(0%);
+	}
+
+	.home .botones-laterales {
+		gap: 20px;
 	}
 
 	.home .contenedor .contenido h1 { 
@@ -798,7 +803,6 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	}
 
 	.home .contenedor .contenido p {
-		max-width: 390px;
 		font-size: 16px;
 	}
 
