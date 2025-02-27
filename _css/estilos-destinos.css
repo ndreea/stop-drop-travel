@@ -1,5 +1,5 @@
 
-/* Variables Globales para colores y fuentes*/
+/* ESTILOS GLOBALES */
 
 * {
 	margin: 0;
@@ -12,13 +12,16 @@ body {
     height: 100vh;
     position: relative;
     margin: 0 auto;
+	overflow-y: auto
 }
 
 
 /* ----------------------------- */
 
 
-/* Modal Login*/
+/* ESTILOS MODAL */
+
+/* Modal Login */
 
 .login {
 	background-color: rgba(0, 0, 0, 0.5);
@@ -60,7 +63,7 @@ body {
 }
 
 /* Título */
-.login .form h2 { 
+.login .form h1 { 
 	text-align: center;
 	color: #1d1d1b;
 	margin: 10px 0 20px;
@@ -125,9 +128,6 @@ body {
 }
 
 
-/* ----------------------------- */
-
-
 /* Modal Registro */
 .registro {
 	background-color: rgba(0, 0, 0, 0.5);
@@ -169,7 +169,7 @@ body {
 }
 
 /* Título */
-.registro .formulario h2 {
+.registro .formulario h1 {
 	text-align: center;
 	color: #1d1d1b;
 	margin: 10px 0 20px;
@@ -231,6 +231,7 @@ body {
 
 
 /* ESTILO GENERAL MENÚ DE NAVEGACIÓN PRINCIPAL */
+
 .nav {
     position: fixed;
     top: 0;
@@ -313,7 +314,6 @@ body {
     display: flex;
     align-items: center;
     width: 28rem;
-    padding: 0.5rem;
     border-radius: 2rem;
 }
 
@@ -344,7 +344,7 @@ body {
 
 /* Contenido del dropdown de usuario */
 .dropdown-user .menu-user {
-    width: 12rem;
+    width: 10rem;
     border-radius: 1rem;
 }
 
@@ -374,6 +374,8 @@ body {
 /* ----------------------------- */
 
 
+/* ESTILOS CUERPO */
+
 /*Imágenes */
 #medellin { background-image: url('../_img/medellin.jpg'); }
 #porto { background-image: url('../_img/porto.jpg'); }
@@ -383,7 +385,7 @@ body {
 #seattle { background-image: url('../_img/seattle.jpg'); }
 
 
-/* Estilo Contenedor */
+/* Contenedor */
 .home {
 	overflow: hidden;
 	width: 100%;
@@ -423,41 +425,29 @@ body {
 	width: 1200px;
     color: #fff;
     display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
 	justify-content: space-between;
     z-index: 1;
-    padding: 0 30px;
-}
-
-.home .contenedor .contenido .texto {
-    max-width: 600px;
-    padding-top: 30px;
+	padding: 0 40px;
 }
 
 /* Título */
-.home .contenedor .contenido h2 { 
+.home .contenedor .contenido h1 { 
 	font-size: 85px;
 	color: #fff;
 	line-height: 1;
+	margin-right: 40px;
 	animation: mov-izq-dcha 2s;
 	padding-bottom: 70px;
-	display: flex;
-	flex-direction: column;
-}
-
-/* Botón debajo del título */
-.home .contenedor .contenido .titulo {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espacio entre el título y el botón */
 }
 
  /* Contenido del texto */
 .home .contenedor .contenido p {
     width: 580px;
     font-size: 22px;
-	margin-right: 40px;
 	font-weight: 600;
-	line-height: 1.5;
+	line-height: 1.6;
 	text-align: justify;
 	animation: mov-dcha-izq 2s;
 }
@@ -486,7 +476,8 @@ body {
 /* ----------------------------- */
 
 
-/* Menú de Navegación Manual (Botones) */
+/* MENÚ DE NAVEGACIÓN MANUAL (botones) */
+
 .home .botones-laterales {
 	position: fixed;
 	display: flex;
@@ -522,7 +513,7 @@ body {
 /* ----------------------------- */
 
 
-/* Footer */
+/* FOOTER */
 
 .footer {
 	display: flex;
@@ -594,4 +585,188 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 /* ------------------------------ */
 
 
-/* Responsive */
+/* RESPONSIVE */
+
+/* Ordenadores (Pantallas grandes) */
+@media (max-width: 1351px) {
+	.home .contenedor .contenido {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-width: 100%;
+		width: 90%;
+		padding-left: 80px;
+		position: sticky;
+		z-index: 1;
+	}
+
+	.home .contenedor .contenido h1,
+	.home .contenedor .contenido p,
+	.home .contenedor .contenido a {
+		animation: none;
+	}
+
+	.home .contenedor .contenido h1 { 
+		font-size: 75px;
+		padding-bottom: 0;
+		white-space: nowrap; /* Evita el salto de línea */
+	}
+
+	.home .contenedor .contenido h1 br { /* Ocultamos el br */
+        display: none;
+    }
+
+	.home .contenedor .contenido p {
+		width: 100%;
+		max-width: 700px;
+		margin: 30px 0;
+	}
+
+	.home .contenedor .contenido a {
+		align-self: start;
+		margin: 0;
+	}
+}
+
+/* Ordenadores (Pantallas medianas) */
+@media (max-width: 1050px) {
+	.home .contenedor .contenido h1 { 
+		font-size: 65px;
+	}
+
+	.home .contenedor .contenido p {
+		font-size: 21px;
+	}
+}
+
+/* Ordenadores - Tablets (Pantallas medianas) */
+@media (max-width: 901px) {
+
+	.dropdown-search .menu-search {
+		width: 26rem;
+	}
+
+	.home .contenedor .contenido h1 { 
+		font-size: 55px;
+	}
+
+	.home .contenedor .contenido p {
+		font-size: 20px;
+	}
+
+	.home .contenedor .contenido p {
+		max-width: 600px;
+	}
+}
+
+/* Tablets (Pantallas medianas) */
+@media (max-width: 780px) {
+
+	.home .botones-laterales {
+		flex-direction: row;
+		top: 110px;
+	}
+
+	.home .botones-laterales .btn {
+		width: 22px;
+		height: 22px;
+	}
+
+	.dropdown-search .menu-search {
+		width: 26rem;
+	}
+
+	.nav .titulo,
+	.nav .btns-dropdown button {
+		font-size: 25px;
+	}
+
+	.nav .btns-dropdown {
+		gap: 40px; 
+	}
+
+	.home .contenedor .contenido {
+		padding-left: 0px;
+	}
+
+	.dropdown-user ul {
+		gap: 10px;
+	}
+
+	.dropdown-user li a {
+		font-size: 14px;
+	}
+
+	.home .contenedor .contenido h1 { 
+		font-size: 65px;
+	}
+
+	.home .contenedor .contenido h1 br {
+        display: block;
+    }
+
+	.home .contenedor .contenido p {
+		max-width: 600px;
+	}
+}
+
+/* Tablets - Móviles (Pantallas medianas - pequeñas) */
+@media (max-width: 630px) {
+
+	.login .form,
+	.registro .formulario {
+		width: 350px;
+	}
+
+	.login .form h1,
+	.registro .formulario h1{ 
+		font-size: 22px;
+	}
+
+	.login .form .caja button,
+	.registro .formulario .datos button {
+		font-size: 14px;
+	}
+
+
+	.home .contenedor .contenido h1 { 
+		font-size: 60px;
+	}
+
+	.home .contenedor .contenido p {
+		max-width: 500px;
+		font-size: 18px;
+	}
+
+	.footer {
+		flex-direction: column-reverse;
+	}
+
+	.footer .enlaces {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 530px) {
+
+	.nav .titulo,
+	.nav .btns-dropdown button {
+		font-size: 22px;
+	}
+
+	.nav .btns-dropdown {
+		gap: 25px; 
+	}
+
+	.dropdown-search .menu-search {
+		width: 24rem;
+	}
+
+	.home .contenedor .contenido h1 { 
+		font-size: 60px;
+	}
+
+	.footer ul li a {
+		font-size: 16px;
+	}
+}
