@@ -799,7 +799,7 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	}
 
 	.home .botones-laterales {
-		top: 85px;
+		top: 110px;
 		transform: translateX(0%);
 	}
 
@@ -817,7 +817,6 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 
 	.home .contenedor .contenido p {
 		max-width: 100%;
-		font-size: 14px;
 	}
 
 	.footer ul li a {
