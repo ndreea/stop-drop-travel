@@ -766,7 +766,7 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	}
 
 	.nav .btns-dropdown {
-		gap: 25px; 
+		gap: 30px; 
 	}
 
 	.dropdown-search .menu-search {
@@ -780,6 +780,10 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	.home .contenedor .contenido p {
 		font-size: 16px;
 	}
+
+	.home .contenedor .contenido a {
+		font-size: 12px;
+	}
 }
 
 /* Móviles (Pantallas pequeñas) */
@@ -788,10 +792,6 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 	.login .form,
 	.registro .formulario {
 		width: 320px;
-	}
-
-	.nav {
-		padding: 20px;
 	}
 
 	.home .botones-laterales {
