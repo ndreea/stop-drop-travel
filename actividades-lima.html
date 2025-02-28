@@ -1,39 +1,17 @@
-<!--
-
-DESCRIPCIÓN DE LA PÁGINA DE ACTIVIDADES LIMA
-Esta sección se concentran todas las actividades correspondientes del destino.
-Al obtener más información sobre cada uno de ellos, te ofrece una descripción más detallada.
-Contiene:
-
-1.Modales:
-    1.1 Login
-    1.2 Registro
-2.Navegador general
-    2.1 Dropdown buscar
-    2.2 Dropdown usuario
-3.Encabezado con título
-4.Contenido con las las actividades:
-    4.1 Sitios históricos de Lima
-    4.2 Visita Barranco
-    4.3 Escursión a Icas y Paracas
-5.Footer general
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lima, Perú - Actividades</title>
-    <link rel="icon" href="_img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="_img/favicon.png">
     <link rel="stylesheet" href="_css/estilos-actividades.css">
-    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
     <script defer src="_js/app-actividades.js"></script>
 </head>
 <body>
-
-    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
 
     <!--MODAL LOGIN-->
     <div class="login">
@@ -99,26 +77,34 @@ Contiene:
 
     <!--MENÚ DE NAVEGACIÓN GENERAL-->
     <header class="nav">
-        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
-        <!--Botones dropdown--> 
+        <a class="titulo" href="index.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+    
+        <!-- Contenedor de botones dropdown -->
         <div class="btns-dropdown">
-            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Buscar-->
-            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Search (buscar)-->
-                <div class="menu-search abrir-search">
-                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
-                    <div class="btn-search">
-                        <a href="#">Buscar</a>
+    
+            <!-- Botón de búsqueda -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuSearch()" aria-controls="MenuSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="dropdown-search" id="MenuSearch">
+                    <div class="menu-search abrir-search">
+                        <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                        <div class="btn-search">
+                            <a href="#">Buscar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
-            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario (iniciar sesión y crear cuenta)-->
-                <div class="menu-user abrir-user" >
-                    <ul>
-                        <!--Ponemos un id a los enlaces para llamar a las modales-->
-                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
-                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
-                    </ul>
+    
+            <!-- Botón de usuario -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuUser()" aria-controls="MenuUser"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-user" id="MenuUser">
+                    <div class="menu-user abrir-user">
+                        <ul>
+                            <li><a id="open-registro" href="#">Crear cuenta</a></li>
+                            <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,7 +115,7 @@ Contiene:
 
 
     <!--BOTÓN BACK HOME: Este botón esta fuera del encabezado de la página-->
-    <a class="btn-back" href="destinos.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <a class="btn-back" href="destinos.html" aria-label="Volver a la página de destinos"><i class="fa-solid fa-arrow-left"></i></a>
 
     
     <!--ENCABEZADO LIMA-->
@@ -145,45 +131,45 @@ Contiene:
     <section class="actividades">
         <div class="contenedor">
 
-            <!--Actividad Sitios Históricos-->
+            <!--Sitios Históricos de Lima-->
             <div class="actividad">
-                <img src="_img/historia-lima.jpg" alt="">
+                <img src="_img/historia-lima.jpg" alt="Panorámica de los sitios históricos de Lima" loading="lazy">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Sitios históricos de Lima</h5>
+                    <h3>Sitios históricos de Lima</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Parque Kennedy</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 20€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Parque Kennedy</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 20€ / persona</p>
                     </div>
                     <p>En este tour por Lima, descubrirás sus lugares más representativos e históricos como La Plaza de Armas, el Monasterio de San Francisco y sus catacumbas y mucho más.</p>
-                    <a href="reserva-lima-historia.html">más información</a>
+                    <a href="reserva-lima-historia.html" title="Más información sobre los Sitios Históricos de Lima">más información</a>
                 </div>
             </div>
 
-             <!--Actividad Barranco-->
+             <!--Barranco-->
              <div class="actividad">
-                <img src="_img/barranco.jpg" alt="">
+                <img src="_img/barranco.jpg" alt="Casas coloridas de Barranco" loading="lazy">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Visita a pie por Barranco</h5>
+                    <h3>Visita a pie por Barranco</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Parque Municipal de Barranco</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 15€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Parque Municipal de Barranco</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 15€ / persona</p>
                     </div>
                     <p>Disfruta de esta visita guiada por las calles de Barranco, el barrio más bohemio de Lima. Te enamorarás de su calles y casas llenas de color.</p>
-                    <a href="reserva-lima-barranco.html">más información</a>
+                    <a href="reserva-lima-barranco.html" title="Más información sobre la Visita a pie por Barranco">más información</a>
                 </div>
             </div>
 
-             <!--Actividad Ica + Paracas-->
+             <!--Ica + Paracas-->
              <div class="actividad">
-                <img src="_img/paracas.jpg" alt="">
+                <img src="_img/paracas.jpg" alt="Dunas de Paracas">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Excursión a Ica y Paracas</h5>
+                    <h3>Excursión a Ica y Paracas</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Larcomar</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 53€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Larcomar</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 53€ / persona</p>
                     </div>
                     <p>En esta excursión durante todo el día a Ica y Paracas, disfrutarás del suroeste de Perú que te cautivará por su extraordinaria belleza natural.</p>
-                    <a href="reserva-lima-paracas.html">más información</a>
+                    <a href="reserva-lima-paracas.html" title="Más información sobre la Excursión a Ica y Paracas">más información</a>
                 </div>
             </div>
         </div>
