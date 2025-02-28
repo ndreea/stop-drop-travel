@@ -1,19 +1,5 @@
 
-/*
-
-Este JS lo contienen:
-- Página de actividades general
-- Página de Contacto
-
-*/
-
-
-/* -------------------------------------- */
-
-
 //HEADER DROPDOWNS
-
-/* En el header general de la página, están los dropdown de buscar y el otro del usuario (iniciar sesión y crear cuenta) */
 
 //Dropdown Usuario (Iniciar sesión y crear cuenta)
 let MenuUser = document.getElementById("MenuUser"); //Creamos una variable para el botón
