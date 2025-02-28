@@ -432,15 +432,16 @@ body::before {
 }
 
 .home .contenedor .contenido {
-	width: 100%;
-	max-width: 1200px;
+	width: 1200px;
     color: #fff;
     display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: space-between;
-    z-index: 1;
+    z-index: 2;
 	padding: 0 40px;
+	min-height: 200px; /* Evita que colapse */
+	gap: 5px;
 }
 
 /* Título */
@@ -450,7 +451,7 @@ body::before {
 	line-height: 1;
 	margin-right: 40px;
 	animation: mov-izq-dcha 2s;
-	padding-bottom: 70px;
+	padding-bottom: 80px;
 }
 
  /* Contenido del texto */
@@ -462,6 +463,7 @@ body::before {
 	line-height: 1.5;
 	text-align: justify;
 	animation: mov-dcha-izq 2s;
+	padding-top: 20px;
 }
 
 /* Botón */
