@@ -1,39 +1,17 @@
-<!--
-
-DESCRIPCIÓN DE LA PÁGINA DE ACTIVIDADES MILÁN
-Esta sección se concentran todas las actividades correspondientes del destino.
-Al obtener más información sobre cada uno de ellos, te ofrece una descripción más detallada.
-
-Contiene:
-1.Modales:
-    1.1 Login
-    1.2 Registro
-2.Navegador general
-    2.1 Dropdown buscar
-    2.2 Dropdown usuario
-3.Encabezado con título
-4.Contenido con las las actividades
-    4.1 Empire State
-    4.2 Visita por Brooklyn
-    4.3 Broadway
-5.Footer general
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nueva York, Nueva York - Actividades</title>
-    <link rel="icon" href="_img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="_img/favicon.png">
     <link rel="stylesheet" href="_css/estilos-actividades.css">
-    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
     <script defer src="_js/app-actividades.js"></script>
 </head>
 <body>
-
-    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
 
     <!--MODAL LOGIN-->
     <div class="login">
@@ -98,26 +76,34 @@ Contiene:
 
     <!--MENÚ DE NAVEGACIÓN GENERAL-->
     <header class="nav">
-        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
-        <!--Botones dropdown--> 
+        <a class="titulo" href="index.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+    
+        <!-- Contenedor de botones dropdown -->
         <div class="btns-dropdown">
-            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Search-->
-            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Search (buscar)-->
-                <div class="menu-search abrir-search">
-                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
-                    <div class="btn-search">
-                        <a href="#">Buscar</a>
+    
+            <!-- Botón de búsqueda -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuSearch()" aria-controls="MenuSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="dropdown-search" id="MenuSearch">
+                    <div class="menu-search abrir-search">
+                        <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                        <div class="btn-search">
+                            <a href="#">Buscar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
-            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario (inicar sesión y crear cuenta)-->
-                <div class="menu-user abrir-user" >
-                    <ul>
-                        <!--Ponemos un id a los enlaces para llamar a las modales-->
-                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
-                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
-                    </ul>
+    
+            <!-- Botón de usuario -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuUser()" aria-controls="MenuUser"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-user" id="MenuUser">
+                    <div class="menu-user abrir-user">
+                        <ul>
+                            <li><a id="open-registro" href="#">Crear cuenta</a></li>
+                            <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,7 +114,7 @@ Contiene:
     
 
     <!--BOTÓN BACK HOME: Este botón esta fuera del encabezado de la página-->
-    <a class="btn-back" href="destinos.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <a class="btn-back" href="destinos.html" aria-label="Volver a la página de destinos"><i class="fa-solid fa-arrow-left"></i></a>
 
     
     <!--ENCABEZADO NUEVA YORK-->
@@ -144,45 +130,45 @@ Contiene:
     <section class="actividades">
         <div class="contenedor">
 
-            <!--Actividad Empire State-->
+            <!--Empire State-->
             <div class="actividad">
-                <img src="_img/empire-state.jpg" alt="">
+                <img src="_img/empire-state.jpg" alt="Skyline de Nueva York desde el Empire State Building" loading="lazy">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Vistas desde el Empire State</h5>
+                    <h3>Vistas desde el Empire State</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Empire State Building</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 45€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Empire State Building</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 45€ / persona</p>
                     </div>
                     <p>Con esta entrada podrás ascender hasta el mirador del Empire State, uno de los edificios más famosos del mundo, para disfrutar de unas vistas únicas de la Gran Manzana.</p>
-                    <a href="reserva-ny-empire.html">más información</a>
+                    <a href="reserva-ny-empire.html" title="Más información sobre las vistas desde el Empire State">más información</a>
                 </div>
             </div>
 
-             <!--Actividad Visita a Brooklyn-->
+             <!--Visita a Brooklyn-->
              <div class="actividad">
-                <img src="_img/brooklyn.jpg" alt="">
+                <img src="_img/brooklyn.jpg" alt="Vistas de Brooklyn en DUMBO" loading="lazy">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Visita a pie por Brooklyn</h5>
+                    <h3>Visita a pie por Brooklyn</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> DUMBO</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 20€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> DUMBO</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 20€ / persona</p>
                     </div>
                     <p>Disfruta de esta visita guiada por DUMBO, uno de los espacios mas trendy de Nueva York. Admirarás su arquitectura antigua junto con los espacios de diseño y lujo más modernos del barrio.</p>
-                    <a href="reserva-ny-brooklyn.html">más información</a>
+                    <a href="reserva-ny-brooklyn.html" title="Más información sobre la visita guiada por DUMBO">más información</a>
                 </div>
             </div>
 
-             <!--Actividad Historia de Broadway-->
+             <!--Historia de Broadway-->
              <div class="actividad">
-                <img src="_img/broadway.jpg" alt="">
+                <img src="_img/broadway.jpg" alt="Calle principal de Broadway y su historia" loading="lazy">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>La historia de Broadway</h5>
+                    <h3>La historia de Broadway</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Times Square</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 34€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Times Square</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 34€ / persona</p>
                     </div>
                     <p>En esta visita guiada por la historia de Broadway, pasearás por sus atrevidas calles llenas de musicales y espectáculos como un artista más.</p>
-                    <a href="reserva-ny-broadway.html">más información</a>
+                    <a href="reserva-ny-broadway.html" title="Más información sobre la historia de broadway">más información</a>
                 </div>
             </div>
         </div>
@@ -194,19 +180,23 @@ Contiene:
 
      <!--FOOTER GENERAL-->
      <footer class="footer">
-        <ul class="redes"> <!--Iconos-->
-            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-        </ul>
-
-        <ul class="enlaces"> <!--Enlaces-->
-            <li><a href="actividades-general.html">Actividades</a></li>
-            <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer">Vuelos</a></li>
-            <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer">Hoteles</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+        <nav aria-label="Redes sociales">
+            <ul class="redes">
+                <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+    
+        <nav aria-label="Enlaces importantes">
+            <ul class="enlaces">
+                <li><a href="actividades-general.html">Actividades</a></li>
+                <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer" title="Buscar vuelos en Google">Vuelos</a></li>
+                <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer" title="Reservar hoteles en Booking">Hoteles</a></li>
+                <li><a href="#" aria-disabled="true">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </footer>
 </body>
 </html>

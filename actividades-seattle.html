@@ -1,39 +1,17 @@
-<!--
-
-DESCRIPCIÓN DE LA PÁGINA DE ACTIVIDADES SEATTLE
-Esta sección se concentran todas las actividades correspondientes del destino.
-Al obtener más información sobre cada uno de ellos, te ofrece una descripción más detallada.
-Contiene:
-
-1.Modales:
-    1.1 Login
-    1.2 Registro
-2.Navegador general
-    2.1 Dropdown buscar
-    2.2 Dropdown usuario
-3.Encabezado con título
-4.Contenido con las las actividades:
-    4.1 Mercado Piket Place
-    4.2 Degustación café
-    4.3 Space Needle
-5.Footer general
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seattle, Whashington - Actividades</title>
-    <link rel="icon" href="_img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="_img/favicon.png">
     <link rel="stylesheet" href="_css/estilos-actividades.css">
-    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
     <script defer src="_js/app-actividades.js"></script>
 </head>
 <body>
-
-    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
 
     <!--MODAL LOGIN-->
     <div class="login">
@@ -99,42 +77,49 @@ Contiene:
 
     <!--MENÚ DE NAVEGACIÓN GENERAL-->
     <header class="nav">
-        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
-        <!--Botones dropdown--> 
+        <a class="titulo" href="index.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+    
+        <!-- Contenedor de botones dropdown -->
         <div class="btns-dropdown">
-            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Search-->
-            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Search (buscar)-->
-                <div class="menu-search abrir-search">
-                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
-                    <div class="btn-search">
-                        <a href="#">Buscar</a>
+    
+            <!-- Botón de búsqueda -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuSearch()" aria-controls="MenuSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="dropdown-search" id="MenuSearch">
+                    <div class="menu-search abrir-search">
+                        <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                        <div class="btn-search">
+                            <a href="#">Buscar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
-            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario (iniciar sesión y crear cuenta)-->
-                <div class="menu-user abrir-user" >
-                    <ul>
-                        <!--Ponemos un id a los enlaces para llamar a las modales-->
-                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
-                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
-                    </ul>
+    
+            <!-- Botón de usuario -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuUser()" aria-controls="MenuUser"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-user" id="MenuUser">
+                    <div class="menu-user abrir-user">
+                        <ul>
+                            <li><a id="open-registro" href="#">Crear cuenta</a></li>
+                            <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-
     <!---->
 
 
     <!--BOTÓN BACK HOME: Este botón esta fuera del encabezado de la página-->
-    <a class="btn-back" href="destinos.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <a class="btn-back" href="destinos.html" aria-label="Volver a la página de destinos"><i class="fa-solid fa-arrow-left"></i></a>
 
 
     <!--ENCABEZADO SEATTLE-->
     <section class="encabezado">
-        <h1>Actividades en<br>Seattle, Whashington</h1>
+        <h1>Actividades en<br>Seattle, Washington</h1>
     </section>
 
 
@@ -145,45 +130,45 @@ Contiene:
     <section class="actividades">
         <div class="contenedor">
 
-            <!--Actividad Mercado-->
+            <!--Mercado-->
             <div class="actividad">
-                <img src="_img/mercado.jpg" alt="">
+                <img src="_img/mercado.jpg" alt="Diversa variedad de frutas y otros productos en el Pike Place Market">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Visita por Pike Place Market</h5>
+                    <h3>Visita por Pike Place Market</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Pike Place Market</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 55€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Pike Place Market</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 55€ / persona</p>
                     </div>
                     <p>Embárcate en esta visita guiada de degustación culinaria por el Mercado de Pike Place. Detente en los puestos de los vendedores artesanales y aprende sobre los productores locales.</p>
-                    <a href="reserva-seattle-mercado.html">más información</a>
+                    <a href="reserva-seattle-mercado.html" title="Más información sobre la visita por Pike Place Market">más información</a>
                 </div>
             </div>
 
-             <!--Actividad Desgustación Café-->
+             <!--Desgustación Café-->
              <div class="actividad">
-                <img src="_img/cafe.jpg" alt="">
+                <img src="_img/cafe.jpg" alt="Disfruta de un café en Starbucks Reserve Rosey">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Saborea el mejor café de Seattle</h5>
+                    <h3>Saborea el mejor café de Seattle</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Starbucks Reserve Rosery</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 25€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Starbucks Reserve Rosery</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 25€ / persona</p>
                     </div>
                     <p>Disfruta del mejor café de todo Seattle en Starbucks Reserve Rosery, conocido por sus exquisitos cafés especiales y sus deliciosos aperitivos.</p>
-                    <a href="reserva-seattle-cafe.html">más información</a>
+                    <a href="reserva-seattle-cafe.html" title="Más información sobre el Mejor Café de Seattle">más información</a>
                 </div>
             </div>
 
-             <!--Actividad Space Needle-->
+             <!--Space Needle-->
              <div class="actividad">
-                <img src="_img/needle.jpg" alt="">
+                <img src="_img/needle.jpg" alt="Impresionantes vistas de todo Seattle desde el Space Needle">
                 <div class="descripcion"> <!--Descripción de la actividad-->
                     <h5>Vistas desde el Space Needle</h5>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Space Needle</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 45€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Space Needle</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 45€ / persona</p>
                     </div>
                     <p>Con esta entrada, viajará a la parte superior del famoso Space Needle para obtener vistas inigualables del centro de Seattle, Mt. Rainier, y Puget Sound a 520 pies de altura.</p>
-                    <a href="reserva-seattle-space.html">más información</a>
+                    <a href="reserva-seattle-space.html" title="Más información sobre las Vistas desde el Space Needle">más información</a>
                 </div>
             </div>
         </div>
@@ -195,19 +180,24 @@ Contiene:
 
      <!--FOOTER GENERAL-->
      <footer class="footer">
-        <ul class="redes"> <!--Iconos-->
-            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-        </ul>
-
-        <ul class="enlaces"> <!--Enlaces-->
-            <li><a href="actividades-general.html">Actividades</a></li>
-            <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer">Vuelos</a></li>
-            <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer">Hoteles</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+        <nav aria-label="Redes sociales">
+            <ul class="redes">
+                <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+    
+        <nav aria-label="Enlaces importantes">
+            <ul class="enlaces">
+                <li><a href="actividades-general.html">Actividades</a></li>
+                <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer" title="Buscar vuelos en Google">Vuelos</a></li>
+                <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer" title="Reservar hoteles en Booking">Hoteles</a></li>
+                <li><a href="#" aria-disabled="true">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </footer>
+    
 </body>
 </html>
