@@ -250,7 +250,7 @@ body {
     justify-content: space-between;
     align-items: center;
 	position: relative;
-    padding: 20px 30px;
+    padding: 25px 30px;
 	background-color: #fff;
 	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
 }
@@ -522,7 +522,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	padding: 20px 30px;
+	padding: 25px 30px;
 	bottom: 0;
 	background-color: #ffffff;
 }

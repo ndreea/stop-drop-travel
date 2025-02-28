@@ -13,8 +13,6 @@
 </head>
 <body>
 
-    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
-
     <!--MODAL LOGIN-->
     <div class="login">
         <div class="form">
@@ -133,45 +131,45 @@
     <section class="actividades">
         <div class="contenedor">
 
-            <!--Actividad Comuna 13-->
+            <!--Comuna 13-->
             <div class="actividad">
-                <img src="_img/comuna.jpg" alt="">
+                <img src="_img/comuna.jpg" alt="Graffitis coloridos en la Comuna 13">
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Visita guiada por la Comuna 13</h5>
+                    <h3>Visita guiada por la Comuna 13</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Estación de metro San Javier</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 10€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Estación de metro San Javier</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 10€ / persona</p>
                     </div>
                     <p>Explora el distrito de Comuna 13, aprende sobre su turbulenta historia mientras contempla asombrosas obras de arte callejero, y conoce a los vecinos de la comunidad.</p>
-                    <a href="reserva-medellin-comuna.html">más información</a>
+                    <a href="reserva-medellin-comuna.html" title="Más información sobre la visita a la Comuna 13">más información</a>
                 </div>
             </div>
 
-             <!--Actividad Cocina Colombiana-->
+             <!--Cocina Colombiana-->
              <div class="actividad">
-                <img src="_img/cocina-colombia.jpg" alt=""> 
+                <img src="_img/cocina-colombia.jpg" alt="Mesa con ingredientes tradiciones colombianos"> 
                 <div class="descripcion"> <!--Descripción de la actividad-->
-                    <h5>Clase de cocina colombiana</h5>
+                    <h3>Clase de cocina colombiana</h3>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> El Poblado</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 25€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> El Poblado</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 25€ / persona</p>
                     </div>
                     <p>Sumérjete en el delicioso mundo de la comida colombiana. Descubre los secretos de los platos tradicionales mientras aprendes a cocinar con autenticidad y sabor.</p>
-                    <a href="reserva-medellin-cocina.html">más información</a>
+                    <a href="reserva-medellin-cocina.html" title="Más información sobre la clase de cocina colombiana">más información</a>
                 </div>
             </div>
 
-             <!--Actividad Guatapé y Piedra del Peñol-->
+             <!--Guatapé y Piedra del Peñol-->
              <div class="actividad">
-                <img src="_img/guatape.jpg" alt="">
+                <img src="_img/guatape.jpg" alt="Vista panorámica del Embalse del Peñol en Guatapé"">
                 <div class="descripcion"> <!--Descripción de la actividad-->
                     <h5>Excursión a Guatapé</h5>
                     <div class="datos"> <!--Ubicación y precio por persona-->
-                        <p><i class="fa-solid fa-location-dot"></i> Parque Lleras</p>
-                        <p><i class="fa-solid fa-money-bill"></i> 57€ / persona</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Parque Lleras</p>
+                        <p><i class="fa-solid fa-money-bill" aria-hidden="true"></i> 57€ / persona</p>
                     </div>
                     <p>En este viaje, conocerá la arquitectura colonial de esta bella localidad y disfrutará de las vistas del famoso Embalse del Peñol.</p>
-                    <a href="reserva-medellin-guatape.html">más información</a>
+                    <a href="reserva-medellin-guatape.html" title="Más información sobre la excursión a Guatapé">más información</a>
                 </div>
             </div>
         </div>
@@ -181,21 +179,26 @@
     <!---->
 
 
-    <!--FOOTER GENERAL-->
+    <!--FOOTER-->
     <footer class="footer">
-        <ul class="redes"> <!--Iconos-->
-            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-        </ul>
-
-        <ul class="enlaces"> <!--Enlaces-->
-            <li><a href="actividades-general.html">Actividades</a></li>
-            <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer">Vuelos</a></li>
-            <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer">Hoteles</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+        <nav aria-label="Redes sociales">
+            <ul class="redes">
+                <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+    
+        <nav aria-label="Enlaces importantes">
+            <ul class="enlaces">
+                <li><a href="actividades-general.html">Actividades</a></li>
+                <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer" title="Buscar vuelos en Google">Vuelos</a></li>
+                <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer" title="Reservar hoteles en Booking">Hoteles</a></li>
+                <li><a href="#" aria-disabled="true">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </footer>
+    
 </body>
 </html>

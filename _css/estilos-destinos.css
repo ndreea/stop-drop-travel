@@ -250,7 +250,7 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 25px 30px;
     z-index: 100;
 }
 
@@ -531,7 +531,7 @@ body::before {
 	align-items: center;
     text-align: center;
 	width: 100%;
-	padding: 20px 30px;
+	padding: 25px 30px;
 	position: fixed;
 	bottom: 0;
 }
