@@ -1,34 +1,14 @@
-<!--
-
-DESCRIPCIÓN DE LA PÁGINA DE ACTIVIDADES MEDELLÍN
-Esta sección se concentran todas las actividades correspondientes del destino.
-Al obtener más información sobre cada uno de ellos, te ofrece una descripción más detallada.
-Contiene:
-
-1.Modales:
-    1.1 Login
-    1.2 Registro
-2.Navegador general
-    2.1 Dropdown buscar
-    2.2 Dropdown usuario
-3.Encabezado con título
-4.Contenido con las las actividades:
-    4.1 Comuna 13
-    4.2 Clase de cocina
-    4.3 Guatapé y Piedra del Peñol
-5.Footer general
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Medellin, Colombia - Actividades</title>
-    <link rel="icon" href="_img/favicon.png">
-    <link rel="stylesheet" href="_css/estilos-actividades.css">
-    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="_img/favicon.png">
+    <link rel="stylesheet" href="_css/estilos-actividades.css" media="all">
+    <script src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
     <script defer src="_js/app-actividades.js"></script>
 </head>
 <body>
@@ -99,30 +79,38 @@ Contiene:
 
      <!--MENÚ DE NAVEGACIÓN GENERAL-->
      <header class="nav">
-        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
-        <!--Botones dropdown--> 
+        <a class="titulo" href="index.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+    
+        <!-- Contenedor de botones dropdown -->
         <div class="btns-dropdown">
-            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Search-->
-            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Search (buscar)-->
-                <div class="menu-search abrir-search">
-                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
-                    <div class="btn-search">
-                        <a href="#">Buscar</a>
+    
+            <!-- Botón de búsqueda -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuSearch()" aria-controls="MenuSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="dropdown-search" id="MenuSearch">
+                    <div class="menu-search abrir-search">
+                        <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                        <div class="btn-search">
+                            <a href="#">Buscar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
-            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario (inicar sesión y crear cuenta)-->
-                <div class="menu-user abrir-user" >
-                    <ul>
-                        <!--Ponemos un id a los enlaces para llamar a las modales-->
-                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
-                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
-                    </ul>
+    
+            <!-- Botón de usuario -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuUser()" aria-controls="MenuUser"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-user" id="MenuUser">
+                    <div class="menu-user abrir-user">
+                        <ul>
+                            <li><a id="open-registro" href="#">Crear cuenta</a></li>
+                            <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </header> 
+    </header>
 
 
     <!---->

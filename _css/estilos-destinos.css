@@ -250,13 +250,13 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 20px 30px;
     z-index: 100;
 }
 
 /* Título */
 .nav .titulo {
-    font-size: 30px;
+    font-size: 28px;
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
@@ -275,7 +275,7 @@ body::before {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 28px;
     color: #ffffff;
     padding: 5px;
     display: flex;
@@ -531,7 +531,7 @@ body::before {
 	align-items: center;
     text-align: center;
 	width: 100%;
-	padding: 30px;
+	padding: 20px 30px;
 	position: fixed;
 	bottom: 0;
 }
