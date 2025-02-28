@@ -32,7 +32,6 @@ body::before {
 /* ESTILOS MODAL */
 
 /* Modal Login */
-
 .login {
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 1;
@@ -137,6 +136,7 @@ body::before {
 	text-decoration: underline;
 }
 
+/*----------------------*/
 
 /* Modal Registro */
 .registro {
@@ -451,7 +451,6 @@ body::before {
 	margin-right: 40px;
 	animation: mov-izq-dcha 2s;
 	padding-bottom: 70px;
-
 }
 
  /* Contenido del texto */

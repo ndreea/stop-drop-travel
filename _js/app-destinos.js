@@ -22,7 +22,6 @@ function toggleMenuSearch(){ //Aplicamos la función toggle que al hacer click, 
 
 //MENÚ DE NAVEGACIÓN LATERAL BOTONES (NAVEGACIÓN MANUAL)
 
-
 //Creamos variables para todos los contenedores y todos los botones
 var contenedores = document.querySelectorAll(".contenedor");
 var btns = document.querySelectorAll(".btn");
@@ -89,8 +88,3 @@ document.querySelector(".registro #close-registro").addEventListener("click", fu
     //El caso de que se presione el botón, la modal se cierre
     document.querySelector(".registro").classList.remove("show");
 });
-
-
-
-
-
