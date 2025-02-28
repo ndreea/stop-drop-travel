@@ -73,7 +73,7 @@ body::before {
 }
 
 /* Título */
-.login .form h1 { 
+.login .form h2 { 
 	text-align: center;
 	color: #1d1d1b;
 	margin: 10px 0 20px;
@@ -179,7 +179,7 @@ body::before {
 }
 
 /* Título */
-.registro .formulario h1 {
+.registro .formulario h2 {
 	text-align: center;
 	color: #1d1d1b;
 	margin: 10px 0 20px;
@@ -407,7 +407,7 @@ body::before {
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-	height: 100dvh;
+	height: 100vh;
 	clip-path: circle(0% at 0 50%);
     background-size: cover;
     background-position: center;
@@ -432,7 +432,8 @@ body::before {
 }
 
 .home .contenedor .contenido {
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
     color: #fff;
     display: flex;
 	flex-wrap: wrap;
@@ -450,14 +451,16 @@ body::before {
 	margin-right: 40px;
 	animation: mov-izq-dcha 2s;
 	padding-bottom: 70px;
+
 }
 
  /* Contenido del texto */
 .home .contenedor .contenido p {
-    width: 580px;
+    width: 100%;
+	max-width: 580px;
     font-size: 22px;
 	font-weight: 600;
-	line-height: 1.6;
+	line-height: 1.5;
 	text-align: justify;
 	animation: mov-dcha-izq 2s;
 }
@@ -728,8 +731,8 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 		width: 350px;
 	}
 
-	.login .form h1,
-	.registro .formulario h1{ 
+	.login .form h2,
+	.registro .formulario h2{ 
 		font-size: 22px;
 	}
 
