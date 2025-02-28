@@ -762,7 +762,7 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 
 	.nav .titulo,
 	.nav .btns-dropdown button {
-		font-size: 22px;
+		font-size: 24px;
 	}
 
 	.nav .btns-dropdown {
@@ -805,6 +805,15 @@ Cada vez que el usuario entra a la página, se activa la animación en el texto,
 
 	.home .contenedor .contenido {
 		gap: 10px; /* Ajustar el espacio entre los elementos */
+	}
+
+	.nav .titulo,
+	.nav .btns-dropdown button {
+		font-size: 22px;
+	}
+
+	.nav .btns-dropdown {
+		gap: 20px; 
 	}
 
 	.home .contenedor .contenido h1 { 

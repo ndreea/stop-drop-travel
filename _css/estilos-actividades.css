@@ -470,7 +470,7 @@ body {
 	margin-left: 40px;
 }
 
-.actividades .contenedor .actividad .descripcion h5 {
+.actividades .contenedor .actividad .descripcion h3 {
 	align-self: center;
 	color: #1d1d1b;
 	font-size: 24px;
@@ -560,22 +560,11 @@ body {
 /* ------------------------------ */
 
 
-/*
-
-FORMATO RESPONSIVE
-Se adecuarán los tamaños para todo tipo de pantallas.
-Ordenadores, tablet y móviles.
-
-*/
+/* RESPONSIVE */
 
 
-/* RESPONSIVE ORDENADOR */
-
+/* Ordenador (Pantallas grandes) */
 @media (max-width: 1250px) {
-    
-    /* Reducimos un poco el tamaño del contenedor y añadimos
-	un padding a los laterales, arriba y abajo para ampliar
-	la caja del contenido */
 
     .actividades .contenedor{
         width: 90%;
@@ -587,25 +576,15 @@ Ordenadores, tablet y móviles.
     }
 }
 
-
-
-/* ------------------------------ */
-
-
-
-/* RESPONSIVE ORDENADOR - TABLET */
+/* Ordenador - Tablet (Pantallas pequeñas o medianas) */
 @media (max-width: 975px) {
-
-    /* Ponemos el contenido en modo vertical, la imagen
-    hacemos que ocupe el 100% del contenedor y añadimos
-    padding nuevo al contenido de la descripción */
 
     .actividades .contenedor .actividad{
         display: block;
         padding: 0;
     }
 
-    .actividades .contenedor .actividad img{ /* Imagen */
+    .actividades .contenedor .actividad img{
         width: 100%;
         height: 180px;
     }
@@ -616,44 +595,29 @@ Ordenadores, tablet y móviles.
     }
 }
 
+/*---------------------------*/
 
-
-/* ------------------------------ */
-
-
-
-/* RESPONSIVE TABLET */
+/* Tablet (Pantallas Medianas) */
 @media (max-width: 601px) {
-
-    /* Reducimos el tamaño del logo junto
-    con los iconos de lupa y usuario */
 
     .nav .titulo{
         font-size: 24px;
     }
+
+	.nav .btns-dropdown {
+		gap: 40px;
+	}
     
-    .nav .btns-dropdown .fa-magnifying-glass,
-    .nav .btns-dropdown .fa-user{
+    .nav .btns-d.nav .btns-dropdown button{
         font-size: 24px;
     }
-    
-    .nav .btns-dropdown .fa-magnifying-glass{
-        margin-right: 50px;
+
+    .dropdown-search .menu-search{
+        width: 22rem;
+        padding: 0.5rem;
     }
 
-    /* ------------------------------ */
-
-    /* También reducimos el tamaño del contenido
-    de search junto con su tipografía y adecuamos
-    el botón */
-
-    .nav .btns-dropdown .dropdown-search .menu-search{
-        width: 24rem;
-        padding: 1.3rem;
-        right: 7rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search input{
+    .dropdown-search input{
         font-size: 14px;
         width: 18rem;
         border: none;
@@ -661,45 +625,25 @@ Ordenadores, tablet y móviles.
         color: #1d1d1b;
     }
 
-    .nav .btns-dropdown .dropdown-search .menu-search .btn-search{
+    .dropdown-search .btn-search{
         right: 0.8rem;
         top: 0.6rem;
         padding: 0.6rem 1.5rem;
 
     }
 
-    /* ------------------------------ */
-
-    /* La cajita del menú de usuario la
-    reducimos un poco de tamaño */
-
-    .nav .btns-dropdown .dropdown-user .menu-user{
+    .dropdown-user .menu-user {
         width: 11rem;
         right: 2rem;
     }
-
-    /* ------------------------------ */
-
-    /* Reducimos el alto del encabezado */
 
     .encabezado{
         height: 300px;
     }
 
-    /* ------------------------------ */
-
-    /* Reducimos la distancia entre el contenido
-    y el encabezado */
-
     .actividades{
         padding: 80px 0;
     }
-
-    /* ------------------------------ */
-
-     /* El footer lo ponemos en modo columna invertida
-     para que los enlaces queden arriba y las redes abajo.
-     También ampliamos la distancia entre ellos */
 
     .footer{
         display: flex;
@@ -714,24 +658,16 @@ Ordenadores, tablet y móviles.
     }
 }
 
+/*---------------------------*/
 
-
-/* ------------------------------ */
-
-
-
-/* RESPONSIVE TABLET-MÓVIL */
+/* Dispositivos Móviles (Pantallas pequeñas) */
 @media (max-width: 521px) {
-
-    /* Reducimos el tamaño del contenedor de 
-    la modal del login junto con su título y
-    el botón */
 
     .login .form{ 
         width: 330px;
     }
 
-    .login .formulario h2{
+    .login .formulario h3{
         font-size: 20px;
     }
 
@@ -740,17 +676,11 @@ Ordenadores, tablet y móviles.
         font-size: 14px;
     }
 
-    /* ------------------------------ */
-
-     /* Reducimos el tamaño del contenedor de 
-    la modal de registro junto con su título y
-    el botón */
-
     .registro .formulario{
         width: 330px;
     }
 
-    .registro .formulario h2{
+    .registro .formulario h3{
         font-size: 20px;
     }
 
@@ -759,68 +689,38 @@ Ordenadores, tablet y móviles.
         font-size: 14px;
     }
 
-    /* ------------------------------ */
-
-    /* Quitamos el sombreado del navegador para fusionarlo
-    con el encabezado y reducimos un poco el logo y los
-    iconos del header */
-
     .nav{
         background-color: none;
         box-shadow: none;
     }
 
-    .nav .titulo{
-        font-size: 22px;
-    }
-    
-    .nav .btns-dropdown .fa-magnifying-glass,
-    .nav .btns-dropdown .fa-user{
-        font-size: 22px;
-    }
-    
-    .nav .btns-dropdown .fa-magnifying-glass{
-        margin-right: 40px;
-    }
+	.nav .titulo,
+	.nav .btns-dropdown button {
+		font-size: 24px;
+	}
 
-    /* ------------------------------ */
+	.nav .btns-dropdown {
+		gap: 30px; 
+	}
 
-    /* Reducimos un poco el tamaño del dropdown
-    de search*/
-
-    .nav .btns-dropdown .dropdown-search .menu-search{
-        width: 23rem;
-        padding: 1.3rem;
-        right: 5rem;
-        z-index: 1;
+	.dropdown-search .menu-search{
+        z-index: 100;
+		padding: 0.3rem;
     }
 
-    /* ------------------------------ */
-
-     /* Reducimos un poco el tamaño del dropdown
-    de usuario junto con la tipografía */
-
-    .nav .btns-dropdown .dropdown-user .menu-user{
+	.dropdown-user .menu-user{
         width: 10rem;
         right: 2rem;
     }
 
-    .nav .btns-dropdown .dropdown-user .menu-user ul li a{
+	.dropdown-user .menu-user ul li a{
         font-size: 14px;
     }
 
-    /* ------------------------------ */
-
-    /* Subimos un poco el botón */
-
     .btn-back{
         margin-top: 15px;
+		z-index: 0;
     }
-
-    /* ------------------------------ */
-
-    /* Reducimos el alto del encabezado y  el texto
-    lo alinamos todo a la izquierda */
 
     .encabezado{
         display: flex;
@@ -835,12 +735,7 @@ Ordenadores, tablet y móviles.
         font-size: 38px;
     }
 
-    /* ------------------------------ */
-
-    /* La localización y el precio, lo ponemos uno debajo del 
-    otro y reducimos su distancia entre ellos y el texto */
-
-    .actividades .contenedor .actividad .descripcion .datos{ /* Lugar y precio */
+    .actividades .contenedor .actividad .descripcion .datos{
         display: block;
     }
     
@@ -859,79 +754,42 @@ Ordenadores, tablet y móviles.
 }
 
 
-
-/* ------------------------------ */
-
-
-
-/* RESPONSIVE MÓVIL */
 @media (max-width: 461px) {
 
-     /* Reducimos el tamaño del logo junto
-     con los iconos del header principal */
-
-    .nav .titulo{
-        font-size: 20px;
-    }
+    .nav .titulo,
+	.nav .btns-dropdown button {
+		font-size: 22px;
+	}
     
-    .nav .btns-dropdown .fa-magnifying-glass,
-    .nav .btns-dropdown .fa-user{
-        font-size: 20px;
+	.nav .btns-dropdown {
+		gap: 20px; 
+	}
+
+	.dropdown-search {
+		z-index: 100;
+	}
+
+	.dropdown-search input{
+        font-size: 14px;
+        width: 18rem;
     }
-    
-    .nav .btns-dropdown .fa-magnifying-glass{
-        margin-right: 30px;
-    }
-
-    /* ------------------------------ */
-
-    /* Reducimos el tamaño del input del menu
-    search */
-
-    .nav .btns-dropdown .dropdown-search .menu-search{
-        right: 5rem;
-        width: 21rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search input{
-        font-size: 12px;
-        width: 16rem;
-    }
-
-    /* ------------------------------ */
-
-    /* Reducimos la distancia entre el contenido y el encabezado
-     y el tamalo del título */
 
     .actividades{
         padding: 60px 0;
     }
 
-    .actividades .contenedor .actividad .descripcion h5{
+    .actividades .contenedor .actividad .descripcion h3{
         font-size: 22px;
     }
-
-    /* ------------------------------ */
-
-    /* Reducimos la tipografía del footer */
 
     .footer ul li a{
         font-size: 16px;
     }
 }
 
-
-
-/* ------------------------------ */
-
-
-/* RESPONSIVE MÓVIL CHIQUITO */
 @media (max-width: 425px) {
 
-    /* Reducimos la tipografía del título, los datos de 
-    localización y precio, la descripción y el botón */
-
-    .actividades .contenedor .actividad .descripcion h5{
+    .actividades .contenedor .actividad .descripcion h3{
         font-size: 20px;
     }
 
