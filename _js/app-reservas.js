@@ -22,37 +22,38 @@ function toggleMenuSearch(){ //Aplicamos la función toggle que al hacer click, 
 //DROPDOWNS
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Dropdown Información General
+    // 📌 Dropdown Información General
     const infoBtn = document.querySelector(".info-btn");
     const informaciones = document.querySelector(".informaciones");
 
     if (infoBtn && informaciones) {
         infoBtn.addEventListener("click", () => {
-            informaciones.style.display = informaciones.style.display === "block" ? "none" : "block";
+            informaciones.classList.toggle("activo");
         });
     }
 
-    // Dropdown Punto de Encuentro
+    // 📌 Dropdown Punto de Encuentro
     const ubicacionBtn = document.getElementById("ubicacionBtn");
     const encuentro = document.getElementById("encuentro");
 
     if (ubicacionBtn && encuentro) {
         ubicacionBtn.addEventListener("click", () => {
             encuentro.classList.toggle("activo");
-            encuentro.style.display = encuentro.classList.contains("activo") ? "block" : "none";
         });
     }
 
-    // Dropdown Opiniones
+    // 📌 Dropdown Opiniones
     const opinionBtn = document.getElementById("opinionBtn");
     const comentarios = document.getElementById("comentarios");
 
     if (opinionBtn && comentarios) {
         opinionBtn.addEventListener("click", () => {
-            comentarios.style.display = comentarios.style.display === "block" ? "none" : "block";
+            comentarios.classList.toggle("activo");
         });
     }
 });
+
+
 
 
 
