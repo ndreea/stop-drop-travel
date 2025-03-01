@@ -1,32 +1,4 @@
 
-/*
-DESCRIPCIÓN GENERAL PÁGINA DE RESERVA
-Esta sección es donde se describe la actividad que quiere hacer el usuario. Consta de diferentes apartados como:
-0. Modales Inicio sesión y crear cuenta
-1.Menu de navegación general de la página
-    1.1 Dropdown Search
-    1.2 Dropdown Usuario
-2.Botón de atrás
-3.Encabezado
-4.Descipción de la actividad y cuadro de reserva informativo
-5.Información general de la actividad
-6.Cuadro de reserva de la actividad:
-    6.1 Nº de participantes
-    6.2 Fecha (calendario)
-    6.3 Idioma
-    6.4 Horario
-7.Punto de encuentro de la actividad
-8.Opiniones de clientes que han realizado la actividad
-    8.1 Valoraciones
-    8.2 Reseñas
-9.Footer general
-
-*/
-
-
-/* -------------------------------------- */
-
-
 /* ESTILOS GENERALES */
 * {
 	margin: 0;
@@ -1143,7 +1115,7 @@ body {
 
     .selecciones,
     .button-reserva {
-        gap: 20px;
+        gap: 10px;
     }
 
     .seleccion-menu, .button-reserva {
@@ -1251,8 +1223,36 @@ body {
     .footer .enlaces {
         margin-bottom: 20px;
     }
+}
 
+@media (max-width: 511px) {
 
+    .login .form,
+    .registro .formulario {
+        width: 350px;
+    }
+
+    .login .form h2,
+    .registro .formulario h2 {
+        font-size: 22px;
+    }
+
+    .registro .formulario .datos button,
+    .login .form .caja button {
+        font-size: 14px;
+    }
+
+    .dropdown-search .menu-search {
+        width: 20rem;
+    }
+
+    .contenido-encabezado h1 {
+        font-size: 50px;
+    }
+
+    .descripcion p {
+        font-size: 16px;
+    }
 }
 
 
