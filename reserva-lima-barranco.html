@@ -333,82 +333,25 @@
             </div>     
          </div>
     </div>
-</div>
 
     <!---->
 
-    <!--OPINIONES DE CLIENTES SOBRE LA ACTIVIDAD--> 
-    <div class="opiniones" id="opiniones">
-        <div class="opinion-btn" onclick="toggleOpinion()"> <!--Botón Dropdown Opiniones de clientes-->
+    <!-- OPINIONES DE CLIENTES SOBRE LA ACTIVIDAD -->
+    <div class="opiniones">
+        <div class="opinion-btn" id="opinionBtn">
             <span>Opiniones de clientes</span>
             <i class="fa-solid fa-chevron-down"></i>
         </div>
-        <!--Dropdown y opiniones de los clientes sobre la actividad-->
+
+        <!-- Contenedor de comentarios -->
         <div class="comentarios" id="comentarios">
-            <div class="valoracion"> <!--Valoración general de la actividad-->
+            <div class="valoracion">
                 <p>Valoración general: <span>4.5 / 5</span> <i class="fa-solid fa-star"></i></p>
                 <span class="cita">Basada en 3 comentarios</span>
             </div>
 
-            <!--RESEÑA 1-->
-            <div class="reseña">
-                <div class="estrellas"> <!--Valoración-->
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                </div>
-                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
-                    <img src="_img/persona1-lima-barranco.jpg" alt="">
-                    <div class="nombre">
-                        <p>Paula - Chile</p>
-                        <span class="fecha"> 16 de julio del 2024</span>
-                    </div>
-                </div>
-                <!--Comentario de la opinión-->
-                <p>Agradable Tour por Barranco. Especialmente disfrutamos el arte callejero y el atardecer con vistas al mar al final del tour. También nos proporcionó información y recomendaciones adicionales para realizar fuera del tour. Totalmente recomendado para conocer a fondo y disfrutar de una tarde en el barrio.</p>
-            </div>
-
-            <!--RESEÑA 2-->
-            <div class="reseña"> 
-                <div class="estrellas"> <!--Valoración-->
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                </div>
-                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
-                    <img src="_img/persona2-lima-barranco.jpg" alt="">
-                    <div class="nombre">
-                        <p>Olivia - Australia</p>
-                        <span class="fecha"> 20 de septiembre del 2024</span>
-                    </div>
-                </div>
-                <!--Comentario de la opinión-->
-                <p>Diana, fue nuestra guía, fue un encanto. Nos conto muchas cuiriosidades y luego nos ayudo en todas las dudas que le preguntamos.</p>
-            </div>
-
-            <!--RESEÑA 3-->
-            <div class="reseña">
-                <div class="estrellas"> <!--Valoración-->
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star gris"></i>
-                </div>
-                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
-                    <img src="_img/persona3-lima-barranco.jpg" alt="">
-                    <div class="nombre">
-                        <p>Jimmy - Alemania</p>
-                        <span class="fecha"> 12 de octubre del 2024</span>
-                    </div>
-                </div>
-                <!--Comentario de la opinión-->
-                <p>Buen tour por los principales lugares del barrio de Barranco. Muy bien explicado.</p>
-            </div>
+            <!-- Reseñas (Generadas dinámicamente en JavaScript) -->
+            <div class="resenas-container"></div>
         </div>
     </div>
 
