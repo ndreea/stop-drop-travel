@@ -1007,6 +1007,57 @@ body {
     color: #ccc;
 }
 
+.resenas-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding-top: 20px;
+}
+
+.estrellas {
+    color: #E33323;
+    margin-bottom: 10px;
+}
+
+#inactivo {
+    color: #ccc;
+}
+
+.persona {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre imagen y texto */
+}
+
+.persona img {
+    width: 50px; /* Ajusta el tamaño de la imagen */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.datos-persona {
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre {
+    font-weight: bold;
+    margin: 0;
+}
+
+.fecha {
+    font-size: 0.9em;
+    color: gray;
+    margin: 0;
+}
+
+.comentario {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
 
 /* -------------------------------------- */
 
