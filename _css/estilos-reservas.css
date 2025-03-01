@@ -247,132 +247,143 @@ body {
 
 /* ESTILO GENERAL MENÚ DE NAVEGACIÓN PRINCIPAL */
 .nav {
-	padding: 30px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	top: 0;
-	background-color: #fafafa;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	position: relative;
+    padding: 25px 30px;
+	background-color: #fff;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
 }
 
+/* Título */
 .nav .titulo {
-	font-size: 30px;
+    font-size: 28px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
 	color: #1d1d1b;
-	text-decoration: none;
-	font-weight: 600;
 }
 
-/* Dropdowns (Usuario y Search) */
+/* Contenedor de botones de dropdown */
 .nav .btns-dropdown {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    gap: 50px; /* Espaciado entre iconos */
+    align-items: center;
 }
 
-.nav .btns-dropdown .fa-magnifying-glass,
-.nav .btns-dropdown .fa-user {
-	font-size: 30px;
+/* Botones de dropdown */
+.nav .btns-dropdown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #ffffff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
 	color: #1d1d1b;
 }
 
-.nav .btns-dropdown .fa-magnifying-glass {
-	margin-right: 80px;
+.nav .btns-dropdown button:focus {
+    outline: none;
 }
 
-/* Dropdown Search */
-.nav .btns-dropdown .dropdown-search {
-	overflow: hidden;
-	display: none;
+/* Dropdowns generales */
+.dropdown-container {
+    position: relative;
 }
 
-.nav .btns-dropdown .dropdown-search.abrir-search {
-	display: block;
+/* Dropdowns */
+.dropdown-search,
+.dropdown-user {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    top: 3rem;
+    right: 0;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search {
-	display: flex;
-	justify-content: space-between;
-	width: 30rem;
-	background-color: #ffffff;
-	padding: 1.5rem;
-	position: absolute;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
-	right: 10rem;
-	top: 5rem;
-	border-radius: 2rem;
+.dropdown-search {
+    border-radius: 5rem;
+    padding: 0.3rem;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search input {
-	font-size: 16px;
-	width: 20rem;
-	border: none;
-	outline: none;
-	color: #1d1d1b;
+.dropdown-user {
+    border-radius: 1rem;
+    padding: 1.5rem 0.3rem;
+    text-align: center;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search .btn-search {
-	position: absolute;
-	right: 0.8rem;
-	top: 0.7rem;
-	z-index: 1;
-	background-color: #E33323;
-	padding: 0.8rem 1.8rem;
-	border-radius: 1.5rem;
-	cursor: pointer;
+/* Mostrar los dropdown activos */
+.dropdown-search.abrir-search,
+.dropdown-user.abrir-user {
+    display: block;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search .btn-search a {
-	color: #fafafa;
-	text-decoration: none;
-	font-size: 12px;
-	font-weight: 600;
-	text-transform: uppercase;
+/* Contenido del dropdown de búsqueda */
+.dropdown-search .menu-search {
+    display: flex;
+    align-items: center;
+    width: 28rem;
+    border-radius: 2rem;
 }
 
-/* Dropdown Usuario (Iniciar sesión y crear cuenta) */
-.nav .btns-dropdown .dropdown-user {
-	overflow: hidden;
-	display: none;
+.dropdown-search input {
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #1d1d1b;
+    padding: 0.5rem;
 }
 
-.nav .btns-dropdown .dropdown-user.abrir-user {
-	display: block;
+.dropdown-search .btn-search {
+    background-color: #E33323;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user {
-	width: 12rem;
-	background-color: #ffffff;
-	padding: 1rem;
-	position: absolute;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
-	right: 3rem;
-	top: 5rem;
-	border-radius: 1rem;
+.dropdown-search .btn-search a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul {
-	padding: 15px;
-	display: flex;
-	flex-direction: column;
+/* Contenido del dropdown de usuario */
+.dropdown-user .menu-user {
+    width: 10rem;
+    border-radius: 1rem;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li {
-	list-style: none;
+.dropdown-user ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li:last-child {
-	margin-top: 25px;
+.dropdown-user li a {
+    font-size: 16px;
+    color: #1d1d1b;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 5px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li a {
-	display: block;
-	font-size: 16px;
-	color: #1d1d1b;
-	text-decoration: none;
-	font-weight: 600;
-}
-
-.nav .btns-dropdown .dropdown-user .menu-user ul li a:hover {
-	color: #E33323;
+.dropdown-user li a:hover {
+    color: #E33323;
 }
 
 
@@ -403,28 +414,55 @@ body {
 /* -------------------------------------- */
 
 
-/* ESTILO ENCABEZADO */
+/* ENCABEZADO */
 .encabezado {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 400px;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  url('../_img/barranco.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
 }
 
-.encabezado h1 {
-	font-size: 54px;
-	color: #fff;
-	text-align: center;
+.contenido-encabezado {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.encabezado a { /* Botón reserva (escondido hasta que se llegue a tablet) */
-	visibility: hidden;
+.contenido-encabezado h1 {
+    font-size: 54px;
+    margin: 0 auto;
+    padding-top: 30px;
 }
 
-.encabezado button { /* Botón favoritos (escondido hasta que se llegue a tablet) */
-	visibility: hidden;
+.btn-encabezado {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+/* Botón reserva */
+.btn-reserva { 
+    background: #E33323;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+	visibility: hidden; /* escondido hasta que se llegue a dispositivos */
+}
+
+/* Botón favorito */
+.btn-favorito { 
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #1d1d1b;
+	visibility: hidden; /* escondido hasta que se llegue a dispositivos */
 }
 
 
@@ -432,540 +470,453 @@ body {
 
 
 /* MENÚ DE NAVEGACIÓN INTERNO DE LA PÁGINA */
-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	z-index: 1;
+#navbar {
+    position: sticky;
+    top: 0;
+    background: #fafafa;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
 }
 
-.sticky { /* A medida que se hace scroll, el menú se queda anclado arriba */
-	position: fixed;
-	top: 0;
-	width: 100%;
-	background-color: #fafafa;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+.navegador {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
 }
 
-nav .navegador {
-	display: flex;
-	padding: 25px 30px;
+.navegador li {
+    position: relative;
 }
 
-nav .navegador li {
-	list-style: none;
-	display: inline-block;
-	padding: 0 10px;
+.navegador li:not(:first-child)::before {
+    content: "|";
+    color: gray;
+    margin-right: 10px;
 }
 
-nav .navegador li:first-child {
-	padding: 0;
+.navegador a {
+    text-decoration: none;
+    color: #1d1d1b;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-nav .navegador li a {
-	font-size: 18px;
-	text-decoration: none;
-	color: #1d1d1b;
-	font-weight: 600;
+.navegador a:hover {
+    color: #E33323;
 }
 
-nav .navegador li a:hover {
-	color: #E33323;
+.btn-fav {
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #E33323;
+    border-radius: 5px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    white-space: nowrap;
 }
 
-nav .navegador li span {
-	font-size: 18px;
-	color: #757573;
-	line-height: 1.2;
+.btn-fav:hover {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
-nav .btn-favorito {
-	color: #1d1d1b;
-	font-size: 16px;
-	text-decoration: none;
-	padding-right: 50px;
-}
-
-nav .btn-favorito .fa-heart {
-	margin-right: 5px;
-}
-
-nav .btn-favorito:hover {
-	color: #E33323;
-}
 
 
 /* -------------------------------------- */
 
 
 /* CONTENEDOR GENERAL DE LA ACTIVIDAD */
-.actividad {
-	padding: 30px 0;
+.actividad-pagina{
+	padding: 60px 30px;
 }
 
-.actividad .contenedor {
-	padding: 0 30px;
-}
-
-.actividad .contenedor .contenido {
-	display: flex;
-	flex-direction: column;
-	width: 1100px;
+.actividad-pagina .contenedor-texto{
+    max-width: 1100px;
 }
 
 
 /* -------------------------------------- */
 
 
-/* CONTENEDOR DE LA DESCRIPCIÓN DE LA ACTIVIDAD */
 .descripcion { 
-	padding-bottom: 30px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
 }
 
-.descripcion .texto {
-	width: 1100px;
+.descripcion .contenedor-texto {
+    max-width: 1100px;
+    flex: 1;
 }
 
-.descripcion .titulo {
-	font-size: 24px;
-	font-weight: 600;
-	display: none;
+.descripcion h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: none; 
 }
 
 .descripcion p {
-	font-size: 18px;
-	color: #1d1d1b;
-	font-weight: 300;
-	text-align: justify;
-	line-height: 1.4;
+    font-size: 18px;
+    color: #1d1d1b;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 .descripcion span {
-	font-weight: 400;
+    font-weight: 500;
 }
 
-/* -------------------------------------- */
-
-/* Cuadro de reserva informativo de la actividad (está dentro del contenedor descripción) */
-.descripcion .cuadro-reserva {
-	width: 400px;
-	height: 200px;
-	background-color: #fff;
-	border-radius: 10px;
-	padding: 30px;
-	border-top: 3px solid #E33323;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+/* Cuadro de reserva */
+.cuadro-reserva {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    flex-shrink: 0;
+    border-top: 4px solid #E33323;
+    box-shadow: 0 3px 10px rgba(25, 25, 25, 0.12);
+    text-align: center;
 }
 
-/* Precio y botón de reserva */
-.descripcion .cuadro-reserva .datos {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.cuadro-reserva .datos {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.descripcion .cuadro-reserva .datos p {
-	font-size: 14px;
-	font-weight: 600;
-	color: #1d1d1b;
-	line-height: 1.2;
+.cuadro-reserva .datos p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
 }
 
-.descripcion .cuadro-reserva .datos span {
-	color: #E33323;
-	font-size: 40px;
-	font-weight: 600;
-	margin-right: 10px;
+.cuadro-reserva strong {
+    font-weight: 800;
+    color: #E33323;
+    font-size: 48px;
 }
 
-.descripcion .cuadro-reserva .datos a { /* Al hacer click en el botón, este te manda al contenedor de reserva interactivo que hay abajo) */
-	background-color: #E33323;
-	padding: 15px 35px;
-	color: #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	border-radius: 30px;
-	font-weight: 600;
-	font-size: 16px;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
-	transition-property: transform;
+/* Botón de reserva */
+.boton-reserva {
+    display: inline-block;
+    background: #E33323;
+    color: white;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.descripcion .cuadro-reserva .datos a:hover {
-	transform: scale(1.1);
+.boton-reserva:hover {
+    transform: scale(1.05);
 }
 
-/* Icono de calendario y nota informativa de la reserva  */
-.descripcion .cuadro-reserva .nota {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 30px;
+/* Nota con icono */
+.cuadro-reserva .nota {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #1d1d1b;
+    margin-top: 20px;
 }
 
-.descripcion .cuadro-reserva .nota i {
-	font-size: 22px;
-	color: #1d1d1b;
-	margin-right: 15px;
-	margin-top: 3px;
+.cuadro-reserva .nota i {
+    font-size: 20px;
+    color: #1d1d1b;
 }
 
-.descripcion .cuadro-reserva .nota p {
-	font-size: 16px;
-	color: #1d1d1b;
-	font-weight: 300;
+.cuadro-reserva .nota p {
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
-.descripcion .cuadro-reserva .nota span {
-	font-weight: 400;
-}
 
 
 /* -------------------------------------- */
 
 
-/* CONTENEDOR DE LA INFORMACIÓN GENERAL DE LA ACTIVIDAD */
+/* Información general */
 .info-general {
-	padding: 30px 0;
+    width: 100%;
+    margin: 20px auto;
 }
 
-.info-general .info-btn { /* Título */
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 60px;
-	padding: 30px 0;
-	border-bottom: 0.5px solid #E33323;
+.info-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1b;
+    border: none;
+    cursor: pointer;
+    background-color: #fafafa;
+    border-bottom: 1px solid #E33323;
 }
 
-.info-general .info-btn p {
-	font-size: 22px;
-	font-weight: 600;
+/* Ocultamos el botón dropdown en web */
+.info-btn .fa-solid.fa-chevron-down {
+    display: none;
+    font-size: 20px;
 }
 
-.info-general .info-btn i { /* Icono dropdown */
-	font-size: 18px;
-	margin-right: 20px;
-	display: none; /* A partir de tablet, este aparecerá */
+
+.informaciones {
+    display: block; /* Oculto por defecto */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
-/* Dropdown Texto informativo */
-.info-general .informaciones {
-	padding: 10px 0 80px 0;
-	display: block;
+.informacion {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-.info-general .informaciones.abrir-info { /* A partir de tablet, el contenido querará oculto y solo se activará cuando se haga click en el drowpdown */
-	display: none;
+.info-general .info-btn h2 {
+    font-size: 24px;
 }
 
-.info-general .informaciones .informacion {
-	display: flex;
-	height: 60px;
-	margin-top: 15px;
+.informacion i {
+    font-size: 20px;
+    color: #1d1d1b;
 }
 
-.info-general .informaciones .informacion i { /* Iconos */
-	font-size: 20px;
-	color: #1d1d1b;
-	margin-top: 3px;
+.informacion span {
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.info-general .informaciones .informacion .fa-user-group { /* Al icono de grupo, se le reduce un poco el tamaño para que tenga el mismo ancho y alto que los demás */
-	font-size: 18px;
+.informacion p, .informacion ul {
+    font-size: 14px;
+    color: #1d1d1b;
+    margin: 5px 0;
 }
 
-.info-general .informaciones .informacion .texto {
-	padding-left: 10px;
-	font-size: 16px;
-	color: #1d1d1b;
-	line-height: 1.6;
-	text-align: left;
+.informacion ul {
+    padding-left: 20px;
 }
 
-.info-general .informaciones .informacion .texto span {
-	font-weight: 600;
+.informacion li {
+    margin-bottom: 5px;
 }
 
-.contenido .info-general .informaciones .informacion .texto ul {
-	margin-left: 15px;
-}
-
-.contenido .info-general .informaciones .informacion .texto p {
-	font-size: 14px;
-	font-weight: 300;
-}
 
 
 /* -------------------------------------- */
 
 
 /* CONTENEDOR RESERVA DE LA ACTIVIDAD (CUADRO INTERACTIVO) */
-.reserva .reserva-contenido {
-	width: 1100px;
-	background-color: #fff;
-	padding: 30px;
-	border-radius: 10px;
-	border-top: 3px solid #E33323;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
+.reserva-contenido {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 30px;
+    border-top: 3px solid #E33323;
+    box-shadow: 0 3px 10px rgba(25, 25, 25, 0.12);
 }
 
-.reserva .reserva-contenido h2 { /* Título */
-	font-size: 22px;
-	color: #1d1d1b;
-	padding-bottom: 20px;
+.reserva-contenido h2 {
+    margin-bottom: 25px;
 }
 
-/* Botones dropdowns de participantes, fecha, horario e idioma */
-.reserva .reserva-contenido .selecciones {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.selecciones,
+.button-reserva {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.reserva .reserva-contenido .selecciones .seleccion-menu {
-	width: 200px;
+.seleccion-menu {
+    position: relative;
+    cursor: pointer;
 }
 
-.reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn {
-	display: flex;
-	height: 35px;
-	background-color: #fff;
-	padding: 20px;
-	font-size: 16px;
-	color: #1d1d1b;
-	border-radius: 30px;
-	border: 1px solid #1d1d1b;
-	box-shadow: 0 2px 5px 0 rgba(10, 10, 10, 0.1);
-	justify-content: space-between;
-	align-items: center;
-	cursor: pointer;
+.seleccion-btn {
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid #1d1d1b;
+    width: 100%;
 }
 
-/* Dropdowns de participantes, fecha, horario e idioma */
-.reserva .reserva-contenido .selecciones .seleccion-menu .options {
-	width: 200px;
-	position: absolute;
-	padding: 10px;
-	background-color: #fff;
-	border-radius: 10px;
-	margin-top: 10px;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
-    visibility: hidden; /* Escondemos el dropdown a simple vista */
+.seleccion-btn i {
+    margin: 0 10px;
 }
 
-/* Hacemos visible el dropdown cuando se haga click en él */
-.reserva .reserva-contenido .selecciones .seleccion-menu.abrir .options  {
-	visibility: visible;
+.options, .calendario {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    z-index: 10;
 }
 
-/* Contenido de los dropdowns (Participantes, idioma y horario) */
-.reserva .reserva-contenido .selecciones .seleccion-menu .options .option {
-	display: flex;
-	height: 55px;
-	cursor: pointer;
-	padding: 0 15px;
-	border-radius: 5px;
-	justify-content: center;
-	align-items: center;
-	background-color: #fff;
-	list-style: none;
+.seleccion-menu:hover .options, 
+.seleccion-menu:hover .calendario {
+    display: block; /* Se muestra al pasar el mouse */
 }
 
-.reserva .reserva-contenido .selecciones .seleccion-menu .options .option .option-text {
-	font-size: 16px;
-	color: #1d1d1b;
+.option {
+    padding: 10px;
+    cursor: pointer;
+    list-style: none;
 }
 
-.reserva .reserva-contenido .selecciones .seleccion-menu .options .option:hover {
-	background-color: #e3332322;
-	color: #E33323;
+.option:hover {
+    background: #ddd;
 }
 
-.reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn .fa-calendar-days,
-.reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn .fa-globe,
-.reserva .reserva-contenido .selecciones .seleccion-menu .seleccion-btn .fa-clock {
-	font-size: 18px;
+.button-reserva {
+    background-color: #E33323;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
-/* Dropdown Calendario (Fecha) */
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario {
-	width: 400px;
-	position: absolute;
-	background-color: #fff;
-	border-radius: 10px;
-	margin-top: 10px;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
-	display: none;
+/* Calendario */
+.calendario {
+    width: 320px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-.reserva .reserva-contenido .selecciones .seleccion-menu.abrir .calendario {
-	display: block;
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .cabecera { /* Título del calendario */
-	display: flex;
-	justify-content: center;
-	padding: 30px 25px 10px;
+.btn {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
 }
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .cabecera .mes-actual {
-	font-size: 20px;
-	font-weight: 600;
-	color: #1d1d1b;
+.btn:hover {
+    background: #0056b3;
 }
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido { /* Contenido del calendario */
-	width: 400px;
-	padding: 10px;
+.semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
-
-/* Días de la semana */
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido ul { 
-	display: flex;
-	list-style: none;
-	flex-wrap: wrap;
-	text-align: center;
+.dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido ul li { 
-	position: relative;
-	width: calc(100% / 7);
+.dia, .inactivo {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+    text-align: center;
 }
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido ul li {
-	font-size: 14px;
-	color: #757573;
-	font-weight: 300;
+.dia:hover {
+    background: #f0f0f0;
 }
-
-/* Días del mes */
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias { 
-	margin-bottom: 20px;
-}
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li {
-	z-index: 1;
-	margin-top: 30px;
-	cursor: pointer;
-	font-size: 16px;
-	color: #1d1d1b;
-}
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li::before {
-	position: absolute;
-	content: "";
-	height: 40px;
-	width: 40px;
-	top: 50%;
-	left: 50%;
-	z-index: 1;
-	transform: translate(-50%, -50%);
-	border-radius: 5px;
-}
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li:hover::before {
-	background-color: #e3332322;
-}
-
-.reserva .reserva-contenido .selecciones .seleccion-menu .calendario .contenido .dias li.inactivo {
-	color: #b2b2b2;
-}
-
-/* Botón de reserva ahora */
-.reserva .reserva-contenido .selecciones button { 
-	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 14px;
-	border: none;
-	outline: none;
-	padding: 15px 35px;
-	border-radius: 30px;
-	background-color: #E33323;
-	color: #fff;
-	box-shadow: 0 2px 5px 0 rgba(10, 10, 10, 0.1);
-	cursor: pointer;
+.inactivo {
+    color: #ccc;
+    background: none;
+    cursor: default;
 }
 
 
 /* -------------------------------------- */
 
 
-/* CONTENEDOR PUNTO DE ENCUENTRO DE LA ACTIVIDAD */
+/* PUNTO DE ENCUENTRO DE LA ACTIVIDAD */
 .ubicacion {
-	padding-top: 40px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 30px 0;
 }
 
-.ubicacion .ubicacion-btn { /* Título */
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 60px;
-	padding: 30px 0;
-	border-bottom: 0.5px solid #E33323;
+.ubicacion-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1b;
+    border: none;
+    cursor: pointer;
+    background-color: #fafafa;
+    border-bottom: 1px solid #E33323;
 }
 
-.ubicacion .ubicacion-btn p {
-	font-size: 22px;
-	font-weight: 600;
+.encuentro {
+    display: block;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
-.ubicacion .ubicacion-btn i { /* Icono dropdown */
-	font-size: 18px;
-	margin-right: 20px;
-	display: none; /* A partir de tablet, este aparecerá */
+.mapa {
+    width: 100%;
+    height: 200px;
+    background: url('_img/mapa.jpg') no-repeat center center/cover;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Dropdown Información del punto de encuentro */
-.ubicacion .encuentro {
-	padding-top: 30px;
-	display: block;
+.mapa a {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
 }
 
-.ubicacion .encuentro.abrir-ubicacion { /* A partir de tablet, el contenido querará oculto y solo se activará cuando se haga click en el drowpdown */
-	display: none;
-}
-
-/* Icono de localización y lugar */
-.ubicacion .encuentro .fa-location-dot {
-	font-size: 24px;
-	color: #E33323;
-	margin-right: 5px;
-}
-
-.ubicacion .encuentro p {
-	font-size: 16px;
-	color: #1d1d1b;
-	font-weight: 400;
-}
-/* Mapa decorativo y enlace al lugar */
-.ubicacion .encuentro .mapa {
-	width: 250px;
-	height: 120px;
-	border-radius: 5px;
-	margin-top: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.ubicacion .encuentro .mapa a {
-	background-color: #fff;
-	padding: 10px 20px;
-	text-decoration: none;
-	font-size: 16px;
-	color: #E33323;
-	border-radius: 30px;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
-}
-
-.actividad .contenedor .contenido .ubicacion .encuentro .mapa a:hover {
-	background-color: #E33323;
-	color: #fff;
+.mapa a:hover {
+    background: rgba(0, 0, 0, 0.9);
 }
 
 
