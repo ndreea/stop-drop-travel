@@ -387,6 +387,7 @@ body {
 
 /* -------------------------------------- */
 
+
 /*Imágenes encabezado */
 #lima-barranco { background-image: url('../_img/barranco.jpg'); }
 #lima-historia { background-image: url('../_img/historia-lima.jpg'); }
@@ -399,6 +400,18 @@ body {
 #milan-cocina { background-image: url('../_img/pasta.jpg'); }
 #milan-fotos { background-image: url('../_img/photo-shoot-milan.jpg'); }
 #milan-fondazione { background-image: url('../_img/fondazione.jpg'); }
+
+#ny-broadway { background-image: url('../_img/broadway.jpg'); }
+#ny-brooklyn { background-image: url('../_img/brooklyn.jpg'); }
+#ny-empire-state { background-image: url('../_img/empire-state.jpg'); }
+
+#oporto-fotos { background-image: url('../_img/photo-shoot-porto.jpg'); }
+#oporto-livreria { background-image: url('../_img/livreria.jpg'); }
+#oporto-visita { background-image: url('../_img/tour-oporto.jpg'); }
+
+#seattle-cafe { background-image: url('../_img/cafe.jpg'); }
+#seattle-mercado { background-image: url('../_img/mercado.jpg'); }
+#seattle-space-needle { background-image: url('../_img/needle.jpg'); }
 
 
 /* Encabezado */
@@ -431,7 +444,7 @@ body {
 }
 
 .contenido-encabezado h1 {
-    font-size: 56px;
+    font-size: 54px;
     margin: 0 auto;
     padding-top: 60px;
     z-index: 1;
@@ -548,7 +561,7 @@ body {
 }
 
 .actividad-pagina .contenedor-texto{
-    max-width: 1200px;
+    max-width: 1100px;
 }
 
 
@@ -565,7 +578,7 @@ body {
 }
 
 .descripcion .contenedor-texto {
-    max-width: 1200px;
+    max-width: 1100px;
     flex: 1;
 }
 
@@ -772,7 +785,7 @@ body {
 
 .seleccion-btn {
     background: #fff;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 50px;
     border: 1px solid #1d1d1b;
     width: 100%;
