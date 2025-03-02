@@ -641,6 +641,10 @@ body {
         height: 300px;
     }
 
+	.encabezado h1 {
+		font-size: 40px;
+	}
+
     .actividades{
         padding: 80px 0;
     }
@@ -696,7 +700,7 @@ body {
 
 	.nav .titulo,
 	.nav .btns-dropdown button {
-		font-size: 24px;
+		font-size: 26px;
 	}
 
 	.nav .btns-dropdown {
@@ -754,7 +758,7 @@ body {
 }
 
 
-@media (max-width: 461px) {
+@media (max-width: 481px) {
 
     .nav .titulo,
 	.nav .btns-dropdown button {
@@ -763,6 +767,10 @@ body {
     
 	.nav .btns-dropdown {
 		gap: 20px; 
+	}
+
+	.encabezado h1 {
+		font-size: 35px;
 	}
 
 	.dropdown-search {
@@ -787,7 +795,7 @@ body {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 437px) {
 
     .actividades .contenedor .actividad .descripcion h3{
         font-size: 20px;
@@ -804,4 +812,8 @@ body {
     .actividades .contenedor .actividad .descripcion a{
         font-size: 10px;
     }
+
+	.encabezado h1 {
+		font-size: 32px;
+	}
 }
