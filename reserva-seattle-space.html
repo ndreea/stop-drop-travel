@@ -1,35 +1,17 @@
-
-<!--
-
-DESCRIPCIÓN GENERAL PÁGINA DE ACTIVIDAD
-Esta sección es donde se describe la actividad que quiere hacer el usuario.
-
-Consta de diferentes apartados como:
-0. Modales inicio sesión y crear cuenta
-1.Contenido general de las páginas - (navegador general, botón back y encabezado)
-2.Contenido de la actividad:
-    2.1.Descipción de la actividad
-    2.2.Información general de la actividad
-    2.3.Punto de encuentro de la actividad
-    2.4.Opiniones de clientes que han realizado la actividad
-3.Footer general
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vistas desde el Space Needle - Reserva</title>
-    <link rel="icon" href="_img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="_img/favicon.png">
     <link rel="stylesheet" href="_css/estilos-reservas.css">
-    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
     <script defer src="_js/app-reservas.js"></script>
 </head>
 <body>
-
-    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
 
     <!--MODAL LOGIN-->
     <div class="login">
@@ -88,366 +70,314 @@ Consta de diferentes apartados como:
         </div>   
     </div>
 
-    <!--
-    CONTENIDO GENERAL DE LAS PÁGINAS
-    En esta sección tenemos el menú de navegación general con tu título y sus botones dropdown, el botón de volver
-    y el encabezado con el título y foto de la actividad
-    -->
+    <!---->
 
     <!--NAVEGADOR GENERAL DE LA PÁGINA-->
     <header class="nav">
-        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
-        <!--Botones dropdown--> 
+        <a class="titulo" href="index.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+    
+        <!-- Contenedor de botones dropdown -->
         <div class="btns-dropdown">
-            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Buscar-->
-            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Buscar-->
-                <div class="menu-search abrir-search">
-                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
-                    <div class="btn-search">
-                        <a href="#">Buscar</a>
+    
+            <!-- Botón de búsqueda -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuSearch()" aria-controls="MenuSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="dropdown-search" id="MenuSearch">
+                    <div class="menu-search abrir-search">
+                        <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                        <div class="btn-search">
+                            <a href="#">Buscar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
-            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario-->
-                <div class="menu-user abrir-user" >
-                    <ul>
-                        <!--Ponemos un id a los enlaces para llamar a las modales-->
-                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
-                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
-                    </ul>
+    
+            <!-- Botón de usuario -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuUser()" aria-controls="MenuUser"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-user" id="MenuUser">
+                    <div class="menu-user abrir-user">
+                        <ul>
+                            <li><a id="open-registro" href="#">Crear cuenta</a></li>
+                            <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </header> 
+    </header>
 
     <!---->
 
     <!--BOTÓN BACK (Este botón te lleva a la página anterior)-->
-    <a class="btn-back" href="actividades-seattle.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <a class="btn-back" href="actividades-seattle.html" aria-label="Volver a la página de actividades"><i class="fa-solid fa-arrow-left"></i></a>
 
     <!---->
 
-   <!--ENCABEZADO ACTIVIDAD--> 
-   <section class="encabezado" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(_img/needle.jpg) no-repeat center center/cover;">
-        <h1>Vistas desde el <br>Space Needle</h1>
-        <div class="btn-encabezado">
-            <a href="#reserva">reserva ahora</a>
-            <button><i class="fa-regular fa-heart"></i></button>
+    <!--ENCABEZADO ACTIVIDAD--> 
+    <section class="encabezado">
+        <div class="contenido-encabezado" id="seattle-space-needle">
+            <h1>Vistas desde<br> el Space Needle</h1>
+            <div class="btn-encabezado">
+                <a href="#reserva" class="btn-reserva">reserva ahora</a>
+                <button class="btn-favorito" aria-label="Añadir a favoritos"><i class="fa-regular fa-heart"></i></button>
+            </div>
         </div>
     </section>
 
-    <!--
-    CONTENIDO DE LA ACTIVIDAD
-    El contenido se divide en diferentes secciones:
-    1.Menú de navegación interno de la página
-    2.Descripción y cuadro de reserva informativo de la pagina
-    3.Información general de la página
-    4.Cuadro de reserva de la actividad
-    5.Punto de encuentro
-    6.Opiniones de clientes
-    -->
+    <!---->
 
     <!--NAVEGADOR INTERNO DE LA ACTIVIDAD-->
     <nav id="navbar">
         <ul class="navegador">
             <li><a href="#descripcion">Descripción</a></li>
-            <li><span>|</span></li>
             <li><a href="#info-general">Información general</a></li>
-            <li><span>|</span></li>
             <li><a href="#ubicacion">Punto de encuentro</a></li>
-            <li><span>|</span></li>
             <li><a href="#opiniones">Opiniones de clientes</a></li>
         </ul>
-        <a class="btn-favorito" href="#"><i class="fa-regular fa-heart"></i> Añadir a favoritos</a>  <!--Botón de "Añadir a favoritos"-->
+        <a class="btn-fav" href="#"><i class="fa-regular fa-heart"></i> Añadir a favoritos</a>  
     </nav>
 
     <!---->
 
-    <!--Contenido de la actividad-->
-    <div class="actividad">
-
-        <!--DESCRIPCIÓN, INFORMACIÓN GENERAL, CUADRO DE RESERVA DE LA ACTIVIDAD Y PUNTO DE ENCUENTRO--> 
-        <div class="contenedor">
-            <div class="descripcion" id="descripcion"> <!--Descripción de la actividad-->
-                <div class="texto">
-                    <p class="titulo">Descripción</p> <br>
-                    <p><span>Con esta entrada, viajará a la parte superior del famoso Space Needle para obtener vistas inigualables del centro de Seattle, Mt. Rainier, y Puget Sound a 520 pies de altura.</span></p> <br>
-                    <p>Entrada a la plataforma de observación de la aguja espacial de Seattle (¡520 pies en el aire!). Disfruta de una <span>vista de 360 grados</span> de la ciudad, desde <span>Puget Sound</span> hasta <span>Lake Union</span> y las <span>montañas Cascade</span>.</p> <br>
-                    <p>Captura fotos del icónico monte de Seattle y ¡Diviértete con la nueva tecnología 3D Space Spots!</p>
+     <!--Contenido de la actividad-->
+     <div class="actividad-pagina"> 
+        <!-- Descripción de la actividad -->
+        <div class="descripcion" id="descripcion"> 
+            <div class="contenedor-texto">
+                <h2 class="titulo">Descripción</h2>
+                <p><span>Con esta entrada, viajará a la parte superior del famoso Space Needle para obtener vistas inigualables del centro de Seattle, Mt. Rainier, y Puget Sound a 520 pies de altura.</span></p> <br>
+                <p>Entrada a la plataforma de observación de la aguja espacial de Seattle (¡520 pies en el aire!). Disfruta de una <span>vista de 360 grados</span> de la ciudad, desde <span>Puget Sound</span> hasta <span>Lake Union</span> y las <span>montañas Cascade</span>.</p> <br>
+                <p>Captura fotos del icónico monte de Seattle y ¡Diviértete con la nueva tecnología 3D Space Spots!</p>
+            </div>
+            <!-- Cuadro reserva con precio e información -->
+            <div class="cuadro-reserva">
+                <div class="datos">
+                    <p><strong>45€</strong> <br>por persona</p>
+                    <a href="#reserva" class="boton-reserva">reserva ahora</a>
                 </div>
- 
-                <div class="cuadro-reserva"> <!--Cuadro informativo lateral de la reserva-->
-                    <div class="datos"> <!--Precio por persona y botón de reserva-->
-                        <p><span>45€</span> <br> por persona</p>
-                        <a href="#reserva">reserva ahora</a>
-                    </div>
-                <div class="nota"> <!--Información de la misma-->
+                <div class="nota">
                     <i class="fa-regular fa-calendar"></i>
-                    <p>Al <span>hacer la reserva ahora</span>, estarías asegurando tu plaza.</p>
+                    <p>Haz tu reserva y asegura tu plaza.</p>
                 </div>
             </div>
+        </div>
+        
+        <!---->
 
-            <!--INFORMACIÓN GENERAL, CUADRO DE RESERVA DE LA ACTIVIDAD Y PUNTO DE ENCUENTRO--> 
-            <div class="contenido">
-                <div class="info-general" id="info-general">
-                    <div class="info-btn" onclick="toggleInformacion()"> <!--Botón Dropdown Información general-->
-                        <p>Información general</p>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-
-                    <!--Contenido de la información general de la actividad-->
-                    <div class="informaciones" id="informaciones">
-                        <div class="informacion"> <!--Cancelación de la actividad-->
-                            <i class="fa-regular fa-calendar-check"></i>
-                            <div class="texto">
-                                <span>Cancelación gratuita</span>
-                                <p>Cancela con hasta 24 horas de antelación y recibe un reembolso completo</p>
-                            </div>
-                        </div>
-                        <div class="informacion"> <!--Duración de la actividad-->
-                            <i class="fa-regular fa-clock"></i>
-                            <div class="texto">
-                                <span>Duración 2 horas</span>
-                                <p>Comprueba tu disponibilidad para ver los horarios de inicio</p>
-                            </div>
-                        </div>
-                        <div class="informacion"> <!--Nº de personas de la actividad-->
-                            <i class="fa-solid fa-user-group"></i>
-                            <div class="texto">
-                                <span>Sin grupos</span>
-                                <p>Por libre</p>
-                            </div>
-                        </div>
-                        <div class="informacion"> <!--Cosas incluidas dentro de la actividad-->
-                            <i class="fa-solid fa-check"></i>
-                            <div class="texto">
-                                <span>Incluido</span>
-                                <ul>
-                                    <li><p>Entrada al Space Needle</p></li>
-                                    <li><p>Descarga gratuita de fotos digitales</p></li>
-                                    <li><p>Experiencias digitales</p></li>
-                                    <li><p>Vistas increibles de toda la ciudad</p></li>
-                                </ul>
-                            </div>
+        <!-- Información General --> 
+        <div class="contenedor-texto">
+            <div class="info-general" id="info-general">
+                <button class="info-btn"> <!-- Botón dropdown Información General -->
+                    <h2>Información general</h2>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                
+                <!-- Contenido de la información general -->
+                <div class="informaciones activo">
+                    <!-- Cancelación -->
+                    <div class="informacion">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <div class="texto">
+                            <span>Cancelación gratuita</span>
+                            <p>Cancela con hasta 24 horas de antelación y recibe un reembolso completo</p>
                         </div>
                     </div>
-                </div>
-
-                <!--CUADRO DE RESERVA DE LA ACTIVIDAD: Nº DE PARTICIPANTES, FECHA (con su calendario), IDIOMA Y HORARIO-->
-                <div class="reserva" id="reserva">
-                    <div class="reserva-contenido">
-                        <h2>Seleccione los participantes, la fecha, el idioma y el horario</h2>
-                        <!--Selección de opciones de la actividad-->
-                        <div class="selecciones">
-                            <div class="seleccion-menu"> <!--Selección nº de participantes de la actividad-->
-                                <div class="seleccion-btn"> 
-                                    <i class="fa-solid fa-user-group"></i>
-                                    <span class="btnSelect texto-btn">Participantes</span> <!--Añadimos la clase texto-btn para el JS-->
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                                    <ul class="options"> <!--Participantes Dropdown-->
-                                        <li class="option"><span class="option-text">Adulto x1</span></li>
-                                        <li class="option"><span class="option-text">Adultos x2</span></li>
-                                        <li class="option"><span class="option-text">Adultos x3</span></li>
-                                    </ul>
-                                </div>
-
-                                <div class="seleccion-menu"> <!--Selección de la fecha de la actividad-->
-                                    <div class="seleccion-btn texto-btn"> <!--Añadimos la clase texto-btn para el JS-->
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                        <span class="btnSelect">Fecha</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <div class="calendario"> <!--Calendario dropdown de la actividad-->
-                                        <div class="cabecera">
-                                            <p class="mes-actual">Noviembre 2024</p>
-                                        </div>
-                                        <div class="contenido">
-                                            <ul class="semana"> <!--Días de la semana-->
-                                                <li>lun</li>
-                                                <li>mar</li>
-                                                <li>mié</li>
-                                                <li>jue</li>
-                                                <li>vie</li>
-                                                <li>sab</li>
-                                                <li>dom</li>
-                                            </ul>
-                                            <ul class="dias"> <!--Dias del mes-->
-                                                <!--Dias restantes de Octubre-->
-                                                <li class="inactivo"><span>28</span></li>
-                                                <li class="inactivo"><span>29</span></li>
-                                                <li class="inactivo"><span>30</span></li>
-                                                <li class="inactivo"><span>31</span></li>
-                                                <!--Días activos del mes-->
-                                                <li class="dia"><span class="option-day">1</span></li>
-                                                <li class="dia"><span class="option-day">2</span></li>
-                                                <li class="dia"><span class="option-day">3</span></li>
-                                                <li class="dia"><span class="option-day">4</span></li>
-                                                <li class="dia"><span class="option-day">5</span></li>
-                                                <li class="dia"><span class="option-day">6</span></li>
-                                                <li class="dia"><span class="option-day">7</span></li>
-                                                <li class="dia"><span class="option-day">8</span></li>
-                                                <li class="dia"><span class="option-day">9</span></li>
-                                                <li class="dia"><span class="option-day">10</span></li>
-                                                <li class="dia"><span class="option-day">11</span></li>
-                                                <li class="dia"><span class="option-day">12</span></li>
-                                                <li class="dia"><span class="option-day">13</span></li>
-                                                <li class="dia"><span class="option-day">14</span></li>
-                                                <li class="dia"><span class="option-day">15</span></li>
-                                                <li class="dia"><span class="option-day">16</span></li>
-                                                <li class="dia"><span class="option-day">17</span></li>
-                                                <li class="dia"><span class="option-day">18</span></li>
-                                                <li class="dia"><span class="option-day">19</span></li>
-                                                <li class="dia"><span class="option-day">20</span></li>
-                                                <li class="dia"><span class="option-day">21</span></li>
-                                                <li class="dia"><span class="option-day">22</span></li>
-                                                <li class="dia"><span class="option-day">23</span></li>
-                                                <li class="dia"><span class="option-day">24</span></li>
-                                                <li class="dia"><span class="option-day">25</span></li>
-                                                <li class="dia"><span class="option-day">26</span></li>
-                                                <li class="dia"><span class="option-day">27</span></li>
-                                                <li class="dia"><span class="option-day">28</span></li>
-                                                <li class="dia"><span class="option-day">29</span></li>
-                                                <li class="dia"><span class="option-day">30</span></li>
-                                                <!--Primer día de diciemmbre-->
-                                                <li class="inactivo"><span>1</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="seleccion-menu"> <!--Selección del idioma de la actividad-->
-                                    <div class="seleccion-btn"> 
-                                        <i class="fa-solid fa-globe"></i>
-                                        <span class="btnSelect texto-btn">Idioma</span> <!--Añadimos la clase texto-btn para el JS-->
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <ul class="options"> <!--Idioma Dropdown-->
-                                        <li class="option"><span class="option-text">Español</span></li>
-                                        <li class="option"><span class="option-text">Inglés</span></li>
-                                    </ul>
-                                </div>
-
-                                <div class="seleccion-menu"> <!--Selección del horario de la actividad-->
-                                    <div class="seleccion-btn"> 
-                                        <i class="fa-solid fa-clock"></i>
-                                        <span class="btnSelect texto-btn">Horario</span> <!--Añadimos la clase texto-btn para el JS-->
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <ul class="options"> <!--Horario Dropdown-->
-                                        <li class="option activo"><span class="option-text">10:00h</span></li>
-                                        <li class="option activo"><span class="option-text">11:00h</span></li>
-                                        <li class="option activo"><span class="option-text">12:00h</span></li>
-                                        <li class="option activo"><span class="option-text">13:00h</span></li>
-                                        <li class="option activo"><span class="option-text">14:00h</span></li>
-                                        <li class="option activo"><span class="option-text">15:00h</span></li>
-                                        <li class="option activo"><span class="option-text">16:00h</span></li>
-                                        <li class="option activo"><span class="option-text">17:00h</span></li>
-                                    </ul>
-                                </div>
-                                <button>reserva ahora</button><!--Botón de reserva-->
-                            </div>
+                    <!-- Duración -->
+                    <div class="informacion">
+                        <i class="fa-regular fa-clock"></i>
+                        <div class="texto">
+                            <span>Duración ilimitada</span>
+                            <p>Comprueba tu disponibilidad para ver los horarios de inicio</p>
                         </div>
                     </div>
-
-                    <!--PUNTO DE ENCUENTRO DE LA ACTIIVIDAD-->
-                    <div class="ubicacion" id="ubicacion">
-                        <div class="ubicacion-btn" onclick="toggleUbicacion()"> <!--Botón Dropdown Ubicación-->
-                            <p>Punto de encuentro</p>
-                            <i class="fa-solid fa-chevron-down"></i>
+                    <!-- Grupos -->
+                    <div class="informacion">
+                        <i class="fa-solid fa-user-group"></i>
+                        <div class="texto">
+                            <span>Sin grupo</span>
+                            <p>Entrada libre</p>
                         </div>
-                        <!--Dropdown y contenido de la ubicación de la actividad-->
-                        <div class="encuentro" id="encuentro"> 
-                            <p><i class="fa-solid fa-location-dot"></i> Space Needle</p>
-                            <div class="mapa" style="background: url(_img/mapa.jpg) no-repeat center center/cover;">
-                            <a href="https://www.google.com/maps/dir//Space+Needle,+400+Broad+St,+Seattle,+WA+98109/@47.6205099,-122.3518577,17z" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
-                            </div>
+                    </div>
+                    <!-- Incluido -->
+                    <div class="informacion">
+                        <i class="fa-solid fa-check"></i>
+                        <div class="texto">
+                            <span>Incluido</span>
+                            <ul>
+                                <li>Entrada Premium</li>
+                                <li>Acceso sin colas</li>
+                                <li>Vistas de todo Seattle</li>
+                                <li>Descuento en la tienda</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!---->
+
+            <!-- Cuadro de reserva Dropdwns -->
+            <div class="reserva" id="reserva">
+                <div class="reserva-contenido">
+                    <h2>Seleccione los participantes, la fecha, el idioma y el horario</h2>
+                    <!-- Selección genérica de opciones -->
+                    <div class="selecciones">
+                        <!-- Participantes -->
+                        <div class="seleccion-menu" data-tipo="participantes">
+                            <div class="seleccion-btn">
+                                <i class="fa-solid fa-user-group"></i>
+                                <span class="texto-btn">Participantes</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="options">
+                                <li class="option"><span class="option-text">Adulto x1</span></li>
+                                <li class="option"><span class="option-text">Adultos x2</span></li>
+                                <li class="option"><span class="option-text">Adultos x3</span></li>
+                            </ul>
+                        </div>
+                        <!-- Fecha -->
+                        <div class="seleccion-menu" data-tipo="fecha">
+                            <div class="seleccion-btn">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <span class="texto-btn">Fecha</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <!-- Calendario -->
+                            <div class="calendario">
+                                <div class="cabecera"><p class="mes-actual">Noviembre 2024</p></div>
+                                <div class="contenido">
+                                    <ul class="semana">
+                                         <li>Lun</li> <li>Mar</li> <li>Mié</li> <li>Jue</li>
+                                        <li>Vie</li> <li>Sáb</li> <li>Dom</li>
+                                    </ul>
+                                    <ul class="dias">
+                                        <li class="inactivo"><span>28</span></li>
+                                        <li class="dia"><span class="option-day">1</span></li>
+                                        <li class="dia"><span class="option-day">2</span></li>
+                                        <li class="dia"><span class="option-day">3</span></li>
+                                        <li class="dia"><span class="option-day">4</span></li>
+                                        <li class="dia"><span class="option-day">5</span></li>
+                                        <li class="dia"><span class="option-day">6</span></li>
+                                        <li class="dia"><span class="option-day">7</span></li>
+                                        <li class="dia"><span class="option-day">8</span></li>
+                                        <li class="dia"><span class="option-day">9</span></li>
+                                        <li class="dia"><span class="option-day">10</span></li>
+                                        <li class="dia"><span class="option-day">11</span></li>
+                                        <li class="dia"><span class="option-day">12</span></li>
+                                        <li class="dia"><span class="option-day">13</span></li>
+                                        <li class="dia"><span class="option-day">14</span></li>
+                                        <li class="dia"><span class="option-day">15</span></li>
+                                        <li class="dia"><span class="option-day">16</span></li>
+                                        <li class="dia"><span class="option-day">17</span></li>
+                                        <li class="dia"><span class="option-day">18</span></li>
+                                        <li class="dia"><span class="option-day">19</span></li>
+                                        <li class="dia"><span class="option-day">20</span></li>
+                                        <li class="dia"><span class="option-day">21</span></li>
+                                        <li class="dia"><span class="option-day">22</span></li>
+                                        <li class="dia"><span class="option-day">23</span></li>
+                                        <li class="dia"><span class="option-day">24</span></li>
+                                        <li class="dia"><span class="option-day">25</span></li>
+                                        <li class="dia"><span class="option-day">26</span></li>
+                                        <li class="dia"><span class="option-day">27</span></li>
+                                        <li class="dia"><span class="option-day">29</span></li>
+                                        <li class="dia"><span class="option-day">29</span></li>
+                                        <li class="dia"><span class="option-day">30</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Idioma -->
+                        <div class="seleccion-menu" data-tipo="idioma">
+                            <div class="seleccion-btn">
+                                <i class="fa-solid fa-globe"></i>
+                                <span class="texto-btn">Idioma</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="options">
+                                <li class="option"><span class="option-text">Español</span></li>
+                                <li class="option"><span class="option-text">Inglés</span></li>
+                                <li class="option"><span class="option-text">Portugués</span></li>
+                                <li class="option"><span class="option-text">Italiano</span></li>
+                            </ul>
+                        </div>
+                        <!-- Horario -->
+                        <div class="seleccion-menu" data-tipo="horario">
+                            <div class="seleccion-btn">
+                                <i class="fa-solid fa-clock"></i>
+                                <span class="texto-btn">Horario</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="options">
+                                <li class="option activo"><span class="option-text">08:00h</span></li>
+                                <li class="option activo"><span class="option-text">10:00h</span></li>
+                                <li class="option activo"><span class="option-text">12:00h</span></li>
+                                <li class="option"><span class="option-text">16:00h</span></li>
+                                <li class="option"><span class="option-text">18:00h</span></li>
+                                <li class="option"><span class="option-text">20:00h</span></li>
+                            </ul>
+                        </div>
+                        <!-- Botón de reserva -->
+                        <button class="button-reserva">Reserva ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <!---->
+
+            <!--PUNTO DE ENCUENTRO DE LA ACTIIVIDAD-->
+            <div class="ubicacion" id="ubicacion">
+                <div class="ubicacion-btn" id="ubicacionBtn"> 
+                    <p>Punto de encuentro</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="encuentro activo" id="encuentro">
+                    <div class="mapa">
+                        <a href="https://www.google.com/maps/dir//Space+Needle,+400+Broad+St,+Seattle,+WA+98109/@47.6205099,-122.3518577,17z" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> Space Needle</a>
+                    </div>
+                </div>
+            </div>     
         </div>
     </div>
 
     <!---->
 
-    <!--
-    Las opiniones de los clientes se pusieron a parte ya que ocupan todo el ancho de la página
-    -->
-
-    <!--OPINIONES DE CLIENTES SOBRE LA ACTIVIDAD--> 
+    <!-- OPINIONES DE CLIENTES SOBRE LA ACTIVIDAD -->
     <div class="opiniones" id="opiniones">
-        <div class="opinion-btn" onclick="toggleOpinion()"> <!--Botón Dropdown Opiniones de clientes-->
+        <div class="opinion-btn" id="opinionBtn">
             <span>Opiniones de clientes</span>
             <i class="fa-solid fa-chevron-down"></i>
         </div>
-        <!--Dropdown y opiniones de los clientes sobre la actividad-->
-        <div class="comentarios" id="comentarios">
-            <div class="valoracion"> <!--Valoración general de la actividad-->
-                <p>Valoración general: <span>4.9 / 5</span> <i class="fa-solid fa-star"></i></p>
-                <span class="cita">Basada en 3 comentarios</span>
+
+        <!-- Contenedor de comentarios -->
+        <div class="comentarios activo" id="comentarios">
+            <div class="valoracion">
+                <p>Valoración general: <span>4.8 / 5</span> <i class="fa-solid fa-star"></i></p>
+                <span class="cita">Basada en 1 comentario</span>
             </div>
 
-            <!--RESEÑA 1-->
-            <div class="reseña">
-                <div class="estrellas"> <!--Valoración-->
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
+            <!-- Reseñas -->
+            <div class="resenas-container">
+                <div class="estrellas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
+
+                <!-- Persona -->
+                <div class="persona">
                     <img src="_img/persona1-seattle-space.jpg" alt="">
-                    <div class="nombre">
-                        <p>Susan - Canadá</p>
-                        <span class="fecha"> 14 de junio del 2024</span>
+                    <div class="datos-persona">
+                        <p class="nombre">Susan - Canadá</p>
+                        <p class="fecha">12 de Abril de 2024</p>
                     </div>
                 </div>
-                <!--Comentario de la opinión-->
-                <p>Las vistas eran hermosas, y tuvimos la suerte de estar allí en un día que el cielo estaba despejado. Las bebidas eran ridículamente caras. ¡Me alegré de que no estuviera tan saturado!</p>
-            </div>
-
-            <!--RESEÑA 2-->
-            <div class="reseña"> 
-                <div class="estrellas"> <!--Valoración-->
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                </div>
-                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
-                    <img src="_img/persona2-seattle-space.jpg" alt="">
-                    <div class="nombre">
-                        <p>Carrie - Estados Unidos</p>
-                        <span class="fecha"> 10 de junio del 2024</span>
-                    </div>
-                </div>
-                <!--Comentario de la opinión-->
-                <p>¡Solo ver todo Seattle fue increíble! Mi marido me dijo que era una experiencia única en la vida y ¡tenía razón!</p>
-            </div>
-
-            <!--RESEÑA 3-->
-            <div class="reseña">
-                <div class="estrellas"> <!--Valoración-->
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                    <i class="fa-solid fa-star rojo"></i>
-                </div>
-                <div class="usuario"> <!--Foto, nombre, ubicación del usuario y fecha de publicación-->
-                    <img src="_img/persona3-seattle-space.jpg" alt="">
-                    <div class="nombre">
-                        <p>Adriana - Perú</p>
-                        <span class="fecha"> 25 de mayo del 2024</span>
-                    </div>
-                </div>
-                <!--Comentario de la opinión-->
-                <p>Hizo un día precioso, y el viaje mereció la pena totalmente.</p>
-            </div>
+                <p class="comentario">
+                    "Las vistas eran hermosas, y tuvimos la suerte de estar allí en un día que el cielo estaba despejado. Las bebidas eran ridículamente caras. ¡Me alegré de que no estuviera tan saturado!"
+                </p>
+            </div>            
         </div>
     </div>
 
@@ -455,19 +385,23 @@ Consta de diferentes apartados como:
 
     <!--FOOTER-->
     <footer class="footer">
-        <ul class="redes"> <!--Iconos-->
-            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-        </ul>
-
-        <ul class="enlaces"> <!--Enlaces-->
-            <li><a href="actividades-general.html">Actividades</a></li>
-            <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer">Vuelos</a></li>
-            <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer">Hoteles</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+        <nav aria-label="Redes sociales">
+            <ul class="redes">
+                <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+    
+        <nav aria-label="Enlaces importantes">
+            <ul class="enlaces">
+                <li><a href="actividades-general.html">Actividades</a></li>
+                <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer" title="Buscar vuelos en Google">Vuelos</a></li>
+                <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer" title="Reservar hoteles en Booking">Hoteles</a></li>
+                <li><a href="#" aria-disabled="true">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </footer>
 </body>
 </html>
