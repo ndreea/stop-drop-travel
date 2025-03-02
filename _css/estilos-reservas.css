@@ -391,9 +391,14 @@ body {
 #lima-barranco { background-image: url('../_img/barranco.jpg'); }
 #lima-historia { background-image: url('../_img/historia-lima.jpg'); }
 #lima-paracas { background-image: url('../_img/paracas.jpg'); }
+
 #medellin-cocina { background-image: url('../_img/cocina-colombia.jpg'); }
 #medellin-comuna { background-image: url('../_img/comuna.jpg'); }
 #medellin-guatape { background-image: url('../_img/guatape.jpg'); }
+
+#milan-cocina { background-image: url('../_img/pasta.jpg'); }
+#milan-fotos { background-image: url('../_img/photo-shoot-milan.jpg'); }
+#milan-fondazione { background-image: url('../_img/fondazione.jpg'); }
 
 
 /* Encabezado */
