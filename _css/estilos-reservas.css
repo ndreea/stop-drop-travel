@@ -245,6 +245,7 @@ body {
     display: flex;
     gap: 50px; /* Espaciado entre iconos */
     align-items: center;
+    z-index: 1;
 }
 
 /* Botones de dropdown */
@@ -390,6 +391,9 @@ body {
 #lima-barranco { background-image: url('../_img/barranco.jpg'); }
 #lima-historia { background-image: url('../_img/historia-lima.jpg'); }
 #lima-paracas { background-image: url('../_img/paracas.jpg'); }
+#medellin-cocina { background-image: url('../_img/cocina-colombia.jpg'); }
+#medellin-comuna { background-image: url('../_img/comuna.jpg'); }
+#medellin-guatape { background-image: url('../_img/guatape.jpg'); }
 
 
 /* Encabezado */
