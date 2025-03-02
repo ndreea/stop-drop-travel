@@ -374,6 +374,7 @@ body {
 	background-color: #E33323;
 	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
 	text-align: center;
+    z-index: 1;
 }
 
 .btn-back i {
@@ -385,10 +386,14 @@ body {
 
 /* -------------------------------------- */
 
+/*Imágenes encabezado */
+#lima-barranco { background-image: url('../_img/barranco.jpg'); }
+#lima-historia { background-image: url('../_img/historia-lima.jpg'); }
+#lima-paracas { background-image: url('../_img/paracas.jpg'); }
 
-/* ENCABEZADO */
+
+/* Encabezado */
 .encabezado {
-	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  url('../_img/barranco.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
 }
@@ -401,12 +406,26 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.contenido-encabezado:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .contenido-encabezado h1 {
-    font-size: 60px;
+    font-size: 56px;
     margin: 0 auto;
     padding-top: 60px;
+    z-index: 1;
 }
 
 .btn-encabezado {
@@ -441,6 +460,7 @@ body {
 .btn-reserva,
 .btn-favorito {
     display: none;
+    z-index: 1;
 }
 
 
