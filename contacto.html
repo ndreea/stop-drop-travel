@@ -1,34 +1,17 @@
-<!--
-
-DESCRIPCIÓN DE LA PÁGINA DE CONTACTO
-Esta sección es meramente una página informativa.
-Carece de botón de vuelta atrás ya que se veía irrelevante.
-
-Contiene:
-0. Modales: Iniciar sesión y crear cuenta
-1.Navegador general
-2.Encabezado con título
-3.Contenido la información de la ayuda
-    3.1 Sede principal: Dirección, nº de teléfono e imgen
-    3.2 Centro de más ayuda
-4.Footer general
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Contacto - Stop, Drop & Travel</title>
-    <link rel="icon" href="_img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="_img/favicon.png">
     <link rel="stylesheet" href="_css/estilos-contacto.css">
-    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
     <script defer src="_js/app-actividades.js"></script>
 </head>
 <body>
-
-    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
 
     <!--MODAL LOGIN-->
     <div class="login">
@@ -92,30 +75,38 @@ Contiene:
 
     <!--MENÚ DE NAVEGACIÓN-->
     <header class="nav">
-        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
-        <!--Botones dropdown--> 
+        <a class="titulo" href="index.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+    
+        <!-- Contenedor de botones dropdown -->
         <div class="btns-dropdown">
-            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Buscar-->
-            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Search (buscar)-->
-                <div class="menu-search abrir-search">
-                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
-                    <div class="btn-search">
-                        <a href="#">Buscar</a>
+    
+            <!-- Botón de búsqueda -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuSearch()" aria-controls="MenuSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="dropdown-search" id="MenuSearch">
+                    <div class="menu-search abrir-search">
+                        <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                        <div class="btn-search">
+                            <a href="#">Buscar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
-            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario (iniciar sesión y crear cuenta)-->
-                <div class="menu-user abrir-user" >
-                    <ul>
-                        <!--Ponemos un id a los enlaces para llamar a las modales-->
-                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
-                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
-                    </ul>
+    
+            <!-- Botón de usuario -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuUser()" aria-controls="MenuUser"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-user" id="MenuUser">
+                    <div class="menu-user abrir-user">
+                        <ul>
+                            <li><a id="open-registro" href="#">Crear cuenta</a></li>
+                            <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </header> 
+    </header>
 
     <!---->
 
@@ -126,51 +117,55 @@ Contiene:
 
     <!---->
 
-    <!--CONTENIDO GENERAL ACTIVIDADES-->
+    <!-- CONTENIDO DE LA PÁGINA -->
     <section class="contenedor">
         <div class="contenido">
-            <div class="sede"> <!--Dirección, nº de teléfono e imagen-->
+            <!-- Sede Principal -->
+            <article class="sede"> 
                 <div class="texto">
                     <h3>Sede Central</h3>
-                    <div class="direccion"> <!--Dirección de la sede-->
+                    <div class="direccion">
                         <p><span>Dirección</span></p>
                         <p>Nombre de la calle, 30 <br> 0000 España</p>
                     </div>
-                    <div class="tlf"> <!--Teléfono de la sede-->
+                    <div class="tlf">
                         <p><span>Teléfono de contacto</span></p>
-                    <p>Número de teléfono: +34 xxx xxx xxx</p>
+                        <p>Número de teléfono: +34 xxx xxx xxx</p>
                     </div> 
                 </div>
-                <img src="_img/empresa.jpg" alt="">
-            </div>
-
-            <div class="ayuda"> <!--Cuadro de más ayuda-->
+                <img src="_img/empresa.jpg" alt="Oficinas de Stop, Drop & Travel">
+            </article>
+            
+            <!-- Ayuda -->
+            <section class="ayuda"> 
                 <p class="titulo">¿Necesitas más ayuda?</p>
-                <div class="caja"> <!--Cuadro descriptivo sobre cómo poner el código de reserva-->
-                    <p>Introduce un código de reserva válido. El código empieza por GYG y lo encontrarás en tu cupón o en la confirmación de la reserva. <br>
-                    ¿No encuentras tu código de reserva? Ponte en contacto con nosotros a través de la app de <a href="#">Stop, Drop & Travel</a>.</p>
+                <div class="caja">
+                    <p>
+                        Introduce un código de reserva válido. El código empieza por GYG y lo encontrarás en tu cupón o en la confirmación de la reserva. <br>
+                        ¿No encuentras tu código de reserva? Ponte en contacto con nosotros a través de la app de 
+                        <a href="#">Stop, Drop & Travel</a>.
+                    </p>
                 </div>
-                <div class="form">
-                    <input type="text" placeholder="Código de reserva">
-                    <button>Enviar</button>
-                </div>
-            </div>
+                <form class="form">
+                    <label for="codigo-reserva" class="sr-only">Código de reserva</label>
+                    <input type="text" id="codigo-reserva" placeholder="Código de reserva">
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
         </div>
     </section>
-            
 
     <!---->
 
-    
-     <!--FOOTER GENERAL-->
-     <footer class="footer">
-        <ul> <!--Iconos-->
+    <!--FOOTER GENERAL-->
+    <footer class="footer">
+        <ul class="redes"> <!--Iconos-->
             <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
         </ul>
 
-        <ul> <!--Enlaces-->
+        <ul class="enlaces"> <!--Enlaces-->
             <li><a href="actividades-general.html">Actividades</a></li>
             <li><a href="https://www.google.com/travel/flights?hl=es" target="_blank" rel="noopener noreferrer">Vuelos</a></li>
             <li><a href="https://www.booking.com/index.es.html" target="_blank" rel="noopener noreferrer">Hoteles</a></li>

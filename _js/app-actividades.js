@@ -38,6 +38,9 @@ document.querySelector(".login #close-login").addEventListener("click", function
     document.querySelector(".login").classList.remove("show");
 });
 
+document.querySelector(".login .form").style.display = "block";
+document.querySelectorAll(".login .caja").forEach(el => el.style.display = "block");
+
 /* -------------------------------------- */
 
 //MODAL REGISTRO
@@ -55,3 +58,4 @@ document.querySelector(".registro #close-registro").addEventListener("click", fu
     //El caso de que se presione el botón, la modal se cierre
     document.querySelector(".registro").classList.remove("show");
 });
+
