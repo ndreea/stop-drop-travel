@@ -624,6 +624,10 @@ body {
 	.registro .formulario .datos button {
 		font-size: 14px;
 	}
+
+	.wrapper {
+		padding: 80px 0;
+	}
 }
 
 @media (max-width: 461px) {

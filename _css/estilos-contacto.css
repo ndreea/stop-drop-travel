@@ -562,7 +562,7 @@ body {
 
 /* Ordenador (Pantallas pequeñas) */
 @media (max-width: 1111px) {
-	.contenedor {
+	.contenedor .contenido {
 		width: 90%;
 		margin: 0 auto;
 	}
@@ -653,6 +653,10 @@ body {
 	.form input,
 	.form button {
 		width: 100%;
+	}
+
+	.contenedor {
+		padding: 80px 0;
 	}
 }
 
