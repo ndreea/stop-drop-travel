@@ -1,4 +1,4 @@
-# Página web de reserva de actividades: Stop, Drop & Travel ✈️
+# Stop, Drop & Travel - Página de reservas de actividades ✈️
 Este repositorio contiene una página web responsive completa, desarrollado como proyecto final de un curso. La estructura y el diseño se han realizado utilizando solo HTML, CSS y JS.
 
 ## 📌 Descripción
