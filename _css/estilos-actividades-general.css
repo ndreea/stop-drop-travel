@@ -1,29 +1,3 @@
-
-/*
-
-DESCRIPCIÓN GENERAL PÁGINA ACTIVIDADES GENERALES
-Esta sección ofrece al usuario cada uno de los destinos y que al seleccionar
-cada uno de ellos, te lleve directamente a sus actividades.
-
-Contiene:
-0.Modales: Iniciar sesión y crear cuenta
-1.Navegador principal general
-2.Botón back: Vuelve a la página de Home
-3.Encabezado general
-4.Contenido general de actividades
-    4.1 Imagen
-    4.2 Título de la actividad
-    4.3 Lugar y precio
-    4.4 Breve descripción introductoria
-5. Footer general
-6. Responsive
-
-*/
-
-
-/* -------------------------------------- */
-
-
 /* ESTILO UNIVERSAL */
 * {
 	margin: 0;
@@ -242,135 +216,143 @@ body {
 
 /* ESTILO GENERAL MENÚ DE NAVEGACIÓN PRINCIPAL */
 .nav {
-	padding: 30px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-	width: 100%;
 	top: 0;
-	background-color: #ffffff;
-	box-shadow: 0 1px 5px 0 rgba(25, 25, 25, 0.1);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	position: relative;
+    padding: 20px 30px;
+	background-color: #fff;
+	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
 }
 
+/* Título */
 .nav .titulo {
-	font-size: 30px;
+    font-size: 28px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
 	color: #1d1d1b;
-	text-decoration: none;
-	font-weight: 600;
 }
 
-/* Dropdowns (Usuario y Search) */
+/* Contenedor de botones de dropdown */
 .nav .btns-dropdown {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    gap: 50px; /* Espaciado entre iconos */
+    align-items: center;
 }
 
-.nav .btns-dropdown .fa-magnifying-glass,
-.nav .btns-dropdown .fa-user {
-	font-size: 30px;
+/* Botones de dropdown */
+.nav .btns-dropdown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #ffffff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
 	color: #1d1d1b;
 }
 
-.nav .btns-dropdown .fa-magnifying-glass {
-	margin-right: 80px;
+.nav .btns-dropdown button:focus {
+    outline: none;
 }
 
-/* Dropdown Search */
-.nav .btns-dropdown .dropdown-search {
-	overflow: hidden;
-	display: none;
+/* Dropdowns generales */
+.dropdown-container {
+    position: relative;
 }
 
-.nav .btns-dropdown .dropdown-search.abrir-search {
-	display: block;
+/* Dropdowns */
+.dropdown-search,
+.dropdown-user {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    top: 3rem;
+    right: 0;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search {
-	display: flex;
-	justify-content: space-between;
-	width: 30rem;
-	background-color: #ffffff;
-	padding: 1.5rem;
-	position: absolute;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
-	right: 10rem;
-	top: 5rem;
-	border-radius: 2rem;
+.dropdown-search {
+    border-radius: 5rem;
+    padding: 0.3rem;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search input {
-	font-size: 16px;
-	width: 20rem;
-	border: none;
-	outline: none;
-	color: #1d1d1b;
+.dropdown-user {
+    border-radius: 1rem;
+    padding: 1.5rem 0.3rem;
+    text-align: center;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search .btn-search {
-	position: absolute;
-	right: 0.8rem;
-	top: 0.7rem;
-	z-index: 1;
-	background-color: #E33323;
-	padding: 0.8rem 1.8rem;
-	border-radius: 1.5rem;
-	cursor: pointer;
+/* Mostrar los dropdown activos */
+.dropdown-search.abrir-search,
+.dropdown-user.abrir-user {
+    display: block;
 }
 
-.nav .btns-dropdown .dropdown-search .menu-search .btn-search a {
-	color: #fafafa;
-	text-decoration: none;
-	font-size: 12px;
-	font-weight: 600;
-	text-transform: uppercase;
+/* Contenido del dropdown de búsqueda */
+.dropdown-search .menu-search {
+    display: flex;
+    align-items: center;
+    width: 28rem;
+    border-radius: 2rem;
 }
 
-/* Dropdown Usuario (Iniciar sesión y crear cuenta) */
-.nav .btns-dropdown .dropdown-user {
-	overflow: hidden;
-	display: none;
+.dropdown-search input {
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #1d1d1b;
+    padding: 0.5rem;
 }
 
-.nav .btns-dropdown .dropdown-user.abrir-user {
-	display: block;
+.dropdown-search .btn-search {
+    background-color: #E33323;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user {
-	width: 12rem;
-	background-color: #ffffff;
-	padding: 1rem;
-	position: absolute;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
-	right: 3rem;
-	top: 5rem;
-	border-radius: 1rem;
+.dropdown-search .btn-search a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul {
-	padding: 15px;
-	display: flex;
-	flex-direction: column;
+/* Contenido del dropdown de usuario */
+.dropdown-user .menu-user {
+    width: 10rem;
+    border-radius: 1rem;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li {
-	list-style: none;
+.dropdown-user ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li:last-child {
-	margin-top: 25px;
+.dropdown-user li a {
+    font-size: 16px;
+    color: #1d1d1b;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 5px;
 }
 
-.nav .btns-dropdown .dropdown-user .menu-user ul li a {
-	display: block;
-	font-size: 16px;
-	color: #1d1d1b;
-	text-decoration: none;
-	font-weight: 600;
-}
-
-.nav .btns-dropdown .dropdown-user .menu-user ul li a:hover {
-	color: #E33323;
+.dropdown-user li a:hover {
+    color: #E33323;
 }
 
 
@@ -411,8 +393,9 @@ body {
 	background-color: #ffffff;
 }
 
-.encabezado h1 { /* Título */
-	font-size: 40px;
+/* Título */
+.encabezado h1 { 
+	font-size: 45px;
 	color: #1d1d1b;
 	text-align: center;
 }
@@ -421,58 +404,86 @@ body {
 /* -------------------------------------- */
 
 
-/* ESTILO CONTENEDOR (PANELES CON LINKS) */
+/* Fondos específicos por ciudad */
+
+#medellin { background-image: url("../_img/medellin.jpg"); }
+
+#oporto { background-image: url("../_img/porto.jpg"); }
+
+#milan { background-image: url("../_img/milan.jpg"); }
+
+#lima { background-image: url("../_img/lima.jpg"); }
+
+#nueva-york { background-image: url("../_img/new-york.jpg"); }
+
+#seattle { background-image: url("../_img/seattle.jpg"); }
+
+
+/* ESTILOS PÁGINA */
 .contenedor {
-	width: 100%;
-	padding: 100px 0;
+    display: flex;
+    justify-content: center;
 	background-color: #fafafa;
 }
 
-.contenedor .wrapper {
-	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+	padding: 100px 0;
 }
 
-.contenedor .wrapper .destino {
-	width: 380px;
-	height: 250px;
-	border-radius: 10px;
-	cursor: pointer;
+/* Estilo base de cada destino */
+.destino {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 10px;
-	box-shadow: 0 2px 8px 0 rgba(25, 25, 25, 0.16);
 }
 
-.contenedor .wrapper .destino:hover {
-	box-shadow: 0 2px 20px 0 #e333237e;
+.destino::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
 }
 
-/* Caja de enlace + texto */
-.contenedor .wrapper .destino a {
-	text-align: center;
-	text-decoration: none;
+.destino a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    z-index: 2;
 }
 
-.contenedor .wrapper .destino a p {
-	font-size: 26px;
-	color: #ffffff;
+.destino a p {
+	font-size: 1.5rem;
 	font-weight: 600;
-	margin-bottom: 10px;
+	text-align: center;
 }
 
-/* Valoración */
-.contenedor .wrapper .destino a .estrellas {
-	font-size: 14px;
-	color: #ffffff;
+.estrellas {
+    margin-top: 5px;
 }
 
-.contenedor .wrapper .destino a .estrellas .gris {
-	color: #ffffff8e;
+.estrellas i {
+    color: white;
+}
+
+.estrellas .gris {
+    color: gray;
 }
 
 
@@ -522,330 +533,122 @@ body {
 /* -------------------------------------- */
 
 
-/*
+/* RESPONSIVE */
 
-FORMATO RESPONSIVE
-Se adecuarán los tamaños para todo tipo de pantallas.
-Ordenadores, tablet y móviles.
+@media (max-width: 1261px) {
 
-*/
-
-
-/* RESPONSIVE ORDENADOR */
-@media (max-width: 1251px) {
-
-    /* Reducimos un poco el tamaño de los
-    contenedores sin perder tanto su forma */
-
-    .contenedor .wrapper{
-        width: 100%;
-    }
-
-    .contenedor .wrapper .destino{
-        width: 350px;
-        height: 220px;
-    }
+	.wrapper {
+		width: 90%;
+	}
 }
 
+@media (max-width: 1141px) {
 
-/* -------------------------------------- */
+	.wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
 
+	.encabezado h1 { 
+		font-size: 40px;
+	}
 
-/* RESPONSIVE ORDENADOR */
-@media (max-width: 1121px) {
+	.nav .titulo,
+	.nav .btns-dropdown button {
+		font-size: 26px;
+	}
 
-    /* Limitamos el ancho del contenedor y hacemos
-    que las imágenes ocupen dos a cada lado */
-    .contenedor .wrapper{
-        width: 100%;
-    }
-
-    .contenedor .wrapper .destino{
-        width: 45%;
-        height: 220px;
-    }
+	.nav .btns-dropdown {
+		gap: 30px;
+	}
 }
 
+@media (max-width: 841px) {
 
-/* -------------------------------------- */
-
-
-/* RESPONSIVE TABLET */
-
-@media (max-width: 751px) {
-
-    /* Reducimos el tamaño del dropdown search */
-    .nav .btns-dropdown .dropdown-search .menu-search{
-        width: 25rem;
-        padding: 1.3rem;
-        right: 7rem;
-        top: 4.5rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search input{
-        font-size: 14px;
-        width: 18rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search .btn-search{
-        right: 0.8rem;
-        top: 0.5rem;
-        padding: 0.7rem 1.7rem;
-    }
-
-    /* -------------------------------------- */
-
-    /* Reducimos el tamaño del dropdown usuario */
-    .nav .btns-dropdown .dropdown-user .menu-user{
-        width: 11rem;
-        padding: 1rem;
-        top: 4.5rem;
-    }
-
-     /* -------------------------------------- */
-
-     /* Reducimos el tamaño del ancho del encabezado
-     y su tipografía */
-
-    .encabezado{
-        height: 300px;
-    }
-    
-    .encabezado h1{
-        font-size: 35px;
-    }
-
-    /* -------------------------------------- */
-
-    /* Reducimos el margen del contenedor principal,
-    reducimos un poco el ancho y ponemos las imágenes
-    que ocupen todo ese ancho una debajo de otra */
-
-    .contenedor{
-        padding: 60px 0;
-    }
-
-    .contenedor .wrapper{
-        width: 90%;
-    }
-
-    .contenedor .wrapper .destino{
-        width: 100%;
-        height: 220px;
-    }
-
-    .contenedor .wrapper .destino a p{
-        font-size: 26px;
-    }
-    
-    .contenedor .wrapper .destino a .estrellas{
-        font-size: 16px;
-        color: #ffffff;
-    }
-
-    /* -------------------------------------- */
-
-    /* Ponemos el footer en modo column-reverse
-    para que los enlaces queden arriba de las redes */
-
-    .footer{
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-    }
-
-    .footer ul li a{
-        line-height: 3;
-    }
+	.wrapper {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
+@media (max-width: 611px) {
 
-/* -------------------------------------- */
+	.dropdown-search .menu-search {
+		width: 24rem;
+	}
 
+	.footer {
+		display: flex;
+		flex-direction: column-reverse;
+	}
 
-/* RESPONSIVE TABLET-MÓVIL */
-
-@media (max-width: 591px) {
-
-    /* Reducimos el ancho de la modal del login y el tamaño de sus elementos */
-    .login .form{ 
-        width: 350px;
-        padding: 15px 25px;
-    }
-
-    .login .form h2{ 
-        font-size: 20px;
-    }
-
-    .login .form .caja button{ 
-        width: 100%;
-        height: 40px;
-        font-size: 14px;
-    }
-
-     /* -------------------------------------- */
-
-     /* Reducimos el ancho de la modal de registro y el tamaño de sus elementos */
-    .registro .formulario{ 
-        width: 350px;
-        padding: 15px 25px;
-    }
-
-    .registro .formulario h2{
-        font-size: 20px;
-    }
-
-    .registro .formulario .datos button{
-        width: 100%;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    /* -------------------------------------- */
-
-    /* Quitamos el fondo y las sombras al navegador
-    principal para que se fusione con el encabezado
-    y modificamos el tamaño de los iconos */
-
-    .nav{
-        background-color: none;
-        box-shadow: none;
-    }
-
-    .nav .titulo{
-        font-size: 24px;
-    }
-
-    .nav .btns-dropdown .fa-magnifying-glass,
-    .nav .btns-dropdown .fa-user{
-        font-size: 24px;
-    }
-
-    .nav .btns-dropdown .fa-magnifying-glass{
-        margin-right: 50px;
-    }
-
-    /* -------------------------------------- */
-
-     /* Reducimos el tamaño del dropdown search */
-    .nav .btns-dropdown .dropdown-search .menu-search{
-        width: 24rem;
-        padding: 1.3rem;
-        right: 6rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search input{
-        font-size: 14px;
-        width: 18rem;
-    }
-
-    .nav .btns-dropdown .dropdown-search .menu-search .btn-search{
-        right: 0.5rem;
-        top: 0.5rem;
-        padding: 0.7rem 1.5rem;
-    }
-
-    /* -------------------------------------- */
-
-    /* Reducimos el tamaño del dropdown usuario */
-    .nav .btns-dropdown .dropdown-user .menu-user{
-        width: 10rem;
-    }
-
-    .nav .btns-dropdown .dropdown-user .menu-user ul li a{
-        font-size: 14px;
-    }
-
-    /* -------------------------------------- */
-
-    /* Subimos un poco el botón "back" para que el texto
-    del encabezado quepa debajo y también reducimos el
-    ancho del contenedor del encabezado */
-
-    .btn-back{
-        margin-top: 10px;
-    }
-
-    .encabezado{
-        display: flex;
-        justify-content: left; 
-        height: 250px;
-    }
-    
-    .encabezado h1{
-        text-align: left;
-        margin-left: 30px;
-        margin-top: 30px;
-    }
-
-    /* -------------------------------------- */
-
-    /* Ponemos el footer en modo column-reverse
-    para que los enlaces queden arriba de las redes */
-
-    .footer{
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-    }
-
-    .footer ul li a{
-        line-height: 3;
-    }
+	.footer .enlaces {
+		margin-bottom: 20px;
+	}
 }
 
+@media (max-width: 531px) {
 
-/* -------------------------------------- */
+	.nav {
+		background: transparent;
+		box-shadow: none;
+	}
 
+	.nav .titulo,
+	.nav .btns-dropdown button {
+		font-size: 24px;
+	}
 
-/* RESPONSIVE MÓVIL */
+	.dropdown-search .menu-search {
+		width: 22rem;
+	}
+
+	.encabezado h1 { 
+		font-size: 35px;
+	}
+
+	.login, .registro {
+		z-index: 5;
+	}
+
+	.login .form,
+	.registro .formulario {
+		width: 350px;
+	}
+
+	.login .form h2,
+	.registro .formulario h2 {
+		font-size: 22px;
+	}
+
+	.login .form .caja button,
+	.registro .formulario .datos button {
+		font-size: 14px;
+	}
+}
+
 @media (max-width: 461px) {
 
-    /* Reducimos el tamaño del logo junto
-    con los iconos del header principal */
+	.nav .titulo,
+	.nav .btns-dropdown button {
+		font-size: 22px;
+	}
 
-   .nav .titulo{
-       font-size: 20px;
-   }
-   
-   .nav .btns-dropdown .fa-magnifying-glass,
-   .nav .btns-dropdown .fa-user{
-       font-size: 20px;
-   }
-   
-   .nav .btns-dropdown .fa-magnifying-glass{
-       margin-right: 30px;
-   }
+	.nav .btns-dropdown {
+		gap: 25px;
+	}
 
-   /* ------------------------------ */
+	.dropdown-search {
+		z-index: 5;
+	}
 
-   /* Reducimos el tamaño del input del menu
-   search */
+	.dropdown-search .menu-search {
+		width: 20rem;
+	}
 
-   .nav .btns-dropdown .dropdown-search .menu-search{
-       right: 5rem;
-       width: 21rem;
-       z-index: 1;
-   }
-
-   .nav .btns-dropdown .dropdown-search .menu-search input{
-       font-size: 12px;
-       width: 16rem;
-   }
-
-   /* ------------------------------ */
-
-    /* Reducimos la tipografía del footer */
-    
-   .footer ul li a{
-    font-size: 16px;
+	.footer ul li a {
+		font-size: 16px;
+	}
 }
 
-}
 
 
 

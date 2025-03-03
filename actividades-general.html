@@ -1,31 +1,17 @@
-<!--
-
-DESCRIPCIÓN DE LA PÁGINA DE ACTIVIDADES GENERAL
-Esta sección se concentran todos los destinos que al seleccionar cada uno de ellos, te lleva directamente a la sección de sus actividades.
-
-Contiene:
-0.Modales: Iniciar sesión y crear cuenta.
-1.Navegador general
-2.Encabezado con título
-3.Contenido con los destinos y sus valoraciones
-4.Footer general
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestras actividades - Stop, Drop & Travel</title>
-    <link rel="icon" href="_img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="_img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="_img/favicon.png">
     <link rel="stylesheet" href="_css/estilos-actividades-general.css">
-    <script defer src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/647f2bc6f3.js" crossorigin="anonymous"></script>
     <script defer src="_js/app-actividades.js"></script>
 </head>
 <body>
-
-    <!--Las modales las ponemos al principio del todo para que el fondo que tienen ocupen toda la pantalla-->
 
     <!--MODAL LOGIN-->
     <div class="login">
@@ -52,8 +38,6 @@ Contiene:
             </div>
         </div>   
     </div>
-
-
 
     <!--MODAL CREAR CUENTA-->
     <div class="registro">
@@ -90,36 +74,45 @@ Contiene:
 
     <!--MENÚ DE NAVEGACIÓN-->
     <header class="nav">
-        <a class="titulo" href="destinos.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
-        <!--Botones dropdown--> 
+        <a class="titulo" href="index.html">Stop, Drop & Travel <i class="fa-solid fa-plane"></i></a>
+    
+        <!-- Contenedor de botones dropdown -->
         <div class="btns-dropdown">
-            <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="toggleMenuSearch()"></i></a> <!--Botón Buscar-->
-            <div class="dropdown-search" id="MenuSearch"> <!--Dropdown Search (buscar)-->
-                <div class="menu-search abrir-search">
-                    <input type="text" placeholder="¿Tienes alguna actividad en mente?">
-                    <div class="btn-search">
-                        <a href="#">Buscar</a>
+    
+            <!-- Botón de búsqueda -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuSearch()" aria-controls="MenuSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="dropdown-search" id="MenuSearch">
+                    <div class="menu-search abrir-search">
+                        <input type="text" placeholder="¿Tienes alguna actividad en mente?">
+                        <div class="btn-search">
+                            <a href="#">Buscar</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#"><i class="fa-solid fa-user" onclick="toggleMenuUser()"></i></a> <!--Botón Usuario-->
-            <div class="dropdown-user" id="MenuUser"> <!--Dropdown Usuario (iniciar sesión y crear cuenta)-->
-                <div class="menu-user abrir-user" >
-                    <ul>
-                        <!--Ponemos un id a los enlaces para llamar a las modales-->
-                        <li><a id="open-registro" href="#">Crear cuenta</a></li> 
-                        <li><a id="open-login" href="#">Iniciar sesión</a></li>
-                    </ul>
+    
+            <!-- Botón de usuario -->
+            <div class="dropdown-container">
+                <button aria-haspopup="true" aria-expanded="false" onclick="toggleMenuUser()" aria-controls="MenuUser"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-user" id="MenuUser">
+                    <div class="menu-user abrir-user">
+                        <ul>
+                            <li><a id="open-registro" href="#">Crear cuenta</a></li>
+                            <li><a id="open-login" href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </header> 
+    </header>
 
     <!---->
 
     <!--BOTÓN BACK HOME: Este botón esta fuera del encabezado de la página-->
-    <a class="btn-back" href="destinos.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <a class="btn-back" href="destinos.html" aria-label="Volver a la página de destinos"><i class="fa-solid fa-arrow-left"></i></a>
 
+    <!---->
     
     <!--ENCABEZADO ACTIVIDADES EN GENERAL-->
     <section class="encabezado">
@@ -128,14 +121,15 @@ Contiene:
 
     <!---->
 
-    <!--CONTENIDO GENERAL ACTIVIDADES-->
+    <!--CONTENIDO WRAPPER-->
     <div class="contenedor">
         <div class="wrapper">
+
             <!--Medellín-->
-            <div class="destino" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(_img/medellin.jpg) no-repeat center center/cover;">
+            <div class="destino" id="medellin">
                 <a href="actividades-medellin.html">
                     <p>Medellín, Colombia</p>
-                    <div class="estrellas"> <!--Valoración-->
+                    <div class="estrellas">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -146,10 +140,10 @@ Contiene:
             </div>
 
             <!--Oporto-->
-            <div class="destino" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(_img/porto.jpg) no-repeat center center/cover;">
+            <div class="destino" id="oporto">
                 <a href="actividades-oporto.html">
                     <p>Oporto, Portugal</p>
-                    <div class="estrellas"> <!--Valoración-->
+                    <div class="estrellas">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -160,24 +154,24 @@ Contiene:
             </div>
 
             <!--Milán-->
-            <div class="destino" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(_img/milan.jpg) no-repeat center center/cover;">
+            <div class="destino" id="milan">
                 <a href="actividades-milan.html">
                     <p>Milán, Italia</p>
-                    <div class="estrellas"> <!--Valoración-->
+                    <div class="estrellas">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star gris"></i> <!--Ocultar estrella-->
+                        <i class="fa-solid fa-star gris"></i>
                     </div>
                 </a>
             </div>
 
             <!--Lima-->
-            <div class="destino" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(_img/lima.jpg) no-repeat center center/cover;">
+            <div class="destino" id="lima">
                 <a href="actividades-lima.html">
                     <p>Lima, Perú</p>
-                    <div class="estrellas"> <!--Valoración-->
+                    <div class="estrellas">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -188,35 +182,35 @@ Contiene:
             </div>
 
             <!--Nueva York-->
-            <div class="destino" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(_img/new-york.jpg) no-repeat center center/cover;">
+            <div class="destino" id="nueva-york">
                 <a href="actividades-ny.html">
                     <p>Nueva York, Nueva York</p>
-                    <div class="estrellas"> <!--Valoración-->
+                    <div class="estrellas">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star gris"></i> <!--Ocultar estrella-->
+                        <i class="fa-solid fa-star gris"></i>
                     </div>
                 </a>
             </div>
 
             <!--Seattle-->
-            <div class="destino" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(_img/seattle.jpg) no-repeat center center/cover;">
+            <div class="destino" id="seattle">
                 <a href="actividades-seattle.html">
-                    <p>Seattle, Whashington</p>
-                    <div class="estrellas"> <!--Valoración-->
+                    <p>Seattle, Washington</p>
+                    <div class="estrellas">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star gris"></i> <!--Ocultar estrella-->
-                        <i class="fa-solid fa-star gris"></i> <!--Ocultar estrella-->
+                        <i class="fa-solid fa-star gris"></i>
+                        <i class="fa-solid fa-star gris"></i>
                     </div>
                 </a>
-            </div>        
+            </div>
         </div>
     </div>
-
+    
     <!---->
     
     <!--FOOTER GENERAL-->
